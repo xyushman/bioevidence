@@ -17,6 +17,7 @@ from bioevidence.ingest import (
     ingest_pubmed as ingest_pubmed_fn,
 )
 from bioevidence.quality import run_quality_checks
+from bioevidence.scripts.create_sample_data import create_sample, export_sample
 
 app = typer.Typer(
     name="bioevidence",
@@ -264,6 +265,25 @@ def splits(
         stats = get_split_stats()
         console.print_json(data=stats)
 
+    else:
+        console.print(f"[red]Unknown action: {action}[/red]")
+        raise typer.Exit(code=1)
+
+
+@app.command()
+def sample(
+    action: str = typer.Argument("create", help="Action: create, export"),
+    trials: int = typer.Option(500, "--trials", help="Number of sample trials"),
+    pubmed: int = typer.Option(2000, "--pubmed", help="Number of sample PubMed articles"),
+    labels: int = typer.Option(200, "--labels", help="Number of sample drug labels"),
+    output_dir: str = typer.Option("data/sample", "--output-dir", help="Output directory"),
+    format: str = typer.Option("json", "--format", help="Export format: json, jsonl"),
+):
+    """Create or export sample dataset for demos/CI."""
+    if action == "create":
+        create_sample(trials=trials, pubmed=pubmed, labels=labels, output_dir=output_dir)
+    elif action == "export":
+        export_sample(output_dir=output_dir, format=format)
     else:
         console.print(f"[red]Unknown action: {action}[/red]")
         raise typer.Exit(code=1)
