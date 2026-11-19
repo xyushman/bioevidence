@@ -5,6 +5,7 @@ from pathlib import Path
 import typer
 from rich.console import Console
 
+from bioevidence.agent import BioEvidenceAgent
 from bioevidence.chunking import build_chunks, get_split_stats, make_splits, verify_no_leakage
 from bioevidence.config import get_config
 from bioevidence.embedding import build_embeddings
@@ -232,6 +233,27 @@ def eval(
     console.print(f"[yellow]Running evaluation ({mode})...[/yellow]")
     # TODO: Implement evaluation
     raise typer.Exit(code=1)
+
+
+@app.command()
+def agent(
+    question: str = typer.Argument(..., help="Question to ask the agent"),
+    system: str = typer.Option("A5", "--system", help="Retrieval system: A0-A5"),
+):
+    """Ask a question to the BioEvidence agent."""
+    console.print(f"[yellow]Asking agent (system={system})...[/yellow]")
+    agent = BioEvidenceAgent(system=system)
+    response = agent.answer(question)
+
+    console.print("\n[bold]Answer:[/bold]")
+    console.print(response.answer)
+
+    if response.citations:
+        console.print(f"\n[dim]Citations: {response.citations}[/dim]")
+    if response.tools_used:
+        console.print(f"[dim]Tools used: {response.tools_used}[/dim]")
+    if response.sql_queries:
+        console.print(f"[dim]SQL: {response.sql_queries}[/dim]")
 
 
 @app.command()
