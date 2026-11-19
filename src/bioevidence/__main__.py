@@ -5,6 +5,7 @@ from pathlib import Path
 import typer
 from rich.console import Console
 
+from bioevidence.chunking import build_chunks, get_split_stats, make_splits, verify_no_leakage
 from bioevidence.config import get_config
 from bioevidence.ingest import (
     ingest_ctgov as ingest_ctgov_fn,
@@ -143,11 +144,31 @@ def quality(
 @app.command()
 def chunk(
     action: str = typer.Argument("build", help="Action: build"),
+    max_tokens: int = typer.Option(512, "--max-tokens", help="Max tokens per chunk"),
+    overlap: int = typer.Option(32, "--overlap", help="Token overlap between chunks"),
+    trial_overlap: int = typer.Option(
+        40, "--trial-overlap", help="Token overlap for trial sections"
+    ),
+    label_overlap: int = typer.Option(
+        40, "--label-overlap", help="Token overlap for label sections"
+    ),
+    model: str = typer.Option(None, "--model", help="Embedding model for token counting"),
+    batch_size: int = typer.Option(1000, "--batch-size", help="Batch size for processing"),
 ):
     """Build chunks from documents."""
     console.print("[yellow]Building chunks...[/yellow]")
-    # TODO: Implement chunking
-    raise typer.Exit(code=1)
+    stats = build_chunks(
+        max_tokens=max_tokens,
+        overlap=overlap,
+        trial_section_overlap=trial_overlap,
+        label_section_overlap=label_overlap,
+        model_name=model,
+        batch_size=batch_size,
+    )
+    console.print(f"Total chunks: {stats['total']}")
+    console.print(
+        f"  Trials: {stats['trials']}, PubMed: {stats['pubmed']}, Labels: {stats['labels']}"
+    )
 
 
 @app.command()
@@ -203,12 +224,49 @@ def db(
 
 @app.command()
 def splits(
-    action: str = typer.Argument("make", help="Action: make"),
+    action: str = typer.Argument("make", help="Action: make, verify, stats"),
+    train_ratio: float = typer.Option(0.8, "--train-ratio", help="Train split ratio"),
+    dev_ratio: float = typer.Option(0.1, "--dev-ratio", help="Dev split ratio"),
+    test_ratio: float = typer.Option(0.1, "--test-ratio", help="Test split ratio"),
+    seed: int = typer.Option(42, "--seed", help="Random seed"),
 ):
     """Create train/dev/test splits."""
-    console.print("[yellow]Creating splits...[/yellow]")
-    # TODO: Implement splits
-    raise typer.Exit(code=1)
+    if action == "make":
+        console.print("[yellow]Creating splits...[/yellow]")
+        splits = make_splits(
+            train_ratio=train_ratio,
+            dev_ratio=dev_ratio,
+            test_ratio=test_ratio,
+            seed=seed,
+        )
+        console.print("Splits created:")
+        console.print(
+            f"  Trials - Train: {len(splits['trials']['train'])}, Dev: {len(splits['trials']['dev'])}, Test: {len(splits['trials']['test'])}"
+        )
+        console.print(
+            f"  PubMed - Train: {len(splits['pubmed']['train'])}, Dev: {len(splits['pubmed']['dev'])}, Test: {len(splits['pubmed']['test'])}"
+        )
+        console.print(
+            f"  Labels - Train: {len(splits['labels']['train'])}, Dev: {len(splits['labels']['dev'])}, Test: {len(splits['labels']['test'])}"
+        )
+
+    elif action == "verify":
+        console.print("[yellow]Verifying no leakage...[/yellow]")
+        ok = verify_no_leakage()
+        if ok:
+            console.print("[green]No leakage detected[/green]")
+        else:
+            console.print("[red]Leakage detected![/red]")
+            raise typer.Exit(code=1)
+
+    elif action == "stats":
+        console.print("[yellow]Split statistics...[/yellow]")
+        stats = get_split_stats()
+        console.print_json(data=stats)
+
+    else:
+        console.print(f"[red]Unknown action: {action}[/red]")
+        raise typer.Exit(code=1)
 
 
 if __name__ == "__main__":
