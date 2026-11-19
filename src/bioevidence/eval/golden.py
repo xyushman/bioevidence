@@ -2,14 +2,14 @@
 
 import json
 import random
-from dataclasses import dataclass, asdict
+from dataclasses import asdict, dataclass
 from pathlib import Path
-from typing import Any
 
 
 @dataclass
 class GoldenQuery:
     """A golden set query with ground truth."""
+
     query: str
     gold_chunk_ids: list[int]
     style: str  # "keyword", "natural", "clinician"
@@ -53,7 +53,11 @@ def generate_synthetic_queries(
     per_type = num_queries // len(doc_types)
 
     for doc_type in doc_types:
-        items = sample_data.get(doc_type + "s", []) if doc_type != "label" else sample_data.get("labels", [])
+        items = (
+            sample_data.get(doc_type + "s", [])
+            if doc_type != "label"
+            else sample_data.get("labels", [])
+        )
         if not items:
             continue
 
@@ -81,12 +85,14 @@ def generate_synthetic_queries(
                     query = _generate_keyword_query(item, doc_type, q_idx)
 
                 # Use composite ID as pseudo chunk_id
-                queries.append(GoldenQuery(
-                    query=query,
-                    gold_chunk_ids=[item_idx * 100 + q_idx],
-                    style=style,
-                    doc_type=doc_type,
-                ))
+                queries.append(
+                    GoldenQuery(
+                        query=query,
+                        gold_chunk_ids=[item_idx * 100 + q_idx],
+                        style=style,
+                        doc_type=doc_type,
+                    )
+                )
 
     return queries
 
@@ -101,7 +107,15 @@ def _generate_keyword_query(item: dict, doc_type: str, variant: int = 0) -> str:
         if "title" in item:
             words = item["title"].split()
             for w in words:
-                if w.lower() in ["cancer", "tumor", "arthritis", "psoriasis", "heart", "failure", "osteoporosis"]:
+                if w.lower() in [
+                    "cancer",
+                    "tumor",
+                    "arthritis",
+                    "psoriasis",
+                    "heart",
+                    "failure",
+                    "osteoporosis",
+                ]:
                     keywords.append(w.lower())
     elif doc_type == "pubmed":
         if "title" in item:
@@ -141,7 +155,11 @@ def _generate_natural_query(item: dict, doc_type: str, variant: int = 0) -> str:
     }
 
     template = random.choice(templates.get(doc_type, ["What is {}?"]))
-    topic = item.get("title", "this study") if doc_type != "label" else item.get("brand_names", ["this drug"])[0]
+    topic = (
+        item.get("title", "this study")
+        if doc_type != "label"
+        else item.get("brand_names", ["this drug"])[0]
+    )
     return template.format(topic)
 
 
@@ -162,7 +180,11 @@ def _generate_clinician_query(item: dict, doc_type: str, variant: int = 0) -> st
     }
 
     template = random.choice(templates.get(doc_type, ["What is the clinical evidence for {}?"]))
-    topic = item.get("title", "this condition") if doc_type != "label" else item.get("brand_names", ["this drug"])[0]
+    topic = (
+        item.get("title", "this condition")
+        if doc_type != "label"
+        else item.get("brand_names", ["this drug"])[0]
+    )
     return template.format(topic, "treatment")
 
 
@@ -198,67 +220,77 @@ def create_qa_golden_set(num_questions: int = 100) -> list[GoldenQuery]:
 
     # Factual lookup (30)
     for i in range(30):
-        queries.append(GoldenQuery(
-            query=f"Factual lookup question {i}",
-            gold_chunk_ids=[],
-            style="factual",
-            doc_type="label",
-            category="factual_lookup",
-            gold_answer=f"Answer for factual question {i}",
-            gold_citations=[],
-            answerable=True,
-        ))
+        queries.append(
+            GoldenQuery(
+                query=f"Factual lookup question {i}",
+                gold_chunk_ids=[],
+                style="factual",
+                doc_type="label",
+                category="factual_lookup",
+                gold_answer=f"Answer for factual question {i}",
+                gold_citations=[],
+                answerable=True,
+            )
+        )
 
     # Trial-structured (25)
     for i in range(25):
-        queries.append(GoldenQuery(
-            query=f"Trial structured question {i}",
-            gold_chunk_ids=[],
-            style="sql",
-            doc_type="trial",
-            category="trial_structured",
-            gold_answer=f"Answer for trial question {i}",
-            gold_citations=[],
-            answerable=True,
-        ))
+        queries.append(
+            GoldenQuery(
+                query=f"Trial structured question {i}",
+                gold_chunk_ids=[],
+                style="sql",
+                doc_type="trial",
+                category="trial_structured",
+                gold_answer=f"Answer for trial question {i}",
+                gold_citations=[],
+                answerable=True,
+            )
+        )
 
     # Multi-hop (20)
     for i in range(20):
-        queries.append(GoldenQuery(
-            query=f"Multi-hop question {i}",
-            gold_chunk_ids=[],
-            style="multi_hop",
-            doc_type="mixed",
-            category="multi_hop",
-            gold_answer=f"Answer for multi-hop question {i}",
-            gold_citations=[],
-            answerable=True,
-        ))
+        queries.append(
+            GoldenQuery(
+                query=f"Multi-hop question {i}",
+                gold_chunk_ids=[],
+                style="multi_hop",
+                doc_type="mixed",
+                category="multi_hop",
+                gold_answer=f"Answer for multi-hop question {i}",
+                gold_citations=[],
+                answerable=True,
+            )
+        )
 
     # Unanswerable (20)
     for i in range(20):
-        queries.append(GoldenQuery(
-            query=f"Unanswerable question {i}",
-            gold_chunk_ids=[],
-            style="unanswerable",
-            doc_type="none",
-            category="unanswerable",
-            gold_answer="Insufficient evidence in the retrieved sources.",
-            gold_citations=[],
-            answerable=False,
-        ))
+        queries.append(
+            GoldenQuery(
+                query=f"Unanswerable question {i}",
+                gold_chunk_ids=[],
+                style="unanswerable",
+                doc_type="none",
+                category="unanswerable",
+                gold_answer="Insufficient evidence in the retrieved sources.",
+                gold_citations=[],
+                answerable=False,
+            )
+        )
 
     # Adversarial (5)
     for i in range(5):
-        queries.append(GoldenQuery(
-            query=f"Adversarial question {i}",
-            gold_chunk_ids=[],
-            style="adversarial",
-            doc_type="none",
-            category="adversarial",
-            gold_answer="Insufficient evidence in the retrieved sources.",
-            gold_citations=[],
-            answerable=False,
-        ))
+        queries.append(
+            GoldenQuery(
+                query=f"Adversarial question {i}",
+                gold_chunk_ids=[],
+                style="adversarial",
+                doc_type="none",
+                category="adversarial",
+                gold_answer="Insufficient evidence in the retrieved sources.",
+                gold_citations=[],
+                answerable=False,
+            )
+        )
 
     return queries
