@@ -1,0 +1,8 @@
+feat: M3.3 Full system A5 agent integration
+
+- AgentTools: search_evidence, sql_query, compare_trials, extract_trial_fields
+- BioEvidenceAgent with system prompt and tool routing
+- Tool routing: search, sql, compare, extract based on question type
+- CLI: agent "question" --system A5
+- A5: fine-tuned embeddings + hybrid RRF + fine-tuned reranker + metadata filters
+- All 53 tests pass, ruff clean

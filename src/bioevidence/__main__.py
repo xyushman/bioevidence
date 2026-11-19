@@ -228,11 +228,49 @@ def train(
 @app.command()
 def eval(
     mode: str = typer.Argument("run", help="Mode: run, ci"),
+    systems: str = typer.Option(
+        "A0,A1a,A1b,A2,A3,A4,A4b,A5", "--systems", help="Comma-separated systems"
+    ),
+    retrieval_golden: str = typer.Option(
+        None, "--retrieval-golden", help="Retrieval golden set path"
+    ),
+    qa_golden: str = typer.Option(None, "--qa-golden", help="QA golden set path"),
+    output_dir: str = typer.Option(None, "--output-dir", help="Output directory"),
+    baseline: str = typer.Option(None, "--baseline", help="Baseline path for regression"),
 ):
     """Run evaluation."""
-    console.print(f"[yellow]Running evaluation ({mode})...[/yellow]")
-    # TODO: Implement evaluation
-    raise typer.Exit(code=1)
+    if mode == "ci":
+        console.print("[yellow]Running eval CI gate...[/yellow]")
+        from scripts.eval_ci import run_eval_ci
+
+        system_list = [s.strip() for s in systems.split(",")]
+        results = run_eval_ci(
+            systems=system_list,
+            retrieval_golden=Path(retrieval_golden) if retrieval_golden else None,
+            qa_golden=Path(qa_golden) if qa_golden else None,
+            output_dir=Path(output_dir) if output_dir else None,
+            baseline_path=Path(baseline) if baseline else None,
+        )
+
+        all_passed = True
+        for name, result in results.items():
+            status = "PASS" if result.passed else "FAIL"
+            console.print(f"  {name}: {status}")
+            if result.failures:
+                for f in result.failures:
+                    console.print(f"    - {f}")
+            if not result.passed:
+                all_passed = False
+
+        if not all_passed:
+            console.print("\n[red]Eval CI gate FAILED[/red]")
+            raise typer.Exit(code=1)
+        else:
+            console.print("\n[green]All eval gates PASSED[/green]")
+    else:
+        console.print(f"[yellow]Running evaluation ({mode})...[/yellow]")
+        # TODO: Implement full evaluation
+        raise typer.Exit(code=1)
 
 
 @app.command()
