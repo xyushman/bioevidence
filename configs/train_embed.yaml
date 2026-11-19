@@ -1,0 +1,52 @@
+# Embedding fine-tuning configuration
+model:
+  base_model: "BAAI/bge-small-en-v1.5"
+  output_dir: "models/bge-small-ft"
+  max_seq_length: 512
+
+data:
+  train_file: "data/processed/synth_pairs.jsonl"
+  num_pairs: 20000
+  hard_negatives_per_query: 3
+  negative_mining:
+    rank_range: [10, 50]
+    exclude_same_doc: true
+
+training:
+  loss: "MultipleNegativesRankingLoss"
+  batch_size: 64
+  gradient_accumulation_steps: 1
+  learning_rate: 2e-5
+  num_epochs: 3
+  warmup_ratio: 0.1
+  fp16: true
+  bf16: false
+  gradient_checkpointing: true
+  seed: 42
+  logging_steps: 50
+  eval_steps: 500
+  save_steps: 500
+  save_total_limit: 2
+  metric_for_best_model: "eval_recall_at_5"
+  greater_is_better: true
+  load_best_model_at_end: true
+  report_to: "mlflow"
+
+optimizer:
+  type: "adamw_torch"
+  weight_decay: 0.01
+
+scheduler:
+  type: "cosine"
+  num_cycles: 0.5
+
+eval:
+  dev_file: "data/processed/synth_pairs_dev.jsonl"
+  metrics:
+    - "recall_at_1"
+    - "recall_at_5"
+    - "recall_at_10"
+    - "recall_at_20"
+    - "mrr_at_10"
+    - "ndcg_at_10"
+  instruction_prefix: "Represent this sentence for searching relevant passages: "

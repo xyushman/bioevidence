@@ -1,0 +1,111 @@
+# Therapeutic scope configuration for BioEvidence
+# This defines which conditions/trials to include
+
+# Therapeutic areas (Amgen-relevant)
+therapeutic_areas:
+  - name: "oncology"
+    display_name: "Oncology"
+    mesh_terms:
+      - "Neoplasms"
+      - "Neoplasms by Site"
+      - "Neoplasms by Histologic Type"
+    keywords:
+      - cancer
+      - tumor
+      - tumour
+      - neoplasm
+      - carcinoma
+      - sarcoma
+      - lymphoma
+      - leukemia
+      - melanoma
+      - myeloma
+      - adenocarcinoma
+      - squamous cell
+      - small cell
+      - non-small cell
+
+  - name: "inflammation_immunology"
+    display_name: "Inflammation/Immunology"
+    mesh_terms:
+      - "Arthritis, Rheumatoid"
+      - "Psoriasis"
+      - "Inflammatory Bowel Diseases"
+      - "Crohn Disease"
+      - "Ulcerative Colitis"
+      - "Autoimmune Diseases"
+    keywords:
+      - rheumatoid arthritis
+      - psoriatic arthritis
+      - ankylosing spondylitis
+      - psoriasis
+      - inflammatory bowel disease
+      - crohn
+      - ulcerative colitis
+      - autoimmune
+      - atopic dermatitis
+      - eczema
+      - hidradenitis suppurativa
+
+  - name: "cardiovascular"
+    display_name: "Cardiovascular"
+    mesh_terms:
+      - "Cardiovascular Diseases"
+      - "Heart Failure"
+      - "Myocardial Ischemia"
+      - "Atrial Fibrillation"
+      - "Hypertension"
+    keywords:
+      - heart failure
+      - myocardial infarction
+      - acute coronary syndrome
+      - atrial fibrillation
+      - hypertension
+      - coronary artery disease
+      - stroke
+      - cardiovascular
+      - cardiac
+      - heart disease
+
+  - name: "bone_osteoporosis"
+    display_name: "Bone/Osteoporosis"
+    mesh_terms:
+      - "Osteoporosis"
+      - "Bone Diseases, Metabolic"
+      - "Fractures, Bone"
+      - "Bone Neoplasms"
+    keywords:
+      - osteoporosis
+      - osteopenia
+      - bone fracture
+      - vertebral fracture
+      - hip fracture
+      - bone metastasis
+      - bone mineral density
+      - fragility fracture
+      - paget disease
+
+# Trial filters
+trial_filters:
+  study_types:
+    - "Interventional"
+  phases:
+    - "Phase 1"
+    - "Phase 2"
+    - "Phase 3"
+    - "Phase 4"
+  start_date_min: "2005-01-01"
+  overall_statuses:
+    - "Completed"
+    - "Active, not recruiting"
+    - "Recruiting"
+    - "Enrolling by invitation"
+    - "Terminated"
+    - "Withdrawn"
+    - "Suspended"
+
+# Volume targets
+targets:
+  trials: 25000
+  pubmed_abstracts: 100000
+  drug_labels: 5000

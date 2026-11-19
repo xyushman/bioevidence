@@ -1,0 +1,87 @@
+# Retrieval system configurations (A0..A5)
+systems:
+  A0:
+    name: "Baseline Dense"
+    description: "Off-the-shelf bge-small, dense only, no rerank"
+    retriever: "dense"
+    embedding_model: "BAAI/bge-small-en-v1.5"
+    reranker: null
+    hybrid: false
+    top_k: 5
+    candidate_pool: 50
+
+  A1a:
+    name: "BM25 Only"
+    description: "Postgres FTS only"
+    retriever: "bm25"
+    embedding_model: null
+    reranker: null
+    hybrid: false
+    top_k: 5
+    candidate_pool: 50
+
+  A1b:
+    name: "Dense Only"
+    description: "Off-the-shelf bge-small, dense only"
+    retriever: "dense"
+    embedding_model: "BAAI/bge-small-en-v1.5"
+    reranker: null
+    hybrid: false
+    top_k: 5
+    candidate_pool: 50
+
+  A2:
+    name: "Hybrid (RRF)"
+    description: "BM25 + dense with RRF fusion"
+    retriever: "hybrid"
+    embedding_model: "BAAI/bge-small-en-v1.5"
+    reranker: null
+    hybrid: true
+    top_k: 5
+    candidate_pool: 50
+    rrf_k: 60
+
+  A3:
+    name: "Fine-tuned Embeddings"
+    description: "Hybrid + fine-tuned bge-small embeddings"
+    retriever: "hybrid"
+    embedding_model: "bioevidence/bge-small-ft"
+    reranker: null
+    hybrid: true
+    top_k: 5
+    candidate_pool: 50
+    rrf_k: 60
+
+  A4:
+    name: "Off-the-shelf Reranker"
+    description: "Fine-tuned embeddings + hybrid + bge-reranker-base"
+    retriever: "hybrid"
+    embedding_model: "bioevidence/bge-small-ft"
+    reranker: "BAAI/bge-reranker-base"
+    hybrid: true
+    top_k: 5
+    candidate_pool: 50
+    rrf_k: 60
+
+  A4b:
+    name: "Fine-tuned Reranker"
+    description: "Fine-tuned embeddings + hybrid + fine-tuned MiniLM reranker"
+    retriever: "hybrid"
+    embedding_model: "bioevidence/bge-small-ft"
+    reranker: "bioevidence/minilm-reranker-ft"
+    hybrid: true
+    top_k: 5
+    candidate_pool: 50
+    rrf_k: 60
+
+  A5:
+    name: "Full System"
+    description: "Fine-tuned embeddings + hybrid + fine-tuned reranker + metadata filters"
+    retriever: "hybrid"
+    embedding_model: "bioevidence/bge-small-ft"
+    reranker: "bioevidence/minilm-reranker-ft"
+    hybrid: true
+    top_k: 5
+    candidate_pool: 50
+    rrf_k: 60
+    metadata_filters: true

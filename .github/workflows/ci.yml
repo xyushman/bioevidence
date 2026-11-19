@@ -1,0 +1,176 @@
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+env:
+  UV_VERSION: "0.5.0"
+  PYTHON_VERSION: "3.11"
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+        with:
+          version: ${{ env.UV_VERSION }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install dependencies
+        run: uv sync --all-extras
+
+      - name: Run ruff check
+        run: uv run ruff check src tests
+
+      - name: Run ruff format check
+        run: uv run ruff format --check src tests
+
+      - name: Run mypy
+        run: uv run mypy src
+
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: pgvector/pgvector:pg16
+        env:
+          POSTGRES_USER: bioevidence
+          POSTGRES_PASSWORD: bioevidence
+          POSTGRES_DB: bioevidence
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd="pg_isready -U bioevidence"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+        with:
+          version: ${{ env.UV_VERSION }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install dependencies
+        run: uv sync --all-extras
+
+      - name: Run migrations
+        run: uv run alembic upgrade head
+        env:
+          DATABASE_URL: postgresql://bioevidence:bioevidence@localhost:5432/bioevidence
+
+      - name: Run tests
+        run: uv run pytest --cov=src/bioevidence --cov-report=xml
+        env:
+          DATABASE_URL: postgresql://bioevidence:bioevidence@localhost:5432/bioevidence
+          LLM_PROVIDER: gemini
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
+      - name: Upload coverage
+        uses: codecov/codecov-action@v4
+        if: always()
+        with:
+          files: ./coverage.xml
+
+  eval-ci:
+    name: Evaluation Gate
+    runs-on: ubuntu-latest
+    needs: [lint, test]
+    if: github.event_name == 'pull_request' || github.ref == 'refs/heads/main'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+        with:
+          version: ${{ env.UV_VERSION }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install dependencies
+        run: uv sync --all-extras
+
+      - name: Run eval-ci gate
+        run: uv run python -m bioevidence eval ci
+        env:
+          DATABASE_URL: postgresql://bioevidence:bioevidence@localhost:5432/bioevidence
+          LLM_PROVIDER: gemini
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
+  docker-build:
+    name: Docker Build
+    runs-on: ubuntu-latest
+    needs: [lint, test]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build API image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          dockerfile: Dockerfile.api
+          push: false
+          tags: bioevidence/api:test
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Build Web image
+        uses: docker/build-push-action@v5
+        with:
+          context: ./web
+          dockerfile: Dockerfile
+          push: false
+          tags: bioevidence/web:test
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  trivy-scan:
+    name: Trivy Scan
+    runs-on: ubuntu-latest
+    needs: [docker-build]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'fs'
+          scan-ref: '.'
+          format: 'sarif'
+          output: 'trivy-results.sarif'
+          severity: 'CRITICAL,HIGH'
+
+      - name: Upload Trivy results to GitHub Security
+        uses: github/codeql-action/upload-sarif@v3
+        if: always()
+        with:
+          sarif_file: 'trivy-results.sarif'

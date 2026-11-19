@@ -1,0 +1,65 @@
+version: '3.8'
+
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    container_name: bioevidence-db
+    environment:
+      POSTGRES_USER: bioevidence
+      POSTGRES_PASSWORD: bioevidence
+      POSTGRES_DB: bioevidence
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U bioevidence"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    container_name: bioevidence-api
+    environment:
+      - DATABASE_URL=postgresql://bioevidence:bioevidence@db:5432/bioevidence
+      - LLM_PROVIDER=${LLM_PROVIDER:-gemini}
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - NCBI_API_KEY=${NCBI_API_KEY}
+      - MLFLOW_TRACKING_URI=file:./mlruns
+      - API_HOST=0.0.0.0
+      - API_PORT=8000
+      - API_CORS_ORIGINS=["http://localhost:5173"]
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+      - ./mlruns:/app/mlruns
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  web:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    container_name: bioevidence-web
+    environment:
+      - VITE_API_URL=http://localhost:8000
+    ports:
+      - "5173:5173"
+    depends_on:
+      - api
+
+volumes:
+  pgdata:

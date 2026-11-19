@@ -1,0 +1,61 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# uv
+.uv/
+uv.lock
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data (raw and processed are gitignored)
+data/raw/
+data/processed/
+mlruns/
+models/
+
+# Logs
+*.log
+logs/
+
+# Docker
+docker-compose.override.yml
+
+# Test/coverage
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+
+# Build
+dist/
+build/
+*.egg-info/
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Jupyter
+.ipynb_checkpoints/

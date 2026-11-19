@@ -1,0 +1,28 @@
+# CI Evaluation Gate Configuration
+# Thresholds for eval-ci to pass
+
+gate:
+  # Retrieval thresholds (Recall@5 on test set)
+  retrieval_recall_at_5_min: 0.45  # Set to A5 baseline - 2pts
+  retrieval_mrr_at_10_min: 0.35
+
+  # Generation thresholds
+  faithfulness_min: 0.70
+  citation_accuracy_min: 0.60
+  abstention_f1_min: 0.65
+
+  # Regression thresholds (vs results/main_baseline.json)
+  recall_regression_threshold: -0.02  # Fail if Recall@5 drops > 2pts
+  faithfulness_regression_threshold: -0.03  # Fail if faithfulness drops > 3pts
+
+  # Test subset sizes (for fast CI runs)
+  retrieval_test_queries: 50
+  qa_test_questions: 20
+  extraction_test_trials: 30
+
+  # Cache settings
+  use_cached_llm: true
+  cache_dir: "tests/fixtures/llm_cache"
+
+# Baseline reference (populated after first full eval run)
+baseline_reference: "results/main_baseline.json"

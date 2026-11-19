@@ -1,0 +1,89 @@
+# LoRA extractor training configuration
+model:
+  base_model: "Qwen/Qwen2.5-3B-Instruct"
+  output_dir: "models/qwen2.5-3b-lora-extractor"
+  max_seq_length: 1024
+  trust_remote_code: true
+
+lora:
+  r: 16
+  alpha: 32
+  dropout: 0.05
+  target_modules:
+    - "q_proj"
+    - "k_proj"
+    - "v_proj"
+    - "o_proj"
+    - "gate_proj"
+    - "up_proj"
+    - "down_proj"
+  bias: "none"
+  task_type: "CAUSAL_LM"
+
+quantization:
+  load_in_4bit: true
+  bnb_4bit_quant_type: "nf4"
+  bnb_4bit_compute_dtype: "float16"
+  bnb_4bit_use_double_quant: true
+
+data:
+  train_file: "data/processed/extraction_train.jsonl"
+  val_file: "data/processed/extraction_val.jsonl"
+  test_file: "data/processed/extraction_test.jsonl"
+  num_train_samples: 2700
+  num_val_samples: 300
+  num_test_samples: 200
+  prompt_template: "chatml"
+  max_input_length: 800
+  max_output_length: 224
+
+training:
+  batch_size: 2
+  gradient_accumulation_steps: 8
+  learning_rate: 2e-4
+  num_epochs: 3
+  warmup_ratio: 0.05
+  fp16: true
+  bf16: false
+  gradient_checkpointing: true
+  seed: 42
+  logging_steps: 10
+  eval_steps: 100
+  save_steps: 100
+  save_total_limit: 2
+  metric_for_best_model: "eval_macro_f1"
+  greater_is_better: true
+  load_best_model_at_end: true
+  report_to: "mlflow"
+  packing: false
+
+optimizer:
+  type: "adamw_torch"
+  weight_decay: 0.01
+
+scheduler:
+  type: "cosine"
+
+generation:
+  do_sample: false
+  temperature: 0.0
+  top_p: 1.0
+  max_new_tokens: 256
+  repetition_penalty: 1.0
+  use_constrained_decoding: false
+
+eval:
+  metrics_per_field:
+    primary_endpoint: "token_f1"
+    endpoint_category: "exact_match"
+    intervention_names: "set_f1"
+    intervention_class: "exact_match"
+    randomized: "exact_match"
+    blinding: "exact_match"
+    population_age_group: "exact_match"
+    key_inclusion: "set_f1"
+    key_exclusion: "set_f1"
+  macro_average: true
+  valid_json_rate: true
+  latency_per_trial: true
+  cost_per_1k_trials: true

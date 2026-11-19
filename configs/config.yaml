@@ -1,0 +1,126 @@
+# BioEvidence Configuration
+
+# Scope: therapeutic areas and keywords
+scope:
+  therapeutic_areas:
+    - oncology
+    - inflammation
+    - immunology
+    - cardiovascular
+    - bone
+    - osteoporosis
+  condition_keywords:
+    - cancer
+    - tumor
+    - neoplasm
+    - carcinoma
+    - lymphoma
+    - leukemia
+    - melanoma
+    - rheumatoid arthritis
+    - psoriasis
+    - inflammatory bowel disease
+    - crohn
+    - ulcerative colitis
+    - heart failure
+    - myocardial infarction
+    - atrial fibrillation
+    - hypertension
+    - osteoporosis
+    - bone fracture
+    - bone metastasis
+  mesh_terms:
+    - "Neoplasms"
+    - "Arthritis, Rheumatoid"
+    - "Psoriasis"
+    - "Inflammatory Bowel Diseases"
+    - "Cardiovascular Diseases"
+    - "Osteoporosis"
+    - "Bone Diseases"
+
+# Database
+database:
+  url: "${DATABASE_URL}"
+  pool_size: 10
+  max_overflow: 20
+  pool_timeout: 30
+
+# LLM
+llm:
+  provider: "${LLM_PROVIDER}"
+  gemini:
+    api_key: "${GEMINI_API_KEY}"
+    model: "gemini-1.5-flash"
+    temperature: 0.0
+    max_tokens: 8192
+  anthropic:
+    api_key: "${ANTHROPIC_API_KEY}"
+    model: "claude-3-haiku-20240307"
+    temperature: 0.0
+    max_tokens: 4096
+  openai:
+    api_key: "${OPENAI_API_KEY}"
+    model: "gpt-4o-mini"
+    temperature: 0.0
+    max_tokens: 4096
+  cache_dir: "data/processed/llm_cache"
+
+# Embedding
+embedding:
+  model: "${EMBEDDING_MODEL}"
+  dimension: ${EMBEDDING_DIM}
+  batch_size: 64
+  normalize: true
+
+# Reranker
+reranker:
+  model: "${RERANKER_MODEL}"
+  batch_size: 32
+
+# Retrieval
+retrieval:
+  top_k: ${RETRIEVAL_TOP_K}
+  candidate_pool: ${RETRIEVAL_CANDIDATE_POOL}
+  rrf_k: ${RRF_K}
+  bm25_weight: 0.5
+  dense_weight: 0.5
+
+# Chunking
+chunking:
+  max_tokens: 512
+  overlap: 32
+  trial_section_overlap: 40
+  label_section_overlap: 40
+
+# Agent
+agent:
+  max_steps: ${AGENT_MAX_STEPS}
+  timeout_seconds: ${AGENT_TIMEOUT_SECONDS}
+  token_budget: ${AGENT_TOKEN_BUDGET}
+  sql_timeout_seconds: 3
+  sql_limit: 200
+
+# Forecasting
+forecasting:
+  test_start_year: ${FORECAST_TEST_START_YEAR}
+  max_duration_months: 180
+  min_duration_months: 1
+
+# API
+api:
+  host: "${API_HOST}"
+  port: ${API_PORT}
+  cors_origins: ${API_CORS_ORIGINS}
+
+# Rate limits
+rate_limits:
+  ncbi: ${NCBI_RATE_LIMIT}
+  openfda: ${OPENAFDA_RATE_LIMIT}
+
+# Seed
+seed: ${SEED}
+
+# MLflow
+mlflow:
+  tracking_uri: "${MLFLOW_TRACKING_URI}"
+  experiment_name: "bioevidence"
