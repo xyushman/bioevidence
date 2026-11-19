@@ -1,5 +1,7 @@
 """Main CLI entry point for BioEvidence."""
 
+from pathlib import Path
+
 import typer
 from rich.console import Console
 
@@ -13,6 +15,7 @@ from bioevidence.ingest import (
 from bioevidence.ingest import (
     ingest_pubmed as ingest_pubmed_fn,
 )
+from bioevidence.quality import run_quality_checks
 
 app = typer.Typer(
     name="bioevidence",
@@ -117,11 +120,24 @@ def ingest_openfda(
 @app.command()
 def quality(
     action: str = typer.Argument("run", help="Action: run"),
+    output: str = typer.Option(
+        "reports/data_quality.md", "--output", help="Output path for report"
+    ),
 ):
     """Run data quality checks."""
     console.print("[yellow]Running quality checks...[/yellow]")
-    # TODO: Implement quality checks
-    raise typer.Exit(code=1)
+    report = run_quality_checks(Path(output))
+
+    console.print(f"Checks: {len(report.checks)} total")
+    console.print(f"Passed: {sum(1 for c in report.checks if c.passed)}")
+    console.print(f"Failed (critical): {report.critical_failures}")
+    console.print(f"Warnings: {report.warnings}")
+
+    if report.critical_failures > 0:
+        console.print("[red]Quality checks FAILED[/red]")
+        raise typer.Exit(code=1)
+    else:
+        console.print("[green]Quality checks PASSED[/green]")
 
 
 @app.command()
