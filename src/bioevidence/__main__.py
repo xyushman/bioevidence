@@ -7,6 +7,7 @@ from rich.console import Console
 
 from bioevidence.chunking import build_chunks, get_split_stats, make_splits, verify_no_leakage
 from bioevidence.config import get_config
+from bioevidence.embedding import build_embeddings
 from bioevidence.ingest import (
     ingest_ctgov as ingest_ctgov_fn,
 )
@@ -176,11 +177,13 @@ def chunk(
 def embed(
     action: str = typer.Argument("build", help="Action: build"),
     model: str = typer.Option(None, "--model", help="Embedding model to use"),
+    batch_size: int = typer.Option(64, "--batch-size", help="Batch size"),
+    finetuned: bool = typer.Option(False, "--finetuned", help="Use fine-tuned column"),
 ):
     """Build embeddings for chunks."""
     console.print("[yellow]Building embeddings...[/yellow]")
-    # TODO: Implement embedding
-    raise typer.Exit(code=1)
+    stats = build_embeddings(model=model, batch_size=batch_size, use_finetuned=finetuned)
+    console.print(f"Embeddings built: {stats}")
 
 
 @app.command()
@@ -268,6 +271,66 @@ def splits(
     else:
         console.print(f"[red]Unknown action: {action}[/red]")
         raise typer.Exit(code=1)
+
+
+@app.command(name="eval-retrieval")
+def eval_retrieval(
+    system: str = typer.Argument(..., help="System to evaluate: A0, A1a, A1b, A2, A3, A4, A4b, A5"),
+    golden_file: str = typer.Option(
+        "data/goldens/retrieval_golden.jsonl", "--golden", help="Golden set file"
+    ),
+    output: str = typer.Option("results/retrieval", "--output", help="Output directory"),
+    k: int = typer.Option(5, "--k", help="Top-k for retrieval"),
+):
+    """Evaluate a retrieval system against golden set."""
+    console.print(f"[yellow]Evaluating retrieval system {system}...[/yellow]")
+
+    # Load golden set
+    from bioevidence.eval import load_golden_set
+
+    queries = load_golden_set(Path(golden_file))
+    console.print(f"Loaded {len(queries)} golden queries")
+
+    # Get retriever
+    from bioevidence.retrieval.pipeline import get_retriever
+
+    retriever = get_retriever(system)
+
+    # Evaluate
+    from bioevidence.eval import evaluate_retrieval
+
+    result = evaluate_retrieval(queries, retriever, ks=[1, 5, 10, 20])
+
+    # Save results
+    output_path = Path(output)
+    output_path.mkdir(parents=True, exist_ok=True)
+    import json
+
+    result_file = output_path / f"{system}_results.json"
+    result_file.write_text(
+        json.dumps(
+            {
+                "system": system,
+                "aggregate": {
+                    "recall_at_1": result["aggregate"].recall_at_1,
+                    "recall_at_5": result["aggregate"].recall_at_5,
+                    "recall_at_10": result["aggregate"].recall_at_10,
+                    "recall_at_20": result["aggregate"].recall_at_20,
+                    "mrr_at_10": result["aggregate"].mrr_at_10,
+                    "ndcg_at_10": result["aggregate"].ndcg_at_10,
+                    "hit_at_5": result["aggregate"].hit_at_5,
+                },
+                "cis": result["cis"],
+                "n_queries": result["n_queries"],
+            },
+            indent=2,
+        )
+    )
+
+    console.print(f"Results saved to {result_file}")
+    console.print(f"Recall@5: {result['aggregate'].recall_at_5:.4f}")
+    console.print(f"MRR@10: {result['aggregate'].mrr_at_10:.4f}")
+    console.print(f"nDCG@10: {result['aggregate'].ndcg_at_10:.4f}")
 
 
 @app.command()

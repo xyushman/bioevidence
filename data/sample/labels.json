@@ -1,0 +1,110 @@
+[
+  {
+    "set_id": "sample-pembrolizumab-000",
+    "brand_names": [
+      "Keytruda"
+    ],
+    "generic_names": [
+      "pembrolizumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nKeytruda (pembrolizumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Keytruda is...",
+      "contraindications": "CONTRAINDICATIONS\nKeytruda is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Keytruda was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-nivolumab-001",
+    "brand_names": [
+      "Opdivo"
+    ],
+    "generic_names": [
+      "nivolumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nOpdivo (nivolumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Opdivo is...",
+      "contraindications": "CONTRAINDICATIONS\nOpdivo is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Opdivo was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-adalimumab-002",
+    "brand_names": [
+      "Humira"
+    ],
+    "generic_names": [
+      "adalimumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nHumira (adalimumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Humira is...",
+      "contraindications": "CONTRAINDICATIONS\nHumira is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Humira was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-ustekinumab-003",
+    "brand_names": [
+      "Stelara"
+    ],
+    "generic_names": [
+      "ustekinumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nStelara (ustekinumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Stelara is...",
+      "contraindications": "CONTRAINDICATIONS\nStelara is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Stelara was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-sacubitril/valsartan-004",
+    "brand_names": [
+      "Entresto"
+    ],
+    "generic_names": [
+      "sacubitril/valsartan"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nEntresto (sacubitril/valsartan) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Entresto is...",
+      "contraindications": "CONTRAINDICATIONS\nEntresto is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Entresto was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-denosumab-005",
+    "brand_names": [
+      "Prolia"
+    ],
+    "generic_names": [
+      "denosumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nProlia (denosumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Prolia is...",
+      "contraindications": "CONTRAINDICATIONS\nProlia is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Prolia was demonstrated in..."
+    }
+  }
+]

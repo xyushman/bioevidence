@@ -1,17 +1,17 @@
-"""Retrieval module for BioEvidence."""
+"""Golden set module for BioEvidence."""
 
-from dataclasses import dataclass
-from typing import Any
-
-from bioevidence.config import get_config
-from bioevidence.eval.retrieval_metrics import (
-    RetrievalMetrics,
-    compute_metrics,
-    evaluate_retrieval,
+from bioevidence.eval.golden import (
+    GoldenQuery,
+    create_qa_golden_set,
+    generate_synthetic_queries,
+    load_golden_set,
+    save_golden_set,
 )
 
 __all__ = [
-    "RetrievalMetrics",
-    "compute_metrics",
-    "evaluate_retrieval",
+    "GoldenQuery",
+    "create_qa_golden_set",
+    "generate_synthetic_queries",
+    "load_golden_set",
+    "save_golden_set",
 ]

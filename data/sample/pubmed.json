@@ -1,0 +1,44 @@
+[
+  {
+    "pmid": "10000000",
+    "title": "Efficacy of pembrolizumab in lung cancer",
+    "abstract": "Background: lung cancer is a serious condition. Methods: We conducted a randomized trial of pembrolizumab. Results: The treatment showed significant benefit. Conclusion: pembrolizumab is effective.",
+    "journal": "NEJM",
+    "year": 2020
+  },
+  {
+    "pmid": "10000001",
+    "title": "Efficacy of nivolumab in melanoma",
+    "abstract": "Background: melanoma is a serious condition. Methods: We conducted a randomized trial of nivolumab. Results: The treatment showed significant benefit. Conclusion: nivolumab is effective.",
+    "journal": "Lancet",
+    "year": 2021
+  },
+  {
+    "pmid": "10000002",
+    "title": "Efficacy of adalimumab in rheumatoid arthritis",
+    "abstract": "Background: rheumatoid arthritis is a serious condition. Methods: We conducted a randomized trial of adalimumab. Results: The treatment showed significant benefit. Conclusion: adalimumab is effective.",
+    "journal": "JAMA",
+    "year": 2022
+  },
+  {
+    "pmid": "10000003",
+    "title": "Efficacy of ustekinumab in psoriasis",
+    "abstract": "Background: psoriasis is a serious condition. Methods: We conducted a randomized trial of ustekinumab. Results: The treatment showed significant benefit. Conclusion: ustekinumab is effective.",
+    "journal": "Nature Medicine",
+    "year": 2023
+  },
+  {
+    "pmid": "10000004",
+    "title": "Efficacy of sacubitril/valsartan in heart failure",
+    "abstract": "Background: heart failure is a serious condition. Methods: We conducted a randomized trial of sacubitril/valsartan. Results: The treatment showed significant benefit. Conclusion: sacubitril/valsartan is effective.",
+    "journal": "JCO",
+    "year": 2020
+  },
+  {
+    "pmid": "10000005",
+    "title": "Efficacy of denosumab in osteoporosis",
+    "abstract": "Background: osteoporosis is a serious condition. Methods: We conducted a randomized trial of denosumab. Results: The treatment showed significant benefit. Conclusion: denosumab is effective.",
+    "journal": "Blood",
+    "year": 2021
+  }
+]

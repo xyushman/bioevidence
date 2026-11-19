@@ -66,9 +66,11 @@ def hit_at_k(retrieved: list[str], relevant: set[str], k: int) -> float:
 def compute_metrics(
     retrieved: list[str],
     relevant: set[str],
-    ks: list[int] = [1, 5, 10, 20],
+    ks: list[int] = None,
 ) -> RetrievalMetrics:
     """Compute all retrieval metrics for a single query."""
+    if ks is None:
+        ks = [1, 5, 10, 20]
     metrics = RetrievalMetrics()
 
     for k in ks:
@@ -136,9 +138,11 @@ def bootstrap_ci(
 def evaluate_retrieval(
     queries: list[dict[str, Any]],
     retriever,
-    ks: list[int] = [1, 5, 10, 20],
+    ks: list[int] = None,
 ) -> dict[str, Any]:
     """Evaluate retrieval system on a set of queries."""
+    if ks is None:
+        ks = [1, 5, 10, 20]
     all_metrics = []
 
     for query in queries:
