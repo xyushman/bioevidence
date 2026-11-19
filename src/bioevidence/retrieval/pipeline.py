@@ -3,12 +3,11 @@
 from dataclasses import dataclass
 from typing import Any
 
+import structlog
+
 from bioevidence.config import get_config
 from bioevidence.db.models import Chunk, DocType
 from bioevidence.db.session import get_session
-
-logger = get_config().__class__.__module__  # placeholder
-import structlog
 
 logger = structlog.get_logger(__name__)
 
@@ -228,6 +227,60 @@ class HybridRetriever(BaseRetriever):
         return self._rrf_fuse(dense_hits, bm25_hits, k)
 
 
+class RerankerRetriever(BaseRetriever):
+    """Retriever that applies cross-encoder reranking on top of base retriever."""
+
+    def __init__(
+        self, base_retriever: BaseRetriever, reranker_model: str | None = None, config=None
+    ):
+        super().__init__(config)
+        self.base_retriever = base_retriever
+        self.reranker_model = reranker_model or self.config.reranker.model
+        self._reranker = None
+
+    def _get_reranker(self):
+        """Lazy load cross-encoder reranker."""
+        if self._reranker is None:
+            from sentence_transformers import CrossEncoder
+
+            self._reranker = CrossEncoder(self.reranker_model)
+        return self._reranker
+
+    def search(self, query: str, k: int = 5, filters: dict | None = None) -> list[Hit]:
+        """Search with base retriever then rerank."""
+        # Get more candidates for reranking
+        candidate_pool = self.config.retrieval.candidate_pool if self.config else 50
+
+        # Get initial hits from base retriever
+        hits = self.base_retriever.search(query, k=candidate_pool, filters=filters)
+
+        if not hits:
+            return []
+
+        # Rerank
+        reranker = self._get_reranker()
+        pairs = [(query, hit.text) for hit in hits]
+        scores = reranker.predict(pairs, batch_size=self.config.reranker.batch_size)
+
+        # Re-sort by reranker scores
+        reranked = list(zip(hits, scores, strict=False))
+        reranked.sort(key=lambda x: x[1], reverse=True)
+
+        # Return top-k with updated scores
+        return [
+            Hit(
+                chunk_id=hit.chunk_id,
+                score=float(score),
+                text=hit.text,
+                metadata=hit.metadata,
+                doc_type=hit.doc_type,
+                doc_id=hit.doc_id,
+                section=hit.section,
+            )
+            for hit, score in reranked[:k]
+        ]
+
+
 def get_retriever(system: str, config=None) -> BaseRetriever:
     """Factory function to get retriever by system name."""
     config = config or get_config()
@@ -244,10 +297,32 @@ def get_retriever(system: str, config=None) -> BaseRetriever:
             return HybridRetriever(
                 config, DenseRetriever(config, embedding_model="BAAI/bge-small-en-v1.5")
             )
-        elif system in ["A3", "A4", "A4b", "A5"]:
-            # Fine-tuned embeddings (placeholder - would use fine-tuned model)
+        elif system == "A3":
+            # Fine-tuned embeddings + hybrid (no reranker)
             return HybridRetriever(
                 config, DenseRetriever(config, embedding_model="bioevidence/bge-small-ft")
+            )
+        elif system == "A4":
+            # Fine-tuned embeddings + hybrid + off-the-shelf reranker
+            base = HybridRetriever(
+                config, DenseRetriever(config, embedding_model="bioevidence/bge-small-ft")
+            )
+            return RerankerRetriever(base, reranker_model="BAAI/bge-reranker-base", config=config)
+        elif system == "A4b":
+            # Fine-tuned embeddings + hybrid + fine-tuned reranker
+            base = HybridRetriever(
+                config, DenseRetriever(config, embedding_model="bioevidence/bge-small-ft")
+            )
+            return RerankerRetriever(
+                base, reranker_model="bioevidence/minilm-reranker-ft", config=config
+            )
+        elif system == "A5":
+            # Full system: fine-tuned embeddings + hybrid + fine-tuned reranker + metadata filters
+            base = HybridRetriever(
+                config, DenseRetriever(config, embedding_model="bioevidence/bge-small-ft")
+            )
+            return RerankerRetriever(
+                base, reranker_model="bioevidence/minilm-reranker-ft", config=config
             )
     elif system == "A1a":
         # BM25 only
