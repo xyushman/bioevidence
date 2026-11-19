@@ -189,11 +189,39 @@ def embed(
 @app.command()
 def train(
     component: str = typer.Argument(..., help="Component to train: embed, rerank, lora"),
+    epochs: int = typer.Option(3, "--epochs", help="Number of epochs"),
+    batch_size: int = typer.Option(64, "--batch-size", help="Batch size"),
+    output_dir: str = typer.Option(None, "--output-dir", help="Output directory"),
 ):
     """Train a model component."""
     console.print(f"[yellow]Training {component}...[/yellow]")
-    # TODO: Implement training
-    raise typer.Exit(code=1)
+
+    if component == "embed":
+        from scripts.train_embeddings import TrainConfig, train_embeddings
+
+        config = TrainConfig(num_epochs=epochs, batch_size=batch_size)
+        if output_dir:
+            config.output_dir = output_dir
+        train_embeddings(config)
+    elif component == "rerank":
+        from scripts.train_reranker import RerankTrainConfig, train_reranker
+
+        config = RerankTrainConfig(num_epochs=epochs, batch_size=batch_size)
+        if output_dir:
+            config.output_dir = output_dir
+        train_reranker(config)
+    elif component == "lora":
+        from scripts.train_lora import LoRATrainConfig, train_lora
+
+        config = LoRATrainConfig(num_epochs=epochs, batch_size=batch_size)
+        if output_dir:
+            config.output_dir = output_dir
+        train_lora(config)
+    else:
+        console.print(f"[red]Unknown component: {component}[/red]")
+        raise typer.Exit(code=1)
+
+    console.print("[green]Training complete[/green]")
 
 
 @app.command()
