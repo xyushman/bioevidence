@@ -15,6 +15,7 @@ from rich.console import Console
 from bioevidence.db.models import (
     Chunk,
     DrugLabel,
+    OutcomeKind,
     PubMedArticle,
     Trial,
     TrialCondition,
@@ -101,7 +102,7 @@ def create_sample_trials(session, n: int = 500) -> list[Trial]:
         # Add outcome
         outcome = TrialOutcome(
             nct_id=nct_id,
-            kind="primary",
+            kind=OutcomeKind.PRIMARY,
             measure="Overall Survival"
             if "Cancer" in cond_name or "Melanoma" in cond_name
             else "Progression-Free Survival",
@@ -224,9 +225,11 @@ def create_sample(
     output_dir: str = typer.Option(
         "data/sample", "--output-dir", help="Output directory for sample data"
     ),
+    seed: int = typer.Option(42, "--seed", help="Random seed for deterministic samples"),
 ):
     """Create sample dataset for demos and CI."""
     console.print("[yellow]Creating sample dataset...[/yellow]")
+    random.seed(seed)
 
     # Create output directory
     Path(output_dir).mkdir(parents=True, exist_ok=True)

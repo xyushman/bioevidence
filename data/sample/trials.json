@@ -1,44 +1,4002 @@
 [
   {
     "nct_id": "NCT10000000",
-    "title": "Study of pembrolizumab in Non-Small Cell Lung Cancer",
-    "brief_summary": "This study evaluates pembrolizumab for the treatment of Non-Small Cell Lung Cancer.",
-    "phase": "Phase 3",
-    "overall_status": "Completed"
+    "title": "Study of durvalumab in Breast Cancer",
+    "brief_summary": "This study evaluates durvalumab for the treatment of Breast Cancer.",
+    "phase": "Phase 1",
+    "overall_status": "Recruiting",
+    "start_date": "2009-12-01"
   },
   {
     "nct_id": "NCT10000001",
-    "title": "Study of nivolumab in Melanoma",
-    "brief_summary": "This study evaluates nivolumab for the treatment of Melanoma.",
-    "phase": "Phase 3",
-    "overall_status": "Completed"
+    "title": "Study of pembrolizumab in Breast Cancer",
+    "brief_summary": "This study evaluates pembrolizumab for the treatment of Breast Cancer.",
+    "phase": "Phase 1",
+    "overall_status": "Terminated",
+    "start_date": "2007-04-01"
   },
   {
     "nct_id": "NCT10000002",
-    "title": "Study of adalimumab in Rheumatoid Arthritis",
-    "brief_summary": "This study evaluates adalimumab for the treatment of Rheumatoid Arthritis.",
-    "phase": "Phase 3",
-    "overall_status": "Completed"
+    "title": "Study of denosumab in Psoriasis",
+    "brief_summary": "This study evaluates denosumab for the treatment of Psoriasis.",
+    "phase": "Phase 1",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2022-07-01"
   },
   {
     "nct_id": "NCT10000003",
-    "title": "Study of ustekinumab in Psoriasis",
-    "brief_summary": "This study evaluates ustekinumab for the treatment of Psoriasis.",
-    "phase": "Phase 3",
-    "overall_status": "Completed"
+    "title": "Study of romosozumab in Psoriasis",
+    "brief_summary": "This study evaluates romosozumab for the treatment of Psoriasis.",
+    "phase": "Phase 4",
+    "overall_status": "Recruiting",
+    "start_date": "2005-03-01"
   },
   {
     "nct_id": "NCT10000004",
-    "title": "Study of sacubitril/valsartan in Heart Failure",
-    "brief_summary": "This study evaluates sacubitril/valsartan for the treatment of Heart Failure.",
+    "title": "Study of atezolizumab in Osteoporosis",
+    "brief_summary": "This study evaluates atezolizumab for the treatment of Osteoporosis.",
     "phase": "Phase 3",
-    "overall_status": "Completed"
+    "overall_status": "Recruiting",
+    "start_date": "2015-02-01"
   },
   {
     "nct_id": "NCT10000005",
+    "title": "Study of etanercept in Breast Cancer",
+    "brief_summary": "This study evaluates etanercept for the treatment of Breast Cancer.",
+    "phase": "Phase 4",
+    "overall_status": "Completed",
+    "start_date": "2016-10-01"
+  },
+  {
+    "nct_id": "NCT10000006",
+    "title": "Study of sacubitril/valsartan in Heart Failure",
+    "brief_summary": "This study evaluates sacubitril/valsartan for the treatment of Heart Failure.",
+    "phase": "Phase 1",
+    "overall_status": "Terminated",
+    "start_date": "2017-02-01"
+  },
+  {
+    "nct_id": "NCT10000007",
+    "title": "Study of denosumab in Heart Failure",
+    "brief_summary": "This study evaluates denosumab for the treatment of Heart Failure.",
+    "phase": "Phase 3",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2006-11-01"
+  },
+  {
+    "nct_id": "NCT10000008",
+    "title": "Study of alendronate in Psoriasis",
+    "brief_summary": "This study evaluates alendronate for the treatment of Psoriasis.",
+    "phase": "Phase 3",
+    "overall_status": "Completed",
+    "start_date": "2008-07-01"
+  },
+  {
+    "nct_id": "NCT10000009",
+    "title": "Study of atezolizumab in Heart Failure",
+    "brief_summary": "This study evaluates atezolizumab for the treatment of Heart Failure.",
+    "phase": "Phase 4",
+    "overall_status": "Recruiting",
+    "start_date": "2016-04-01"
+  },
+  {
+    "nct_id": "NCT10000010",
+    "title": "Study of sacubitril/valsartan in Heart Failure",
+    "brief_summary": "This study evaluates sacubitril/valsartan for the treatment of Heart Failure.",
+    "phase": "Phase 1",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2012-03-01"
+  },
+  {
+    "nct_id": "NCT10000011",
+    "title": "Study of dapagliflozin in Metastatic Melanoma",
+    "brief_summary": "This study evaluates dapagliflozin for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 4",
+    "overall_status": "Recruiting",
+    "start_date": "2022-04-01"
+  },
+  {
+    "nct_id": "NCT10000012",
+    "title": "Study of alendronate in Atrial Fibrillation",
+    "brief_summary": "This study evaluates alendronate for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 1",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2015-07-01"
+  },
+  {
+    "nct_id": "NCT10000013",
+    "title": "Study of empagliflozin in Heart Failure",
+    "brief_summary": "This study evaluates empagliflozin for the treatment of Heart Failure.",
+    "phase": "Phase 1",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2015-04-01"
+  },
+  {
+    "nct_id": "NCT10000014",
+    "title": "Study of atezolizumab in Metastatic Melanoma",
+    "brief_summary": "This study evaluates atezolizumab for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 4",
+    "overall_status": "Terminated",
+    "start_date": "2009-04-01"
+  },
+  {
+    "nct_id": "NCT10000015",
+    "title": "Study of etanercept in Heart Failure",
+    "brief_summary": "This study evaluates etanercept for the treatment of Heart Failure.",
+    "phase": "Phase 4",
+    "overall_status": "Terminated",
+    "start_date": "2009-09-01"
+  },
+  {
+    "nct_id": "NCT10000016",
+    "title": "Study of alendronate in Metastatic Melanoma",
+    "brief_summary": "This study evaluates alendronate for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 1",
+    "overall_status": "Completed",
+    "start_date": "2009-11-01"
+  },
+  {
+    "nct_id": "NCT10000017",
+    "title": "Study of infliximab in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates infliximab for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 4",
+    "overall_status": "Completed",
+    "start_date": "2019-09-01"
+  },
+  {
+    "nct_id": "NCT10000018",
+    "title": "Study of dapagliflozin in Heart Failure",
+    "brief_summary": "This study evaluates dapagliflozin for the treatment of Heart Failure.",
+    "phase": "Phase 1",
+    "overall_status": "Completed",
+    "start_date": "2022-05-01"
+  },
+  {
+    "nct_id": "NCT10000019",
+    "title": "Study of infliximab in Atrial Fibrillation",
+    "brief_summary": "This study evaluates infliximab for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 1",
+    "overall_status": "Recruiting",
+    "start_date": "2019-01-01"
+  },
+  {
+    "nct_id": "NCT10000020",
+    "title": "Study of alendronate in Heart Failure",
+    "brief_summary": "This study evaluates alendronate for the treatment of Heart Failure.",
+    "phase": "Phase 2",
+    "overall_status": "Completed",
+    "start_date": "2014-11-01"
+  },
+  {
+    "nct_id": "NCT10000021",
+    "title": "Study of romosozumab in Psoriasis",
+    "brief_summary": "This study evaluates romosozumab for the treatment of Psoriasis.",
+    "phase": "Phase 2",
+    "overall_status": "Recruiting",
+    "start_date": "2022-09-01"
+  },
+  {
+    "nct_id": "NCT10000022",
+    "title": "Study of pembrolizumab in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates pembrolizumab for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 3",
+    "overall_status": "Terminated",
+    "start_date": "2016-05-01"
+  },
+  {
+    "nct_id": "NCT10000023",
+    "title": "Study of empagliflozin in Psoriasis",
+    "brief_summary": "This study evaluates empagliflozin for the treatment of Psoriasis.",
+    "phase": "Phase 1",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2007-02-01"
+  },
+  {
+    "nct_id": "NCT10000024",
+    "title": "Study of atezolizumab in Metastatic Melanoma",
+    "brief_summary": "This study evaluates atezolizumab for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 1",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2020-09-01"
+  },
+  {
+    "nct_id": "NCT10000025",
+    "title": "Study of durvalumab in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates durvalumab for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 3",
+    "overall_status": "Terminated",
+    "start_date": "2022-12-01"
+  },
+  {
+    "nct_id": "NCT10000026",
+    "title": "Study of dapagliflozin in Psoriasis",
+    "brief_summary": "This study evaluates dapagliflozin for the treatment of Psoriasis.",
+    "phase": "Phase 3",
+    "overall_status": "Terminated",
+    "start_date": "2016-08-01"
+  },
+  {
+    "nct_id": "NCT10000027",
+    "title": "Study of durvalumab in Metastatic Melanoma",
+    "brief_summary": "This study evaluates durvalumab for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 1",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2015-01-01"
+  },
+  {
+    "nct_id": "NCT10000028",
+    "title": "Study of nivolumab in Psoriasis",
+    "brief_summary": "This study evaluates nivolumab for the treatment of Psoriasis.",
+    "phase": "Phase 2",
+    "overall_status": "Completed",
+    "start_date": "2006-04-01"
+  },
+  {
+    "nct_id": "NCT10000029",
+    "title": "Study of nivolumab in Breast Cancer",
+    "brief_summary": "This study evaluates nivolumab for the treatment of Breast Cancer.",
+    "phase": "Phase 1",
+    "overall_status": "Recruiting",
+    "start_date": "2012-05-01"
+  },
+  {
+    "nct_id": "NCT10000030",
+    "title": "Study of denosumab in Metastatic Melanoma",
+    "brief_summary": "This study evaluates denosumab for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 2",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2023-10-01"
+  },
+  {
+    "nct_id": "NCT10000031",
+    "title": "Study of romosozumab in Metastatic Melanoma",
+    "brief_summary": "This study evaluates romosozumab for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 2",
+    "overall_status": "Terminated",
+    "start_date": "2011-02-01"
+  },
+  {
+    "nct_id": "NCT10000032",
+    "title": "Study of infliximab in Breast Cancer",
+    "brief_summary": "This study evaluates infliximab for the treatment of Breast Cancer.",
+    "phase": "Phase 4",
+    "overall_status": "Recruiting",
+    "start_date": "2019-12-01"
+  },
+  {
+    "nct_id": "NCT10000033",
+    "title": "Study of infliximab in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates infliximab for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 1",
+    "overall_status": "Completed",
+    "start_date": "2015-02-01"
+  },
+  {
+    "nct_id": "NCT10000034",
+    "title": "Study of sacubitril/valsartan in Psoriasis",
+    "brief_summary": "This study evaluates sacubitril/valsartan for the treatment of Psoriasis.",
+    "phase": "Phase 2",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2009-07-01"
+  },
+  {
+    "nct_id": "NCT10000035",
+    "title": "Study of durvalumab in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates durvalumab for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 3",
+    "overall_status": "Terminated",
+    "start_date": "2007-08-01"
+  },
+  {
+    "nct_id": "NCT10000036",
+    "title": "Study of nivolumab in Breast Cancer",
+    "brief_summary": "This study evaluates nivolumab for the treatment of Breast Cancer.",
+    "phase": "Phase 1",
+    "overall_status": "Completed",
+    "start_date": "2012-03-01"
+  },
+  {
+    "nct_id": "NCT10000037",
+    "title": "Study of durvalumab in Osteoporosis",
+    "brief_summary": "This study evaluates durvalumab for the treatment of Osteoporosis.",
+    "phase": "Phase 4",
+    "overall_status": "Terminated",
+    "start_date": "2017-01-01"
+  },
+  {
+    "nct_id": "NCT10000038",
+    "title": "Study of infliximab in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates infliximab for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 4",
+    "overall_status": "Completed",
+    "start_date": "2019-05-01"
+  },
+  {
+    "nct_id": "NCT10000039",
+    "title": "Study of durvalumab in Osteoporosis",
+    "brief_summary": "This study evaluates durvalumab for the treatment of Osteoporosis.",
+    "phase": "Phase 4",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2011-01-01"
+  },
+  {
+    "nct_id": "NCT10000040",
+    "title": "Study of pembrolizumab in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates pembrolizumab for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 3",
+    "overall_status": "Completed",
+    "start_date": "2020-09-01"
+  },
+  {
+    "nct_id": "NCT10000041",
+    "title": "Study of alendronate in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates alendronate for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 1",
+    "overall_status": "Completed",
+    "start_date": "2007-10-01"
+  },
+  {
+    "nct_id": "NCT10000042",
+    "title": "Study of nivolumab in Breast Cancer",
+    "brief_summary": "This study evaluates nivolumab for the treatment of Breast Cancer.",
+    "phase": "Phase 2",
+    "overall_status": "Terminated",
+    "start_date": "2023-04-01"
+  },
+  {
+    "nct_id": "NCT10000043",
+    "title": "Study of dapagliflozin in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates dapagliflozin for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 1",
+    "overall_status": "Terminated",
+    "start_date": "2023-09-01"
+  },
+  {
+    "nct_id": "NCT10000044",
+    "title": "Study of dapagliflozin in Atrial Fibrillation",
+    "brief_summary": "This study evaluates dapagliflozin for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 3",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2015-04-01"
+  },
+  {
+    "nct_id": "NCT10000045",
+    "title": "Study of dapagliflozin in Heart Failure",
+    "brief_summary": "This study evaluates dapagliflozin for the treatment of Heart Failure.",
+    "phase": "Phase 4",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2014-08-01"
+  },
+  {
+    "nct_id": "NCT10000046",
+    "title": "Study of ustekinumab in Atrial Fibrillation",
+    "brief_summary": "This study evaluates ustekinumab for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 1",
+    "overall_status": "Completed",
+    "start_date": "2023-02-01"
+  },
+  {
+    "nct_id": "NCT10000047",
+    "title": "Study of atezolizumab in Breast Cancer",
+    "brief_summary": "This study evaluates atezolizumab for the treatment of Breast Cancer.",
+    "phase": "Phase 2",
+    "overall_status": "Recruiting",
+    "start_date": "2016-02-01"
+  },
+  {
+    "nct_id": "NCT10000048",
+    "title": "Study of atezolizumab in Psoriasis",
+    "brief_summary": "This study evaluates atezolizumab for the treatment of Psoriasis.",
+    "phase": "Phase 3",
+    "overall_status": "Recruiting",
+    "start_date": "2022-12-01"
+  },
+  {
+    "nct_id": "NCT10000049",
+    "title": "Study of dapagliflozin in Heart Failure",
+    "brief_summary": "This study evaluates dapagliflozin for the treatment of Heart Failure.",
+    "phase": "Phase 1",
+    "overall_status": "Recruiting",
+    "start_date": "2009-05-01"
+  },
+  {
+    "nct_id": "NCT10000050",
+    "title": "Study of adalimumab in Breast Cancer",
+    "brief_summary": "This study evaluates adalimumab for the treatment of Breast Cancer.",
+    "phase": "Phase 1",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2011-12-01"
+  },
+  {
+    "nct_id": "NCT10000051",
+    "title": "Study of sacubitril/valsartan in Atrial Fibrillation",
+    "brief_summary": "This study evaluates sacubitril/valsartan for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 2",
+    "overall_status": "Recruiting",
+    "start_date": "2013-01-01"
+  },
+  {
+    "nct_id": "NCT10000052",
+    "title": "Study of pembrolizumab in Breast Cancer",
+    "brief_summary": "This study evaluates pembrolizumab for the treatment of Breast Cancer.",
+    "phase": "Phase 4",
+    "overall_status": "Recruiting",
+    "start_date": "2015-03-01"
+  },
+  {
+    "nct_id": "NCT10000053",
+    "title": "Study of sacubitril/valsartan in Heart Failure",
+    "brief_summary": "This study evaluates sacubitril/valsartan for the treatment of Heart Failure.",
+    "phase": "Phase 2",
+    "overall_status": "Terminated",
+    "start_date": "2018-09-01"
+  },
+  {
+    "nct_id": "NCT10000054",
+    "title": "Study of denosumab in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates denosumab for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 1",
+    "overall_status": "Completed",
+    "start_date": "2009-09-01"
+  },
+  {
+    "nct_id": "NCT10000055",
+    "title": "Study of infliximab in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates infliximab for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 3",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2006-05-01"
+  },
+  {
+    "nct_id": "NCT10000056",
+    "title": "Study of durvalumab in Atrial Fibrillation",
+    "brief_summary": "This study evaluates durvalumab for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 1",
+    "overall_status": "Recruiting",
+    "start_date": "2012-11-01"
+  },
+  {
+    "nct_id": "NCT10000057",
+    "title": "Study of empagliflozin in Breast Cancer",
+    "brief_summary": "This study evaluates empagliflozin for the treatment of Breast Cancer.",
+    "phase": "Phase 3",
+    "overall_status": "Terminated",
+    "start_date": "2009-04-01"
+  },
+  {
+    "nct_id": "NCT10000058",
+    "title": "Study of pembrolizumab in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates pembrolizumab for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 2",
+    "overall_status": "Terminated",
+    "start_date": "2015-07-01"
+  },
+  {
+    "nct_id": "NCT10000059",
+    "title": "Study of romosozumab in Psoriasis",
+    "brief_summary": "This study evaluates romosozumab for the treatment of Psoriasis.",
+    "phase": "Phase 3",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2008-07-01"
+  },
+  {
+    "nct_id": "NCT10000060",
+    "title": "Study of durvalumab in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates durvalumab for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 4",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2019-06-01"
+  },
+  {
+    "nct_id": "NCT10000061",
+    "title": "Study of pembrolizumab in Heart Failure",
+    "brief_summary": "This study evaluates pembrolizumab for the treatment of Heart Failure.",
+    "phase": "Phase 2",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2011-07-01"
+  },
+  {
+    "nct_id": "NCT10000062",
+    "title": "Study of romosozumab in Atrial Fibrillation",
+    "brief_summary": "This study evaluates romosozumab for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 3",
+    "overall_status": "Completed",
+    "start_date": "2016-11-01"
+  },
+  {
+    "nct_id": "NCT10000063",
+    "title": "Study of nivolumab in Osteoporosis",
+    "brief_summary": "This study evaluates nivolumab for the treatment of Osteoporosis.",
+    "phase": "Phase 3",
+    "overall_status": "Completed",
+    "start_date": "2013-03-01"
+  },
+  {
+    "nct_id": "NCT10000064",
+    "title": "Study of empagliflozin in Heart Failure",
+    "brief_summary": "This study evaluates empagliflozin for the treatment of Heart Failure.",
+    "phase": "Phase 1",
+    "overall_status": "Completed",
+    "start_date": "2016-12-01"
+  },
+  {
+    "nct_id": "NCT10000065",
+    "title": "Study of infliximab in Atrial Fibrillation",
+    "brief_summary": "This study evaluates infliximab for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 4",
+    "overall_status": "Completed",
+    "start_date": "2023-04-01"
+  },
+  {
+    "nct_id": "NCT10000066",
+    "title": "Study of pembrolizumab in Heart Failure",
+    "brief_summary": "This study evaluates pembrolizumab for the treatment of Heart Failure.",
+    "phase": "Phase 1",
+    "overall_status": "Terminated",
+    "start_date": "2022-11-01"
+  },
+  {
+    "nct_id": "NCT10000067",
+    "title": "Study of nivolumab in Psoriasis",
+    "brief_summary": "This study evaluates nivolumab for the treatment of Psoriasis.",
+    "phase": "Phase 3",
+    "overall_status": "Terminated",
+    "start_date": "2015-10-01"
+  },
+  {
+    "nct_id": "NCT10000068",
+    "title": "Study of sacubitril/valsartan in Atrial Fibrillation",
+    "brief_summary": "This study evaluates sacubitril/valsartan for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 1",
+    "overall_status": "Recruiting",
+    "start_date": "2018-06-01"
+  },
+  {
+    "nct_id": "NCT10000069",
+    "title": "Study of durvalumab in Osteoporosis",
+    "brief_summary": "This study evaluates durvalumab for the treatment of Osteoporosis.",
+    "phase": "Phase 3",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2017-11-01"
+  },
+  {
+    "nct_id": "NCT10000070",
+    "title": "Study of sacubitril/valsartan in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates sacubitril/valsartan for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 3",
+    "overall_status": "Terminated",
+    "start_date": "2005-05-01"
+  },
+  {
+    "nct_id": "NCT10000071",
+    "title": "Study of romosozumab in Heart Failure",
+    "brief_summary": "This study evaluates romosozumab for the treatment of Heart Failure.",
+    "phase": "Phase 2",
+    "overall_status": "Terminated",
+    "start_date": "2015-08-01"
+  },
+  {
+    "nct_id": "NCT10000072",
+    "title": "Study of sacubitril/valsartan in Metastatic Melanoma",
+    "brief_summary": "This study evaluates sacubitril/valsartan for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 4",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2010-11-01"
+  },
+  {
+    "nct_id": "NCT10000073",
+    "title": "Study of nivolumab in Breast Cancer",
+    "brief_summary": "This study evaluates nivolumab for the treatment of Breast Cancer.",
+    "phase": "Phase 3",
+    "overall_status": "Recruiting",
+    "start_date": "2012-11-01"
+  },
+  {
+    "nct_id": "NCT10000074",
+    "title": "Study of atezolizumab in Heart Failure",
+    "brief_summary": "This study evaluates atezolizumab for the treatment of Heart Failure.",
+    "phase": "Phase 2",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2006-04-01"
+  },
+  {
+    "nct_id": "NCT10000075",
+    "title": "Study of infliximab in Metastatic Melanoma",
+    "brief_summary": "This study evaluates infliximab for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 1",
+    "overall_status": "Terminated",
+    "start_date": "2023-04-01"
+  },
+  {
+    "nct_id": "NCT10000076",
+    "title": "Study of durvalumab in Osteoporosis",
+    "brief_summary": "This study evaluates durvalumab for the treatment of Osteoporosis.",
+    "phase": "Phase 4",
+    "overall_status": "Terminated",
+    "start_date": "2005-02-01"
+  },
+  {
+    "nct_id": "NCT10000077",
+    "title": "Study of romosozumab in Osteoporosis",
+    "brief_summary": "This study evaluates romosozumab for the treatment of Osteoporosis.",
+    "phase": "Phase 2",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2021-08-01"
+  },
+  {
+    "nct_id": "NCT10000078",
+    "title": "Study of ustekinumab in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates ustekinumab for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 2",
+    "overall_status": "Completed",
+    "start_date": "2019-11-01"
+  },
+  {
+    "nct_id": "NCT10000079",
+    "title": "Study of alendronate in Atrial Fibrillation",
+    "brief_summary": "This study evaluates alendronate for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 4",
+    "overall_status": "Terminated",
+    "start_date": "2022-08-01"
+  },
+  {
+    "nct_id": "NCT10000080",
+    "title": "Study of adalimumab in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates adalimumab for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 4",
+    "overall_status": "Terminated",
+    "start_date": "2012-11-01"
+  },
+  {
+    "nct_id": "NCT10000081",
+    "title": "Study of adalimumab in Heart Failure",
+    "brief_summary": "This study evaluates adalimumab for the treatment of Heart Failure.",
+    "phase": "Phase 4",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2007-12-01"
+  },
+  {
+    "nct_id": "NCT10000082",
+    "title": "Study of etanercept in Heart Failure",
+    "brief_summary": "This study evaluates etanercept for the treatment of Heart Failure.",
+    "phase": "Phase 2",
+    "overall_status": "Recruiting",
+    "start_date": "2022-02-01"
+  },
+  {
+    "nct_id": "NCT10000083",
+    "title": "Study of infliximab in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates infliximab for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 2",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2009-12-01"
+  },
+  {
+    "nct_id": "NCT10000084",
+    "title": "Study of infliximab in Psoriasis",
+    "brief_summary": "This study evaluates infliximab for the treatment of Psoriasis.",
+    "phase": "Phase 1",
+    "overall_status": "Terminated",
+    "start_date": "2022-08-01"
+  },
+  {
+    "nct_id": "NCT10000085",
+    "title": "Study of alendronate in Osteoporosis",
+    "brief_summary": "This study evaluates alendronate for the treatment of Osteoporosis.",
+    "phase": "Phase 1",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2017-10-01"
+  },
+  {
+    "nct_id": "NCT10000086",
+    "title": "Study of pembrolizumab in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates pembrolizumab for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 4",
+    "overall_status": "Terminated",
+    "start_date": "2016-05-01"
+  },
+  {
+    "nct_id": "NCT10000087",
+    "title": "Study of ustekinumab in Osteoporosis",
+    "brief_summary": "This study evaluates ustekinumab for the treatment of Osteoporosis.",
+    "phase": "Phase 4",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2013-07-01"
+  },
+  {
+    "nct_id": "NCT10000088",
+    "title": "Study of etanercept in Metastatic Melanoma",
+    "brief_summary": "This study evaluates etanercept for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 1",
+    "overall_status": "Terminated",
+    "start_date": "2017-12-01"
+  },
+  {
+    "nct_id": "NCT10000089",
+    "title": "Study of empagliflozin in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates empagliflozin for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 4",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2005-07-01"
+  },
+  {
+    "nct_id": "NCT10000090",
+    "title": "Study of atezolizumab in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates atezolizumab for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 1",
+    "overall_status": "Terminated",
+    "start_date": "2019-03-01"
+  },
+  {
+    "nct_id": "NCT10000091",
+    "title": "Study of etanercept in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates etanercept for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 3",
+    "overall_status": "Terminated",
+    "start_date": "2019-06-01"
+  },
+  {
+    "nct_id": "NCT10000092",
+    "title": "Study of romosozumab in Atrial Fibrillation",
+    "brief_summary": "This study evaluates romosozumab for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 4",
+    "overall_status": "Recruiting",
+    "start_date": "2018-05-01"
+  },
+  {
+    "nct_id": "NCT10000093",
+    "title": "Study of denosumab in Breast Cancer",
+    "brief_summary": "This study evaluates denosumab for the treatment of Breast Cancer.",
+    "phase": "Phase 4",
+    "overall_status": "Completed",
+    "start_date": "2006-06-01"
+  },
+  {
+    "nct_id": "NCT10000094",
+    "title": "Study of romosozumab in Psoriasis",
+    "brief_summary": "This study evaluates romosozumab for the treatment of Psoriasis.",
+    "phase": "Phase 1",
+    "overall_status": "Completed",
+    "start_date": "2012-04-01"
+  },
+  {
+    "nct_id": "NCT10000095",
+    "title": "Study of atezolizumab in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates atezolizumab for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 2",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2008-10-01"
+  },
+  {
+    "nct_id": "NCT10000096",
+    "title": "Study of romosozumab in Psoriasis",
+    "brief_summary": "This study evaluates romosozumab for the treatment of Psoriasis.",
+    "phase": "Phase 4",
+    "overall_status": "Recruiting",
+    "start_date": "2010-10-01"
+  },
+  {
+    "nct_id": "NCT10000097",
+    "title": "Study of nivolumab in Breast Cancer",
+    "brief_summary": "This study evaluates nivolumab for the treatment of Breast Cancer.",
+    "phase": "Phase 2",
+    "overall_status": "Recruiting",
+    "start_date": "2005-05-01"
+  },
+  {
+    "nct_id": "NCT10000098",
+    "title": "Study of nivolumab in Osteoporosis",
+    "brief_summary": "This study evaluates nivolumab for the treatment of Osteoporosis.",
+    "phase": "Phase 4",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2012-02-01"
+  },
+  {
+    "nct_id": "NCT10000099",
+    "title": "Study of etanercept in Heart Failure",
+    "brief_summary": "This study evaluates etanercept for the treatment of Heart Failure.",
+    "phase": "Phase 1",
+    "overall_status": "Completed",
+    "start_date": "2018-11-01"
+  },
+  {
+    "nct_id": "NCT10000100",
+    "title": "Study of pembrolizumab in Atrial Fibrillation",
+    "brief_summary": "This study evaluates pembrolizumab for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 1",
+    "overall_status": "Recruiting",
+    "start_date": "2018-08-01"
+  },
+  {
+    "nct_id": "NCT10000101",
+    "title": "Study of dapagliflozin in Breast Cancer",
+    "brief_summary": "This study evaluates dapagliflozin for the treatment of Breast Cancer.",
+    "phase": "Phase 4",
+    "overall_status": "Recruiting",
+    "start_date": "2019-12-01"
+  },
+  {
+    "nct_id": "NCT10000102",
+    "title": "Study of denosumab in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates denosumab for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 4",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2013-10-01"
+  },
+  {
+    "nct_id": "NCT10000103",
+    "title": "Study of alendronate in Metastatic Melanoma",
+    "brief_summary": "This study evaluates alendronate for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 4",
+    "overall_status": "Terminated",
+    "start_date": "2023-05-01"
+  },
+  {
+    "nct_id": "NCT10000104",
+    "title": "Study of adalimumab in Atrial Fibrillation",
+    "brief_summary": "This study evaluates adalimumab for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 2",
+    "overall_status": "Completed",
+    "start_date": "2019-04-01"
+  },
+  {
+    "nct_id": "NCT10000105",
+    "title": "Study of pembrolizumab in Metastatic Melanoma",
+    "brief_summary": "This study evaluates pembrolizumab for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 4",
+    "overall_status": "Recruiting",
+    "start_date": "2015-03-01"
+  },
+  {
+    "nct_id": "NCT10000106",
+    "title": "Study of romosozumab in Metastatic Melanoma",
+    "brief_summary": "This study evaluates romosozumab for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 2",
+    "overall_status": "Recruiting",
+    "start_date": "2015-05-01"
+  },
+  {
+    "nct_id": "NCT10000107",
+    "title": "Study of nivolumab in Heart Failure",
+    "brief_summary": "This study evaluates nivolumab for the treatment of Heart Failure.",
+    "phase": "Phase 1",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2018-08-01"
+  },
+  {
+    "nct_id": "NCT10000108",
+    "title": "Study of ustekinumab in Psoriasis",
+    "brief_summary": "This study evaluates ustekinumab for the treatment of Psoriasis.",
+    "phase": "Phase 4",
+    "overall_status": "Terminated",
+    "start_date": "2005-02-01"
+  },
+  {
+    "nct_id": "NCT10000109",
+    "title": "Study of denosumab in Heart Failure",
+    "brief_summary": "This study evaluates denosumab for the treatment of Heart Failure.",
+    "phase": "Phase 2",
+    "overall_status": "Terminated",
+    "start_date": "2014-11-01"
+  },
+  {
+    "nct_id": "NCT10000110",
+    "title": "Study of infliximab in Atrial Fibrillation",
+    "brief_summary": "This study evaluates infliximab for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 4",
+    "overall_status": "Recruiting",
+    "start_date": "2022-06-01"
+  },
+  {
+    "nct_id": "NCT10000111",
+    "title": "Study of adalimumab in Atrial Fibrillation",
+    "brief_summary": "This study evaluates adalimumab for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 4",
+    "overall_status": "Recruiting",
+    "start_date": "2012-02-01"
+  },
+  {
+    "nct_id": "NCT10000112",
+    "title": "Study of denosumab in Psoriasis",
+    "brief_summary": "This study evaluates denosumab for the treatment of Psoriasis.",
+    "phase": "Phase 3",
+    "overall_status": "Completed",
+    "start_date": "2010-04-01"
+  },
+  {
+    "nct_id": "NCT10000113",
+    "title": "Study of denosumab in Psoriasis",
+    "brief_summary": "This study evaluates denosumab for the treatment of Psoriasis.",
+    "phase": "Phase 4",
+    "overall_status": "Recruiting",
+    "start_date": "2021-10-01"
+  },
+  {
+    "nct_id": "NCT10000114",
+    "title": "Study of adalimumab in Heart Failure",
+    "brief_summary": "This study evaluates adalimumab for the treatment of Heart Failure.",
+    "phase": "Phase 1",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2016-03-01"
+  },
+  {
+    "nct_id": "NCT10000115",
+    "title": "Study of adalimumab in Heart Failure",
+    "brief_summary": "This study evaluates adalimumab for the treatment of Heart Failure.",
+    "phase": "Phase 1",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2006-09-01"
+  },
+  {
+    "nct_id": "NCT10000116",
+    "title": "Study of nivolumab in Heart Failure",
+    "brief_summary": "This study evaluates nivolumab for the treatment of Heart Failure.",
+    "phase": "Phase 2",
+    "overall_status": "Terminated",
+    "start_date": "2005-10-01"
+  },
+  {
+    "nct_id": "NCT10000117",
+    "title": "Study of ustekinumab in Heart Failure",
+    "brief_summary": "This study evaluates ustekinumab for the treatment of Heart Failure.",
+    "phase": "Phase 4",
+    "overall_status": "Terminated",
+    "start_date": "2010-01-01"
+  },
+  {
+    "nct_id": "NCT10000118",
+    "title": "Study of alendronate in Heart Failure",
+    "brief_summary": "This study evaluates alendronate for the treatment of Heart Failure.",
+    "phase": "Phase 4",
+    "overall_status": "Completed",
+    "start_date": "2017-08-01"
+  },
+  {
+    "nct_id": "NCT10000119",
+    "title": "Study of atezolizumab in Breast Cancer",
+    "brief_summary": "This study evaluates atezolizumab for the treatment of Breast Cancer.",
+    "phase": "Phase 1",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2023-05-01"
+  },
+  {
+    "nct_id": "NCT10000120",
+    "title": "Study of sacubitril/valsartan in Breast Cancer",
+    "brief_summary": "This study evaluates sacubitril/valsartan for the treatment of Breast Cancer.",
+    "phase": "Phase 2",
+    "overall_status": "Completed",
+    "start_date": "2018-10-01"
+  },
+  {
+    "nct_id": "NCT10000121",
+    "title": "Study of ustekinumab in Psoriasis",
+    "brief_summary": "This study evaluates ustekinumab for the treatment of Psoriasis.",
+    "phase": "Phase 4",
+    "overall_status": "Terminated",
+    "start_date": "2023-07-01"
+  },
+  {
+    "nct_id": "NCT10000122",
+    "title": "Study of romosozumab in Heart Failure",
+    "brief_summary": "This study evaluates romosozumab for the treatment of Heart Failure.",
+    "phase": "Phase 1",
+    "overall_status": "Completed",
+    "start_date": "2011-05-01"
+  },
+  {
+    "nct_id": "NCT10000123",
+    "title": "Study of atezolizumab in Breast Cancer",
+    "brief_summary": "This study evaluates atezolizumab for the treatment of Breast Cancer.",
+    "phase": "Phase 2",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2007-03-01"
+  },
+  {
+    "nct_id": "NCT10000124",
+    "title": "Study of denosumab in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates denosumab for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 4",
+    "overall_status": "Terminated",
+    "start_date": "2020-05-01"
+  },
+  {
+    "nct_id": "NCT10000125",
+    "title": "Study of denosumab in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates denosumab for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 2",
+    "overall_status": "Recruiting",
+    "start_date": "2019-02-01"
+  },
+  {
+    "nct_id": "NCT10000126",
+    "title": "Study of infliximab in Psoriasis",
+    "brief_summary": "This study evaluates infliximab for the treatment of Psoriasis.",
+    "phase": "Phase 3",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2022-04-01"
+  },
+  {
+    "nct_id": "NCT10000127",
+    "title": "Study of nivolumab in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates nivolumab for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 3",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2010-05-01"
+  },
+  {
+    "nct_id": "NCT10000128",
+    "title": "Study of ustekinumab in Heart Failure",
+    "brief_summary": "This study evaluates ustekinumab for the treatment of Heart Failure.",
+    "phase": "Phase 4",
+    "overall_status": "Completed",
+    "start_date": "2014-12-01"
+  },
+  {
+    "nct_id": "NCT10000129",
+    "title": "Study of ustekinumab in Osteoporosis",
+    "brief_summary": "This study evaluates ustekinumab for the treatment of Osteoporosis.",
+    "phase": "Phase 3",
+    "overall_status": "Terminated",
+    "start_date": "2006-07-01"
+  },
+  {
+    "nct_id": "NCT10000130",
+    "title": "Study of nivolumab in Atrial Fibrillation",
+    "brief_summary": "This study evaluates nivolumab for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 3",
+    "overall_status": "Completed",
+    "start_date": "2023-10-01"
+  },
+  {
+    "nct_id": "NCT10000131",
+    "title": "Study of romosozumab in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates romosozumab for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 3",
+    "overall_status": "Completed",
+    "start_date": "2010-08-01"
+  },
+  {
+    "nct_id": "NCT10000132",
+    "title": "Study of empagliflozin in Metastatic Melanoma",
+    "brief_summary": "This study evaluates empagliflozin for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 3",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2020-02-01"
+  },
+  {
+    "nct_id": "NCT10000133",
+    "title": "Study of etanercept in Metastatic Melanoma",
+    "brief_summary": "This study evaluates etanercept for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 3",
+    "overall_status": "Terminated",
+    "start_date": "2008-03-01"
+  },
+  {
+    "nct_id": "NCT10000134",
+    "title": "Study of adalimumab in Atrial Fibrillation",
+    "brief_summary": "This study evaluates adalimumab for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 4",
+    "overall_status": "Terminated",
+    "start_date": "2017-09-01"
+  },
+  {
+    "nct_id": "NCT10000135",
+    "title": "Study of etanercept in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates etanercept for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 4",
+    "overall_status": "Completed",
+    "start_date": "2015-02-01"
+  },
+  {
+    "nct_id": "NCT10000136",
+    "title": "Study of infliximab in Osteoporosis",
+    "brief_summary": "This study evaluates infliximab for the treatment of Osteoporosis.",
+    "phase": "Phase 1",
+    "overall_status": "Terminated",
+    "start_date": "2011-09-01"
+  },
+  {
+    "nct_id": "NCT10000137",
+    "title": "Study of romosozumab in Atrial Fibrillation",
+    "brief_summary": "This study evaluates romosozumab for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 4",
+    "overall_status": "Terminated",
+    "start_date": "2011-05-01"
+  },
+  {
+    "nct_id": "NCT10000138",
+    "title": "Study of denosumab in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates denosumab for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 3",
+    "overall_status": "Terminated",
+    "start_date": "2008-01-01"
+  },
+  {
+    "nct_id": "NCT10000139",
+    "title": "Study of sacubitril/valsartan in Psoriasis",
+    "brief_summary": "This study evaluates sacubitril/valsartan for the treatment of Psoriasis.",
+    "phase": "Phase 2",
+    "overall_status": "Recruiting",
+    "start_date": "2022-07-01"
+  },
+  {
+    "nct_id": "NCT10000140",
+    "title": "Study of ustekinumab in Breast Cancer",
+    "brief_summary": "This study evaluates ustekinumab for the treatment of Breast Cancer.",
+    "phase": "Phase 2",
+    "overall_status": "Completed",
+    "start_date": "2008-11-01"
+  },
+  {
+    "nct_id": "NCT10000141",
+    "title": "Study of sacubitril/valsartan in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates sacubitril/valsartan for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 4",
+    "overall_status": "Recruiting",
+    "start_date": "2013-07-01"
+  },
+  {
+    "nct_id": "NCT10000142",
+    "title": "Study of ustekinumab in Metastatic Melanoma",
+    "brief_summary": "This study evaluates ustekinumab for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 4",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2009-07-01"
+  },
+  {
+    "nct_id": "NCT10000143",
+    "title": "Study of adalimumab in Psoriasis",
+    "brief_summary": "This study evaluates adalimumab for the treatment of Psoriasis.",
+    "phase": "Phase 2",
+    "overall_status": "Completed",
+    "start_date": "2018-06-01"
+  },
+  {
+    "nct_id": "NCT10000144",
+    "title": "Study of denosumab in Heart Failure",
+    "brief_summary": "This study evaluates denosumab for the treatment of Heart Failure.",
+    "phase": "Phase 1",
+    "overall_status": "Recruiting",
+    "start_date": "2023-10-01"
+  },
+  {
+    "nct_id": "NCT10000187",
+    "title": "Study of ustekinumab in Metastatic Melanoma",
+    "brief_summary": "This study evaluates ustekinumab for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 1",
+    "overall_status": "Completed",
+    "start_date": "2017-07-01"
+  },
+  {
+    "nct_id": "NCT10000145",
+    "title": "Study of sacubitril/valsartan in Metastatic Melanoma",
+    "brief_summary": "This study evaluates sacubitril/valsartan for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 2",
+    "overall_status": "Terminated",
+    "start_date": "2016-06-01"
+  },
+  {
+    "nct_id": "NCT10000146",
+    "title": "Study of alendronate in Osteoporosis",
+    "brief_summary": "This study evaluates alendronate for the treatment of Osteoporosis.",
+    "phase": "Phase 4",
+    "overall_status": "Recruiting",
+    "start_date": "2012-10-01"
+  },
+  {
+    "nct_id": "NCT10000147",
+    "title": "Study of pembrolizumab in Osteoporosis",
+    "brief_summary": "This study evaluates pembrolizumab for the treatment of Osteoporosis.",
+    "phase": "Phase 2",
+    "overall_status": "Terminated",
+    "start_date": "2020-12-01"
+  },
+  {
+    "nct_id": "NCT10000148",
+    "title": "Study of ustekinumab in Osteoporosis",
+    "brief_summary": "This study evaluates ustekinumab for the treatment of Osteoporosis.",
+    "phase": "Phase 4",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2009-09-01"
+  },
+  {
+    "nct_id": "NCT10000149",
+    "title": "Study of nivolumab in Atrial Fibrillation",
+    "brief_summary": "This study evaluates nivolumab for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 1",
+    "overall_status": "Terminated",
+    "start_date": "2019-01-01"
+  },
+  {
+    "nct_id": "NCT10000150",
+    "title": "Study of nivolumab in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates nivolumab for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 4",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2013-06-01"
+  },
+  {
+    "nct_id": "NCT10000151",
+    "title": "Study of alendronate in Osteoporosis",
+    "brief_summary": "This study evaluates alendronate for the treatment of Osteoporosis.",
+    "phase": "Phase 1",
+    "overall_status": "Recruiting",
+    "start_date": "2022-07-01"
+  },
+  {
+    "nct_id": "NCT10000152",
+    "title": "Study of empagliflozin in Atrial Fibrillation",
+    "brief_summary": "This study evaluates empagliflozin for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 4",
+    "overall_status": "Completed",
+    "start_date": "2012-11-01"
+  },
+  {
+    "nct_id": "NCT10000153",
+    "title": "Study of infliximab in Heart Failure",
+    "brief_summary": "This study evaluates infliximab for the treatment of Heart Failure.",
+    "phase": "Phase 2",
+    "overall_status": "Completed",
+    "start_date": "2008-08-01"
+  },
+  {
+    "nct_id": "NCT10000154",
+    "title": "Study of pembrolizumab in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates pembrolizumab for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 3",
+    "overall_status": "Completed",
+    "start_date": "2006-05-01"
+  },
+  {
+    "nct_id": "NCT10000155",
+    "title": "Study of atezolizumab in Atrial Fibrillation",
+    "brief_summary": "This study evaluates atezolizumab for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 3",
+    "overall_status": "Terminated",
+    "start_date": "2021-07-01"
+  },
+  {
+    "nct_id": "NCT10000156",
+    "title": "Study of nivolumab in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates nivolumab for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 2",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2017-10-01"
+  },
+  {
+    "nct_id": "NCT10000157",
+    "title": "Study of durvalumab in Psoriasis",
+    "brief_summary": "This study evaluates durvalumab for the treatment of Psoriasis.",
+    "phase": "Phase 4",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2013-08-01"
+  },
+  {
+    "nct_id": "NCT10000158",
+    "title": "Study of adalimumab in Heart Failure",
+    "brief_summary": "This study evaluates adalimumab for the treatment of Heart Failure.",
+    "phase": "Phase 1",
+    "overall_status": "Terminated",
+    "start_date": "2022-03-01"
+  },
+  {
+    "nct_id": "NCT10000159",
+    "title": "Study of empagliflozin in Breast Cancer",
+    "brief_summary": "This study evaluates empagliflozin for the treatment of Breast Cancer.",
+    "phase": "Phase 4",
+    "overall_status": "Recruiting",
+    "start_date": "2018-12-01"
+  },
+  {
+    "nct_id": "NCT10000160",
+    "title": "Study of durvalumab in Heart Failure",
+    "brief_summary": "This study evaluates durvalumab for the treatment of Heart Failure.",
+    "phase": "Phase 4",
+    "overall_status": "Recruiting",
+    "start_date": "2020-02-01"
+  },
+  {
+    "nct_id": "NCT10000161",
+    "title": "Study of empagliflozin in Psoriasis",
+    "brief_summary": "This study evaluates empagliflozin for the treatment of Psoriasis.",
+    "phase": "Phase 4",
+    "overall_status": "Recruiting",
+    "start_date": "2014-01-01"
+  },
+  {
+    "nct_id": "NCT10000162",
+    "title": "Study of empagliflozin in Osteoporosis",
+    "brief_summary": "This study evaluates empagliflozin for the treatment of Osteoporosis.",
+    "phase": "Phase 3",
+    "overall_status": "Completed",
+    "start_date": "2006-10-01"
+  },
+  {
+    "nct_id": "NCT10000163",
+    "title": "Study of empagliflozin in Metastatic Melanoma",
+    "brief_summary": "This study evaluates empagliflozin for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 3",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2016-04-01"
+  },
+  {
+    "nct_id": "NCT10000164",
+    "title": "Study of dapagliflozin in Psoriasis",
+    "brief_summary": "This study evaluates dapagliflozin for the treatment of Psoriasis.",
+    "phase": "Phase 3",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2006-05-01"
+  },
+  {
+    "nct_id": "NCT10000165",
+    "title": "Study of denosumab in Metastatic Melanoma",
+    "brief_summary": "This study evaluates denosumab for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 1",
+    "overall_status": "Recruiting",
+    "start_date": "2007-05-01"
+  },
+  {
+    "nct_id": "NCT10000166",
+    "title": "Study of durvalumab in Atrial Fibrillation",
+    "brief_summary": "This study evaluates durvalumab for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 4",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2022-06-01"
+  },
+  {
+    "nct_id": "NCT10000167",
+    "title": "Study of alendronate in Heart Failure",
+    "brief_summary": "This study evaluates alendronate for the treatment of Heart Failure.",
+    "phase": "Phase 2",
+    "overall_status": "Recruiting",
+    "start_date": "2020-05-01"
+  },
+  {
+    "nct_id": "NCT10000168",
+    "title": "Study of nivolumab in Atrial Fibrillation",
+    "brief_summary": "This study evaluates nivolumab for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 1",
+    "overall_status": "Terminated",
+    "start_date": "2012-11-01"
+  },
+  {
+    "nct_id": "NCT10000169",
+    "title": "Study of romosozumab in Osteoporosis",
+    "brief_summary": "This study evaluates romosozumab for the treatment of Osteoporosis.",
+    "phase": "Phase 3",
+    "overall_status": "Completed",
+    "start_date": "2005-05-01"
+  },
+  {
+    "nct_id": "NCT10000170",
+    "title": "Study of dapagliflozin in Breast Cancer",
+    "brief_summary": "This study evaluates dapagliflozin for the treatment of Breast Cancer.",
+    "phase": "Phase 4",
+    "overall_status": "Recruiting",
+    "start_date": "2013-10-01"
+  },
+  {
+    "nct_id": "NCT10000171",
+    "title": "Study of dapagliflozin in Osteoporosis",
+    "brief_summary": "This study evaluates dapagliflozin for the treatment of Osteoporosis.",
+    "phase": "Phase 3",
+    "overall_status": "Completed",
+    "start_date": "2020-01-01"
+  },
+  {
+    "nct_id": "NCT10000172",
+    "title": "Study of dapagliflozin in Atrial Fibrillation",
+    "brief_summary": "This study evaluates dapagliflozin for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 2",
+    "overall_status": "Completed",
+    "start_date": "2019-12-01"
+  },
+  {
+    "nct_id": "NCT10000173",
+    "title": "Study of atezolizumab in Heart Failure",
+    "brief_summary": "This study evaluates atezolizumab for the treatment of Heart Failure.",
+    "phase": "Phase 4",
+    "overall_status": "Completed",
+    "start_date": "2006-05-01"
+  },
+  {
+    "nct_id": "NCT10000174",
+    "title": "Study of durvalumab in Metastatic Melanoma",
+    "brief_summary": "This study evaluates durvalumab for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 1",
+    "overall_status": "Completed",
+    "start_date": "2022-03-01"
+  },
+  {
+    "nct_id": "NCT10000175",
+    "title": "Study of dapagliflozin in Osteoporosis",
+    "brief_summary": "This study evaluates dapagliflozin for the treatment of Osteoporosis.",
+    "phase": "Phase 4",
+    "overall_status": "Recruiting",
+    "start_date": "2022-07-01"
+  },
+  {
+    "nct_id": "NCT10000176",
+    "title": "Study of alendronate in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates alendronate for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 4",
+    "overall_status": "Completed",
+    "start_date": "2018-05-01"
+  },
+  {
+    "nct_id": "NCT10000177",
+    "title": "Study of ustekinumab in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates ustekinumab for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 3",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2012-06-01"
+  },
+  {
+    "nct_id": "NCT10000178",
+    "title": "Study of pembrolizumab in Breast Cancer",
+    "brief_summary": "This study evaluates pembrolizumab for the treatment of Breast Cancer.",
+    "phase": "Phase 3",
+    "overall_status": "Recruiting",
+    "start_date": "2013-04-01"
+  },
+  {
+    "nct_id": "NCT10000179",
+    "title": "Study of dapagliflozin in Breast Cancer",
+    "brief_summary": "This study evaluates dapagliflozin for the treatment of Breast Cancer.",
+    "phase": "Phase 4",
+    "overall_status": "Completed",
+    "start_date": "2005-01-01"
+  },
+  {
+    "nct_id": "NCT10000180",
+    "title": "Study of romosozumab in Atrial Fibrillation",
+    "brief_summary": "This study evaluates romosozumab for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 2",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2011-02-01"
+  },
+  {
+    "nct_id": "NCT10000181",
+    "title": "Study of etanercept in Psoriasis",
+    "brief_summary": "This study evaluates etanercept for the treatment of Psoriasis.",
+    "phase": "Phase 2",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2009-10-01"
+  },
+  {
+    "nct_id": "NCT10000182",
+    "title": "Study of atezolizumab in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates atezolizumab for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 3",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2013-03-01"
+  },
+  {
+    "nct_id": "NCT10000183",
+    "title": "Study of pembrolizumab in Breast Cancer",
+    "brief_summary": "This study evaluates pembrolizumab for the treatment of Breast Cancer.",
+    "phase": "Phase 1",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2012-10-01"
+  },
+  {
+    "nct_id": "NCT10000184",
+    "title": "Study of adalimumab in Atrial Fibrillation",
+    "brief_summary": "This study evaluates adalimumab for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 1",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2009-12-01"
+  },
+  {
+    "nct_id": "NCT10000185",
+    "title": "Study of ustekinumab in Osteoporosis",
+    "brief_summary": "This study evaluates ustekinumab for the treatment of Osteoporosis.",
+    "phase": "Phase 1",
+    "overall_status": "Completed",
+    "start_date": "2016-09-01"
+  },
+  {
+    "nct_id": "NCT10000186",
+    "title": "Study of empagliflozin in Breast Cancer",
+    "brief_summary": "This study evaluates empagliflozin for the treatment of Breast Cancer.",
+    "phase": "Phase 4",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2021-05-01"
+  },
+  {
+    "nct_id": "NCT10000188",
+    "title": "Study of nivolumab in Breast Cancer",
+    "brief_summary": "This study evaluates nivolumab for the treatment of Breast Cancer.",
+    "phase": "Phase 4",
+    "overall_status": "Terminated",
+    "start_date": "2007-06-01"
+  },
+  {
+    "nct_id": "NCT10000189",
+    "title": "Study of adalimumab in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates adalimumab for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 1",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2023-09-01"
+  },
+  {
+    "nct_id": "NCT10000190",
+    "title": "Study of ustekinumab in Atrial Fibrillation",
+    "brief_summary": "This study evaluates ustekinumab for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 4",
+    "overall_status": "Recruiting",
+    "start_date": "2018-02-01"
+  },
+  {
+    "nct_id": "NCT10000191",
+    "title": "Study of ustekinumab in Breast Cancer",
+    "brief_summary": "This study evaluates ustekinumab for the treatment of Breast Cancer.",
+    "phase": "Phase 2",
+    "overall_status": "Terminated",
+    "start_date": "2012-07-01"
+  },
+  {
+    "nct_id": "NCT10000192",
+    "title": "Study of infliximab in Atrial Fibrillation",
+    "brief_summary": "This study evaluates infliximab for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 4",
+    "overall_status": "Terminated",
+    "start_date": "2008-06-01"
+  },
+  {
+    "nct_id": "NCT10000193",
+    "title": "Study of etanercept in Osteoporosis",
+    "brief_summary": "This study evaluates etanercept for the treatment of Osteoporosis.",
+    "phase": "Phase 3",
+    "overall_status": "Recruiting",
+    "start_date": "2020-02-01"
+  },
+  {
+    "nct_id": "NCT10000194",
+    "title": "Study of infliximab in Breast Cancer",
+    "brief_summary": "This study evaluates infliximab for the treatment of Breast Cancer.",
+    "phase": "Phase 1",
+    "overall_status": "Completed",
+    "start_date": "2016-03-01"
+  },
+  {
+    "nct_id": "NCT10000195",
+    "title": "Study of infliximab in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates infliximab for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 3",
+    "overall_status": "Completed",
+    "start_date": "2018-12-01"
+  },
+  {
+    "nct_id": "NCT10000196",
+    "title": "Study of etanercept in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates etanercept for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 3",
+    "overall_status": "Recruiting",
+    "start_date": "2023-09-01"
+  },
+  {
+    "nct_id": "NCT10000197",
+    "title": "Study of durvalumab in Psoriasis",
+    "brief_summary": "This study evaluates durvalumab for the treatment of Psoriasis.",
+    "phase": "Phase 2",
+    "overall_status": "Terminated",
+    "start_date": "2008-06-01"
+  },
+  {
+    "nct_id": "NCT10000198",
+    "title": "Study of empagliflozin in Atrial Fibrillation",
+    "brief_summary": "This study evaluates empagliflozin for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 1",
+    "overall_status": "Recruiting",
+    "start_date": "2018-09-01"
+  },
+  {
+    "nct_id": "NCT10000199",
+    "title": "Study of atezolizumab in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates atezolizumab for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 3",
+    "overall_status": "Completed",
+    "start_date": "2014-06-01"
+  },
+  {
+    "nct_id": "NCT10000200",
+    "title": "Study of alendronate in Atrial Fibrillation",
+    "brief_summary": "This study evaluates alendronate for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 1",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2023-11-01"
+  },
+  {
+    "nct_id": "NCT10000201",
+    "title": "Study of denosumab in Osteoporosis",
+    "brief_summary": "This study evaluates denosumab for the treatment of Osteoporosis.",
+    "phase": "Phase 1",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2005-02-01"
+  },
+  {
+    "nct_id": "NCT10000202",
+    "title": "Study of ustekinumab in Psoriasis",
+    "brief_summary": "This study evaluates ustekinumab for the treatment of Psoriasis.",
+    "phase": "Phase 4",
+    "overall_status": "Terminated",
+    "start_date": "2010-06-01"
+  },
+  {
+    "nct_id": "NCT10000203",
+    "title": "Study of pembrolizumab in Heart Failure",
+    "brief_summary": "This study evaluates pembrolizumab for the treatment of Heart Failure.",
+    "phase": "Phase 3",
+    "overall_status": "Completed",
+    "start_date": "2010-10-01"
+  },
+  {
+    "nct_id": "NCT10000204",
+    "title": "Study of ustekinumab in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates ustekinumab for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 1",
+    "overall_status": "Recruiting",
+    "start_date": "2018-08-01"
+  },
+  {
+    "nct_id": "NCT10000205",
+    "title": "Study of durvalumab in Metastatic Melanoma",
+    "brief_summary": "This study evaluates durvalumab for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 4",
+    "overall_status": "Recruiting",
+    "start_date": "2021-02-01"
+  },
+  {
+    "nct_id": "NCT10000206",
+    "title": "Study of adalimumab in Atrial Fibrillation",
+    "brief_summary": "This study evaluates adalimumab for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 4",
+    "overall_status": "Completed",
+    "start_date": "2023-08-01"
+  },
+  {
+    "nct_id": "NCT10000207",
+    "title": "Study of infliximab in Heart Failure",
+    "brief_summary": "This study evaluates infliximab for the treatment of Heart Failure.",
+    "phase": "Phase 1",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2006-01-01"
+  },
+  {
+    "nct_id": "NCT10000208",
+    "title": "Study of romosozumab in Psoriasis",
+    "brief_summary": "This study evaluates romosozumab for the treatment of Psoriasis.",
+    "phase": "Phase 3",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2013-05-01"
+  },
+  {
+    "nct_id": "NCT10000209",
+    "title": "Study of ustekinumab in Atrial Fibrillation",
+    "brief_summary": "This study evaluates ustekinumab for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 1",
+    "overall_status": "Completed",
+    "start_date": "2018-03-01"
+  },
+  {
+    "nct_id": "NCT10000210",
+    "title": "Study of sacubitril/valsartan in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates sacubitril/valsartan for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 4",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2016-02-01"
+  },
+  {
+    "nct_id": "NCT10000211",
+    "title": "Study of pembrolizumab in Osteoporosis",
+    "brief_summary": "This study evaluates pembrolizumab for the treatment of Osteoporosis.",
+    "phase": "Phase 1",
+    "overall_status": "Terminated",
+    "start_date": "2007-06-01"
+  },
+  {
+    "nct_id": "NCT10000212",
+    "title": "Study of adalimumab in Osteoporosis",
+    "brief_summary": "This study evaluates adalimumab for the treatment of Osteoporosis.",
+    "phase": "Phase 4",
+    "overall_status": "Terminated",
+    "start_date": "2017-01-01"
+  },
+  {
+    "nct_id": "NCT10000213",
+    "title": "Study of alendronate in Atrial Fibrillation",
+    "brief_summary": "This study evaluates alendronate for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 2",
+    "overall_status": "Terminated",
+    "start_date": "2016-02-01"
+  },
+  {
+    "nct_id": "NCT10000214",
+    "title": "Study of infliximab in Osteoporosis",
+    "brief_summary": "This study evaluates infliximab for the treatment of Osteoporosis.",
+    "phase": "Phase 1",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2017-09-01"
+  },
+  {
+    "nct_id": "NCT10000215",
+    "title": "Study of denosumab in Breast Cancer",
+    "brief_summary": "This study evaluates denosumab for the treatment of Breast Cancer.",
+    "phase": "Phase 4",
+    "overall_status": "Recruiting",
+    "start_date": "2012-06-01"
+  },
+  {
+    "nct_id": "NCT10000216",
+    "title": "Study of sacubitril/valsartan in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates sacubitril/valsartan for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 1",
+    "overall_status": "Completed",
+    "start_date": "2011-06-01"
+  },
+  {
+    "nct_id": "NCT10000217",
+    "title": "Study of nivolumab in Atrial Fibrillation",
+    "brief_summary": "This study evaluates nivolumab for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 2",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2013-04-01"
+  },
+  {
+    "nct_id": "NCT10000218",
+    "title": "Study of atezolizumab in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates atezolizumab for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 2",
+    "overall_status": "Completed",
+    "start_date": "2020-08-01"
+  },
+  {
+    "nct_id": "NCT10000219",
+    "title": "Study of atezolizumab in Metastatic Melanoma",
+    "brief_summary": "This study evaluates atezolizumab for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 3",
+    "overall_status": "Recruiting",
+    "start_date": "2007-08-01"
+  },
+  {
+    "nct_id": "NCT10000220",
+    "title": "Study of empagliflozin in Metastatic Melanoma",
+    "brief_summary": "This study evaluates empagliflozin for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 3",
+    "overall_status": "Recruiting",
+    "start_date": "2016-09-01"
+  },
+  {
+    "nct_id": "NCT10000221",
+    "title": "Study of ustekinumab in Breast Cancer",
+    "brief_summary": "This study evaluates ustekinumab for the treatment of Breast Cancer.",
+    "phase": "Phase 3",
+    "overall_status": "Terminated",
+    "start_date": "2006-06-01"
+  },
+  {
+    "nct_id": "NCT10000222",
+    "title": "Study of empagliflozin in Heart Failure",
+    "brief_summary": "This study evaluates empagliflozin for the treatment of Heart Failure.",
+    "phase": "Phase 1",
+    "overall_status": "Completed",
+    "start_date": "2021-07-01"
+  },
+  {
+    "nct_id": "NCT10000223",
+    "title": "Study of romosozumab in Metastatic Melanoma",
+    "brief_summary": "This study evaluates romosozumab for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 1",
+    "overall_status": "Terminated",
+    "start_date": "2011-06-01"
+  },
+  {
+    "nct_id": "NCT10000224",
+    "title": "Study of ustekinumab in Metastatic Melanoma",
+    "brief_summary": "This study evaluates ustekinumab for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 2",
+    "overall_status": "Completed",
+    "start_date": "2015-12-01"
+  },
+  {
+    "nct_id": "NCT10000225",
+    "title": "Study of durvalumab in Breast Cancer",
+    "brief_summary": "This study evaluates durvalumab for the treatment of Breast Cancer.",
+    "phase": "Phase 2",
+    "overall_status": "Completed",
+    "start_date": "2019-08-01"
+  },
+  {
+    "nct_id": "NCT10000226",
+    "title": "Study of adalimumab in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates adalimumab for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 3",
+    "overall_status": "Recruiting",
+    "start_date": "2018-06-01"
+  },
+  {
+    "nct_id": "NCT10000227",
+    "title": "Study of etanercept in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates etanercept for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 3",
+    "overall_status": "Completed",
+    "start_date": "2022-11-01"
+  },
+  {
+    "nct_id": "NCT10000228",
     "title": "Study of denosumab in Osteoporosis",
     "brief_summary": "This study evaluates denosumab for the treatment of Osteoporosis.",
     "phase": "Phase 3",
-    "overall_status": "Completed"
+    "overall_status": "Recruiting",
+    "start_date": "2009-06-01"
+  },
+  {
+    "nct_id": "NCT10000229",
+    "title": "Study of adalimumab in Breast Cancer",
+    "brief_summary": "This study evaluates adalimumab for the treatment of Breast Cancer.",
+    "phase": "Phase 2",
+    "overall_status": "Recruiting",
+    "start_date": "2017-03-01"
+  },
+  {
+    "nct_id": "NCT10000230",
+    "title": "Study of dapagliflozin in Breast Cancer",
+    "brief_summary": "This study evaluates dapagliflozin for the treatment of Breast Cancer.",
+    "phase": "Phase 3",
+    "overall_status": "Terminated",
+    "start_date": "2015-03-01"
+  },
+  {
+    "nct_id": "NCT10000231",
+    "title": "Study of pembrolizumab in Breast Cancer",
+    "brief_summary": "This study evaluates pembrolizumab for the treatment of Breast Cancer.",
+    "phase": "Phase 4",
+    "overall_status": "Recruiting",
+    "start_date": "2014-03-01"
+  },
+  {
+    "nct_id": "NCT10000232",
+    "title": "Study of durvalumab in Psoriasis",
+    "brief_summary": "This study evaluates durvalumab for the treatment of Psoriasis.",
+    "phase": "Phase 3",
+    "overall_status": "Terminated",
+    "start_date": "2009-03-01"
+  },
+  {
+    "nct_id": "NCT10000233",
+    "title": "Study of sacubitril/valsartan in Breast Cancer",
+    "brief_summary": "This study evaluates sacubitril/valsartan for the treatment of Breast Cancer.",
+    "phase": "Phase 3",
+    "overall_status": "Completed",
+    "start_date": "2022-12-01"
+  },
+  {
+    "nct_id": "NCT10000234",
+    "title": "Study of empagliflozin in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates empagliflozin for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 3",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2009-03-01"
+  },
+  {
+    "nct_id": "NCT10000235",
+    "title": "Study of pembrolizumab in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates pembrolizumab for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 2",
+    "overall_status": "Terminated",
+    "start_date": "2016-11-01"
+  },
+  {
+    "nct_id": "NCT10000236",
+    "title": "Study of romosozumab in Psoriasis",
+    "brief_summary": "This study evaluates romosozumab for the treatment of Psoriasis.",
+    "phase": "Phase 4",
+    "overall_status": "Recruiting",
+    "start_date": "2019-04-01"
+  },
+  {
+    "nct_id": "NCT10000237",
+    "title": "Study of alendronate in Psoriasis",
+    "brief_summary": "This study evaluates alendronate for the treatment of Psoriasis.",
+    "phase": "Phase 3",
+    "overall_status": "Terminated",
+    "start_date": "2016-11-01"
+  },
+  {
+    "nct_id": "NCT10000238",
+    "title": "Study of romosozumab in Metastatic Melanoma",
+    "brief_summary": "This study evaluates romosozumab for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 4",
+    "overall_status": "Recruiting",
+    "start_date": "2021-09-01"
+  },
+  {
+    "nct_id": "NCT10000239",
+    "title": "Study of romosozumab in Osteoporosis",
+    "brief_summary": "This study evaluates romosozumab for the treatment of Osteoporosis.",
+    "phase": "Phase 2",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2009-05-01"
+  },
+  {
+    "nct_id": "NCT10000240",
+    "title": "Study of sacubitril/valsartan in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates sacubitril/valsartan for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 4",
+    "overall_status": "Recruiting",
+    "start_date": "2008-12-01"
+  },
+  {
+    "nct_id": "NCT10000241",
+    "title": "Study of romosozumab in Breast Cancer",
+    "brief_summary": "This study evaluates romosozumab for the treatment of Breast Cancer.",
+    "phase": "Phase 3",
+    "overall_status": "Completed",
+    "start_date": "2013-08-01"
+  },
+  {
+    "nct_id": "NCT10000242",
+    "title": "Study of durvalumab in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates durvalumab for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 4",
+    "overall_status": "Completed",
+    "start_date": "2019-06-01"
+  },
+  {
+    "nct_id": "NCT10000243",
+    "title": "Study of infliximab in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates infliximab for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 4",
+    "overall_status": "Completed",
+    "start_date": "2016-04-01"
+  },
+  {
+    "nct_id": "NCT10000244",
+    "title": "Study of durvalumab in Osteoporosis",
+    "brief_summary": "This study evaluates durvalumab for the treatment of Osteoporosis.",
+    "phase": "Phase 1",
+    "overall_status": "Recruiting",
+    "start_date": "2015-02-01"
+  },
+  {
+    "nct_id": "NCT10000245",
+    "title": "Study of pembrolizumab in Atrial Fibrillation",
+    "brief_summary": "This study evaluates pembrolizumab for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 2",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2020-12-01"
+  },
+  {
+    "nct_id": "NCT10000246",
+    "title": "Study of empagliflozin in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates empagliflozin for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 4",
+    "overall_status": "Terminated",
+    "start_date": "2007-01-01"
+  },
+  {
+    "nct_id": "NCT10000247",
+    "title": "Study of sacubitril/valsartan in Heart Failure",
+    "brief_summary": "This study evaluates sacubitril/valsartan for the treatment of Heart Failure.",
+    "phase": "Phase 2",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2021-07-01"
+  },
+  {
+    "nct_id": "NCT10000248",
+    "title": "Study of adalimumab in Breast Cancer",
+    "brief_summary": "This study evaluates adalimumab for the treatment of Breast Cancer.",
+    "phase": "Phase 3",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2006-04-01"
+  },
+  {
+    "nct_id": "NCT10000249",
+    "title": "Study of nivolumab in Osteoporosis",
+    "brief_summary": "This study evaluates nivolumab for the treatment of Osteoporosis.",
+    "phase": "Phase 4",
+    "overall_status": "Completed",
+    "start_date": "2020-10-01"
+  },
+  {
+    "nct_id": "NCT10000250",
+    "title": "Study of adalimumab in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates adalimumab for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 2",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2005-10-01"
+  },
+  {
+    "nct_id": "NCT10000251",
+    "title": "Study of atezolizumab in Atrial Fibrillation",
+    "brief_summary": "This study evaluates atezolizumab for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 2",
+    "overall_status": "Terminated",
+    "start_date": "2007-09-01"
+  },
+  {
+    "nct_id": "NCT10000252",
+    "title": "Study of infliximab in Atrial Fibrillation",
+    "brief_summary": "This study evaluates infliximab for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 1",
+    "overall_status": "Completed",
+    "start_date": "2020-01-01"
+  },
+  {
+    "nct_id": "NCT10000253",
+    "title": "Study of denosumab in Osteoporosis",
+    "brief_summary": "This study evaluates denosumab for the treatment of Osteoporosis.",
+    "phase": "Phase 3",
+    "overall_status": "Recruiting",
+    "start_date": "2016-02-01"
+  },
+  {
+    "nct_id": "NCT10000254",
+    "title": "Study of romosozumab in Atrial Fibrillation",
+    "brief_summary": "This study evaluates romosozumab for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 2",
+    "overall_status": "Completed",
+    "start_date": "2015-03-01"
+  },
+  {
+    "nct_id": "NCT10000255",
+    "title": "Study of alendronate in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates alendronate for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 3",
+    "overall_status": "Recruiting",
+    "start_date": "2010-11-01"
+  },
+  {
+    "nct_id": "NCT10000256",
+    "title": "Study of romosozumab in Metastatic Melanoma",
+    "brief_summary": "This study evaluates romosozumab for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 4",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2007-12-01"
+  },
+  {
+    "nct_id": "NCT10000257",
+    "title": "Study of durvalumab in Metastatic Melanoma",
+    "brief_summary": "This study evaluates durvalumab for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 1",
+    "overall_status": "Recruiting",
+    "start_date": "2011-01-01"
+  },
+  {
+    "nct_id": "NCT10000258",
+    "title": "Study of alendronate in Atrial Fibrillation",
+    "brief_summary": "This study evaluates alendronate for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 3",
+    "overall_status": "Terminated",
+    "start_date": "2020-05-01"
+  },
+  {
+    "nct_id": "NCT10000259",
+    "title": "Study of etanercept in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates etanercept for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 2",
+    "overall_status": "Recruiting",
+    "start_date": "2006-11-01"
+  },
+  {
+    "nct_id": "NCT10000260",
+    "title": "Study of romosozumab in Atrial Fibrillation",
+    "brief_summary": "This study evaluates romosozumab for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 3",
+    "overall_status": "Completed",
+    "start_date": "2018-07-01"
+  },
+  {
+    "nct_id": "NCT10000261",
+    "title": "Study of atezolizumab in Metastatic Melanoma",
+    "brief_summary": "This study evaluates atezolizumab for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 4",
+    "overall_status": "Recruiting",
+    "start_date": "2020-06-01"
+  },
+  {
+    "nct_id": "NCT10000262",
+    "title": "Study of nivolumab in Heart Failure",
+    "brief_summary": "This study evaluates nivolumab for the treatment of Heart Failure.",
+    "phase": "Phase 1",
+    "overall_status": "Terminated",
+    "start_date": "2010-09-01"
+  },
+  {
+    "nct_id": "NCT10000263",
+    "title": "Study of nivolumab in Heart Failure",
+    "brief_summary": "This study evaluates nivolumab for the treatment of Heart Failure.",
+    "phase": "Phase 3",
+    "overall_status": "Completed",
+    "start_date": "2014-05-01"
+  },
+  {
+    "nct_id": "NCT10000264",
+    "title": "Study of denosumab in Metastatic Melanoma",
+    "brief_summary": "This study evaluates denosumab for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 4",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2016-08-01"
+  },
+  {
+    "nct_id": "NCT10000265",
+    "title": "Study of adalimumab in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates adalimumab for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 3",
+    "overall_status": "Terminated",
+    "start_date": "2006-02-01"
+  },
+  {
+    "nct_id": "NCT10000266",
+    "title": "Study of pembrolizumab in Osteoporosis",
+    "brief_summary": "This study evaluates pembrolizumab for the treatment of Osteoporosis.",
+    "phase": "Phase 3",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2019-01-01"
+  },
+  {
+    "nct_id": "NCT10000267",
+    "title": "Study of romosozumab in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates romosozumab for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 1",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2016-06-01"
+  },
+  {
+    "nct_id": "NCT10000268",
+    "title": "Study of dapagliflozin in Osteoporosis",
+    "brief_summary": "This study evaluates dapagliflozin for the treatment of Osteoporosis.",
+    "phase": "Phase 1",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2016-06-01"
+  },
+  {
+    "nct_id": "NCT10000269",
+    "title": "Study of sacubitril/valsartan in Metastatic Melanoma",
+    "brief_summary": "This study evaluates sacubitril/valsartan for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 1",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2017-06-01"
+  },
+  {
+    "nct_id": "NCT10000270",
+    "title": "Study of pembrolizumab in Heart Failure",
+    "brief_summary": "This study evaluates pembrolizumab for the treatment of Heart Failure.",
+    "phase": "Phase 2",
+    "overall_status": "Completed",
+    "start_date": "2010-08-01"
+  },
+  {
+    "nct_id": "NCT10000271",
+    "title": "Study of romosozumab in Osteoporosis",
+    "brief_summary": "This study evaluates romosozumab for the treatment of Osteoporosis.",
+    "phase": "Phase 1",
+    "overall_status": "Recruiting",
+    "start_date": "2019-04-01"
+  },
+  {
+    "nct_id": "NCT10000272",
+    "title": "Study of nivolumab in Heart Failure",
+    "brief_summary": "This study evaluates nivolumab for the treatment of Heart Failure.",
+    "phase": "Phase 4",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2007-08-01"
+  },
+  {
+    "nct_id": "NCT10000273",
+    "title": "Study of romosozumab in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates romosozumab for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 4",
+    "overall_status": "Completed",
+    "start_date": "2015-11-01"
+  },
+  {
+    "nct_id": "NCT10000274",
+    "title": "Study of adalimumab in Atrial Fibrillation",
+    "brief_summary": "This study evaluates adalimumab for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 1",
+    "overall_status": "Recruiting",
+    "start_date": "2010-12-01"
+  },
+  {
+    "nct_id": "NCT10000275",
+    "title": "Study of nivolumab in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates nivolumab for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 3",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2009-04-01"
+  },
+  {
+    "nct_id": "NCT10000276",
+    "title": "Study of sacubitril/valsartan in Metastatic Melanoma",
+    "brief_summary": "This study evaluates sacubitril/valsartan for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 1",
+    "overall_status": "Recruiting",
+    "start_date": "2016-08-01"
+  },
+  {
+    "nct_id": "NCT10000277",
+    "title": "Study of adalimumab in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates adalimumab for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 1",
+    "overall_status": "Completed",
+    "start_date": "2020-09-01"
+  },
+  {
+    "nct_id": "NCT10000278",
+    "title": "Study of atezolizumab in Osteoporosis",
+    "brief_summary": "This study evaluates atezolizumab for the treatment of Osteoporosis.",
+    "phase": "Phase 4",
+    "overall_status": "Completed",
+    "start_date": "2007-08-01"
+  },
+  {
+    "nct_id": "NCT10000279",
+    "title": "Study of alendronate in Metastatic Melanoma",
+    "brief_summary": "This study evaluates alendronate for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 3",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2022-11-01"
+  },
+  {
+    "nct_id": "NCT10000280",
+    "title": "Study of sacubitril/valsartan in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates sacubitril/valsartan for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 2",
+    "overall_status": "Terminated",
+    "start_date": "2006-02-01"
+  },
+  {
+    "nct_id": "NCT10000281",
+    "title": "Study of atezolizumab in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates atezolizumab for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 3",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2012-06-01"
+  },
+  {
+    "nct_id": "NCT10000282",
+    "title": "Study of durvalumab in Heart Failure",
+    "brief_summary": "This study evaluates durvalumab for the treatment of Heart Failure.",
+    "phase": "Phase 1",
+    "overall_status": "Recruiting",
+    "start_date": "2022-05-01"
+  },
+  {
+    "nct_id": "NCT10000283",
+    "title": "Study of sacubitril/valsartan in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates sacubitril/valsartan for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 3",
+    "overall_status": "Completed",
+    "start_date": "2010-10-01"
+  },
+  {
+    "nct_id": "NCT10000284",
+    "title": "Study of alendronate in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates alendronate for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 2",
+    "overall_status": "Recruiting",
+    "start_date": "2023-01-01"
+  },
+  {
+    "nct_id": "NCT10000285",
+    "title": "Study of dapagliflozin in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates dapagliflozin for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 1",
+    "overall_status": "Completed",
+    "start_date": "2023-05-01"
+  },
+  {
+    "nct_id": "NCT10000286",
+    "title": "Study of ustekinumab in Psoriasis",
+    "brief_summary": "This study evaluates ustekinumab for the treatment of Psoriasis.",
+    "phase": "Phase 4",
+    "overall_status": "Completed",
+    "start_date": "2022-05-01"
+  },
+  {
+    "nct_id": "NCT10000287",
+    "title": "Study of romosozumab in Heart Failure",
+    "brief_summary": "This study evaluates romosozumab for the treatment of Heart Failure.",
+    "phase": "Phase 4",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2017-05-01"
+  },
+  {
+    "nct_id": "NCT10000288",
+    "title": "Study of atezolizumab in Metastatic Melanoma",
+    "brief_summary": "This study evaluates atezolizumab for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 1",
+    "overall_status": "Completed",
+    "start_date": "2018-08-01"
+  },
+  {
+    "nct_id": "NCT10000289",
+    "title": "Study of empagliflozin in Metastatic Melanoma",
+    "brief_summary": "This study evaluates empagliflozin for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 2",
+    "overall_status": "Recruiting",
+    "start_date": "2015-12-01"
+  },
+  {
+    "nct_id": "NCT10000290",
+    "title": "Study of atezolizumab in Atrial Fibrillation",
+    "brief_summary": "This study evaluates atezolizumab for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 3",
+    "overall_status": "Terminated",
+    "start_date": "2016-09-01"
+  },
+  {
+    "nct_id": "NCT10000291",
+    "title": "Study of ustekinumab in Breast Cancer",
+    "brief_summary": "This study evaluates ustekinumab for the treatment of Breast Cancer.",
+    "phase": "Phase 3",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2013-08-01"
+  },
+  {
+    "nct_id": "NCT10000292",
+    "title": "Study of pembrolizumab in Psoriasis",
+    "brief_summary": "This study evaluates pembrolizumab for the treatment of Psoriasis.",
+    "phase": "Phase 2",
+    "overall_status": "Completed",
+    "start_date": "2017-10-01"
+  },
+  {
+    "nct_id": "NCT10000293",
+    "title": "Study of alendronate in Osteoporosis",
+    "brief_summary": "This study evaluates alendronate for the treatment of Osteoporosis.",
+    "phase": "Phase 2",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2023-12-01"
+  },
+  {
+    "nct_id": "NCT10000294",
+    "title": "Study of ustekinumab in Atrial Fibrillation",
+    "brief_summary": "This study evaluates ustekinumab for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 2",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2019-08-01"
+  },
+  {
+    "nct_id": "NCT10000295",
+    "title": "Study of nivolumab in Heart Failure",
+    "brief_summary": "This study evaluates nivolumab for the treatment of Heart Failure.",
+    "phase": "Phase 4",
+    "overall_status": "Completed",
+    "start_date": "2017-09-01"
+  },
+  {
+    "nct_id": "NCT10000296",
+    "title": "Study of empagliflozin in Metastatic Melanoma",
+    "brief_summary": "This study evaluates empagliflozin for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 2",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2006-01-01"
+  },
+  {
+    "nct_id": "NCT10000297",
+    "title": "Study of adalimumab in Heart Failure",
+    "brief_summary": "This study evaluates adalimumab for the treatment of Heart Failure.",
+    "phase": "Phase 4",
+    "overall_status": "Terminated",
+    "start_date": "2005-02-01"
+  },
+  {
+    "nct_id": "NCT10000298",
+    "title": "Study of denosumab in Osteoporosis",
+    "brief_summary": "This study evaluates denosumab for the treatment of Osteoporosis.",
+    "phase": "Phase 2",
+    "overall_status": "Recruiting",
+    "start_date": "2017-06-01"
+  },
+  {
+    "nct_id": "NCT10000299",
+    "title": "Study of empagliflozin in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates empagliflozin for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 4",
+    "overall_status": "Completed",
+    "start_date": "2011-06-01"
+  },
+  {
+    "nct_id": "NCT10000300",
+    "title": "Study of sacubitril/valsartan in Heart Failure",
+    "brief_summary": "This study evaluates sacubitril/valsartan for the treatment of Heart Failure.",
+    "phase": "Phase 1",
+    "overall_status": "Terminated",
+    "start_date": "2022-05-01"
+  },
+  {
+    "nct_id": "NCT10000301",
+    "title": "Study of infliximab in Breast Cancer",
+    "brief_summary": "This study evaluates infliximab for the treatment of Breast Cancer.",
+    "phase": "Phase 2",
+    "overall_status": "Completed",
+    "start_date": "2015-09-01"
+  },
+  {
+    "nct_id": "NCT10000302",
+    "title": "Study of empagliflozin in Atrial Fibrillation",
+    "brief_summary": "This study evaluates empagliflozin for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 2",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2017-09-01"
+  },
+  {
+    "nct_id": "NCT10000303",
+    "title": "Study of atezolizumab in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates atezolizumab for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 1",
+    "overall_status": "Completed",
+    "start_date": "2015-08-01"
+  },
+  {
+    "nct_id": "NCT10000304",
+    "title": "Study of etanercept in Metastatic Melanoma",
+    "brief_summary": "This study evaluates etanercept for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 2",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2015-03-01"
+  },
+  {
+    "nct_id": "NCT10000305",
+    "title": "Study of sacubitril/valsartan in Osteoporosis",
+    "brief_summary": "This study evaluates sacubitril/valsartan for the treatment of Osteoporosis.",
+    "phase": "Phase 3",
+    "overall_status": "Recruiting",
+    "start_date": "2021-09-01"
+  },
+  {
+    "nct_id": "NCT10000306",
+    "title": "Study of alendronate in Metastatic Melanoma",
+    "brief_summary": "This study evaluates alendronate for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 3",
+    "overall_status": "Terminated",
+    "start_date": "2016-06-01"
+  },
+  {
+    "nct_id": "NCT10000307",
+    "title": "Study of romosozumab in Breast Cancer",
+    "brief_summary": "This study evaluates romosozumab for the treatment of Breast Cancer.",
+    "phase": "Phase 4",
+    "overall_status": "Recruiting",
+    "start_date": "2005-10-01"
+  },
+  {
+    "nct_id": "NCT10000308",
+    "title": "Study of denosumab in Metastatic Melanoma",
+    "brief_summary": "This study evaluates denosumab for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 3",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2023-08-01"
+  },
+  {
+    "nct_id": "NCT10000309",
+    "title": "Study of alendronate in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates alendronate for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 4",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2012-01-01"
+  },
+  {
+    "nct_id": "NCT10000310",
+    "title": "Study of ustekinumab in Breast Cancer",
+    "brief_summary": "This study evaluates ustekinumab for the treatment of Breast Cancer.",
+    "phase": "Phase 2",
+    "overall_status": "Completed",
+    "start_date": "2018-03-01"
+  },
+  {
+    "nct_id": "NCT10000311",
+    "title": "Study of sacubitril/valsartan in Osteoporosis",
+    "brief_summary": "This study evaluates sacubitril/valsartan for the treatment of Osteoporosis.",
+    "phase": "Phase 2",
+    "overall_status": "Terminated",
+    "start_date": "2020-12-01"
+  },
+  {
+    "nct_id": "NCT10000312",
+    "title": "Study of sacubitril/valsartan in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates sacubitril/valsartan for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 2",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2020-09-01"
+  },
+  {
+    "nct_id": "NCT10000313",
+    "title": "Study of ustekinumab in Osteoporosis",
+    "brief_summary": "This study evaluates ustekinumab for the treatment of Osteoporosis.",
+    "phase": "Phase 3",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2022-06-01"
+  },
+  {
+    "nct_id": "NCT10000314",
+    "title": "Study of durvalumab in Atrial Fibrillation",
+    "brief_summary": "This study evaluates durvalumab for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 3",
+    "overall_status": "Terminated",
+    "start_date": "2013-09-01"
+  },
+  {
+    "nct_id": "NCT10000315",
+    "title": "Study of romosozumab in Heart Failure",
+    "brief_summary": "This study evaluates romosozumab for the treatment of Heart Failure.",
+    "phase": "Phase 2",
+    "overall_status": "Recruiting",
+    "start_date": "2011-12-01"
+  },
+  {
+    "nct_id": "NCT10000316",
+    "title": "Study of etanercept in Metastatic Melanoma",
+    "brief_summary": "This study evaluates etanercept for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 3",
+    "overall_status": "Terminated",
+    "start_date": "2013-05-01"
+  },
+  {
+    "nct_id": "NCT10000317",
+    "title": "Study of alendronate in Breast Cancer",
+    "brief_summary": "This study evaluates alendronate for the treatment of Breast Cancer.",
+    "phase": "Phase 4",
+    "overall_status": "Terminated",
+    "start_date": "2009-05-01"
+  },
+  {
+    "nct_id": "NCT10000318",
+    "title": "Study of etanercept in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates etanercept for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 3",
+    "overall_status": "Completed",
+    "start_date": "2019-11-01"
+  },
+  {
+    "nct_id": "NCT10000319",
+    "title": "Study of durvalumab in Heart Failure",
+    "brief_summary": "This study evaluates durvalumab for the treatment of Heart Failure.",
+    "phase": "Phase 4",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2022-05-01"
+  },
+  {
+    "nct_id": "NCT10000320",
+    "title": "Study of empagliflozin in Heart Failure",
+    "brief_summary": "This study evaluates empagliflozin for the treatment of Heart Failure.",
+    "phase": "Phase 2",
+    "overall_status": "Completed",
+    "start_date": "2023-04-01"
+  },
+  {
+    "nct_id": "NCT10000321",
+    "title": "Study of dapagliflozin in Psoriasis",
+    "brief_summary": "This study evaluates dapagliflozin for the treatment of Psoriasis.",
+    "phase": "Phase 1",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2006-02-01"
+  },
+  {
+    "nct_id": "NCT10000322",
+    "title": "Study of nivolumab in Osteoporosis",
+    "brief_summary": "This study evaluates nivolumab for the treatment of Osteoporosis.",
+    "phase": "Phase 3",
+    "overall_status": "Terminated",
+    "start_date": "2009-01-01"
+  },
+  {
+    "nct_id": "NCT10000323",
+    "title": "Study of ustekinumab in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates ustekinumab for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 4",
+    "overall_status": "Terminated",
+    "start_date": "2011-05-01"
+  },
+  {
+    "nct_id": "NCT10000324",
+    "title": "Study of romosozumab in Atrial Fibrillation",
+    "brief_summary": "This study evaluates romosozumab for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 3",
+    "overall_status": "Completed",
+    "start_date": "2023-04-01"
+  },
+  {
+    "nct_id": "NCT10000325",
+    "title": "Study of alendronate in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates alendronate for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 2",
+    "overall_status": "Terminated",
+    "start_date": "2006-07-01"
+  },
+  {
+    "nct_id": "NCT10000326",
+    "title": "Study of pembrolizumab in Metastatic Melanoma",
+    "brief_summary": "This study evaluates pembrolizumab for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 2",
+    "overall_status": "Recruiting",
+    "start_date": "2014-10-01"
+  },
+  {
+    "nct_id": "NCT10000327",
+    "title": "Study of ustekinumab in Breast Cancer",
+    "brief_summary": "This study evaluates ustekinumab for the treatment of Breast Cancer.",
+    "phase": "Phase 3",
+    "overall_status": "Recruiting",
+    "start_date": "2022-09-01"
+  },
+  {
+    "nct_id": "NCT10000328",
+    "title": "Study of adalimumab in Metastatic Melanoma",
+    "brief_summary": "This study evaluates adalimumab for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 2",
+    "overall_status": "Terminated",
+    "start_date": "2008-06-01"
+  },
+  {
+    "nct_id": "NCT10000329",
+    "title": "Study of denosumab in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates denosumab for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 4",
+    "overall_status": "Recruiting",
+    "start_date": "2005-12-01"
+  },
+  {
+    "nct_id": "NCT10000350",
+    "title": "Study of ustekinumab in Osteoporosis",
+    "brief_summary": "This study evaluates ustekinumab for the treatment of Osteoporosis.",
+    "phase": "Phase 2",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2009-05-01"
+  },
+  {
+    "nct_id": "NCT10000330",
+    "title": "Study of atezolizumab in Atrial Fibrillation",
+    "brief_summary": "This study evaluates atezolizumab for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 3",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2017-07-01"
+  },
+  {
+    "nct_id": "NCT10000331",
+    "title": "Study of dapagliflozin in Atrial Fibrillation",
+    "brief_summary": "This study evaluates dapagliflozin for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 1",
+    "overall_status": "Terminated",
+    "start_date": "2010-03-01"
+  },
+  {
+    "nct_id": "NCT10000332",
+    "title": "Study of pembrolizumab in Metastatic Melanoma",
+    "brief_summary": "This study evaluates pembrolizumab for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 3",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2017-04-01"
+  },
+  {
+    "nct_id": "NCT10000333",
+    "title": "Study of adalimumab in Metastatic Melanoma",
+    "brief_summary": "This study evaluates adalimumab for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 3",
+    "overall_status": "Recruiting",
+    "start_date": "2023-01-01"
+  },
+  {
+    "nct_id": "NCT10000334",
+    "title": "Study of pembrolizumab in Heart Failure",
+    "brief_summary": "This study evaluates pembrolizumab for the treatment of Heart Failure.",
+    "phase": "Phase 3",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2008-08-01"
+  },
+  {
+    "nct_id": "NCT10000335",
+    "title": "Study of dapagliflozin in Heart Failure",
+    "brief_summary": "This study evaluates dapagliflozin for the treatment of Heart Failure.",
+    "phase": "Phase 2",
+    "overall_status": "Terminated",
+    "start_date": "2014-12-01"
+  },
+  {
+    "nct_id": "NCT10000336",
+    "title": "Study of empagliflozin in Breast Cancer",
+    "brief_summary": "This study evaluates empagliflozin for the treatment of Breast Cancer.",
+    "phase": "Phase 3",
+    "overall_status": "Recruiting",
+    "start_date": "2012-03-01"
+  },
+  {
+    "nct_id": "NCT10000337",
+    "title": "Study of denosumab in Metastatic Melanoma",
+    "brief_summary": "This study evaluates denosumab for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 2",
+    "overall_status": "Terminated",
+    "start_date": "2016-07-01"
+  },
+  {
+    "nct_id": "NCT10000338",
+    "title": "Study of dapagliflozin in Metastatic Melanoma",
+    "brief_summary": "This study evaluates dapagliflozin for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 2",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2007-09-01"
+  },
+  {
+    "nct_id": "NCT10000339",
+    "title": "Study of empagliflozin in Metastatic Melanoma",
+    "brief_summary": "This study evaluates empagliflozin for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 3",
+    "overall_status": "Completed",
+    "start_date": "2006-09-01"
+  },
+  {
+    "nct_id": "NCT10000340",
+    "title": "Study of etanercept in Psoriasis",
+    "brief_summary": "This study evaluates etanercept for the treatment of Psoriasis.",
+    "phase": "Phase 2",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2021-08-01"
+  },
+  {
+    "nct_id": "NCT10000341",
+    "title": "Study of nivolumab in Breast Cancer",
+    "brief_summary": "This study evaluates nivolumab for the treatment of Breast Cancer.",
+    "phase": "Phase 2",
+    "overall_status": "Terminated",
+    "start_date": "2021-08-01"
+  },
+  {
+    "nct_id": "NCT10000342",
+    "title": "Study of sacubitril/valsartan in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates sacubitril/valsartan for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 4",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2019-10-01"
+  },
+  {
+    "nct_id": "NCT10000343",
+    "title": "Study of denosumab in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates denosumab for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 4",
+    "overall_status": "Recruiting",
+    "start_date": "2017-05-01"
+  },
+  {
+    "nct_id": "NCT10000344",
+    "title": "Study of pembrolizumab in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates pembrolizumab for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 2",
+    "overall_status": "Completed",
+    "start_date": "2016-12-01"
+  },
+  {
+    "nct_id": "NCT10000345",
+    "title": "Study of ustekinumab in Breast Cancer",
+    "brief_summary": "This study evaluates ustekinumab for the treatment of Breast Cancer.",
+    "phase": "Phase 1",
+    "overall_status": "Completed",
+    "start_date": "2014-07-01"
+  },
+  {
+    "nct_id": "NCT10000346",
+    "title": "Study of etanercept in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates etanercept for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 2",
+    "overall_status": "Terminated",
+    "start_date": "2017-08-01"
+  },
+  {
+    "nct_id": "NCT10000347",
+    "title": "Study of dapagliflozin in Osteoporosis",
+    "brief_summary": "This study evaluates dapagliflozin for the treatment of Osteoporosis.",
+    "phase": "Phase 4",
+    "overall_status": "Completed",
+    "start_date": "2022-03-01"
+  },
+  {
+    "nct_id": "NCT10000348",
+    "title": "Study of sacubitril/valsartan in Atrial Fibrillation",
+    "brief_summary": "This study evaluates sacubitril/valsartan for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 1",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2021-03-01"
+  },
+  {
+    "nct_id": "NCT10000349",
+    "title": "Study of adalimumab in Psoriasis",
+    "brief_summary": "This study evaluates adalimumab for the treatment of Psoriasis.",
+    "phase": "Phase 1",
+    "overall_status": "Completed",
+    "start_date": "2022-07-01"
+  },
+  {
+    "nct_id": "NCT10000351",
+    "title": "Study of romosozumab in Psoriasis",
+    "brief_summary": "This study evaluates romosozumab for the treatment of Psoriasis.",
+    "phase": "Phase 1",
+    "overall_status": "Completed",
+    "start_date": "2018-10-01"
+  },
+  {
+    "nct_id": "NCT10000352",
+    "title": "Study of nivolumab in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates nivolumab for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 2",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2006-08-01"
+  },
+  {
+    "nct_id": "NCT10000353",
+    "title": "Study of infliximab in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates infliximab for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 2",
+    "overall_status": "Completed",
+    "start_date": "2012-09-01"
+  },
+  {
+    "nct_id": "NCT10000354",
+    "title": "Study of sacubitril/valsartan in Psoriasis",
+    "brief_summary": "This study evaluates sacubitril/valsartan for the treatment of Psoriasis.",
+    "phase": "Phase 1",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2012-12-01"
+  },
+  {
+    "nct_id": "NCT10000355",
+    "title": "Study of adalimumab in Atrial Fibrillation",
+    "brief_summary": "This study evaluates adalimumab for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 3",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2009-11-01"
+  },
+  {
+    "nct_id": "NCT10000356",
+    "title": "Study of adalimumab in Psoriasis",
+    "brief_summary": "This study evaluates adalimumab for the treatment of Psoriasis.",
+    "phase": "Phase 4",
+    "overall_status": "Recruiting",
+    "start_date": "2022-10-01"
+  },
+  {
+    "nct_id": "NCT10000357",
+    "title": "Study of pembrolizumab in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates pembrolizumab for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 4",
+    "overall_status": "Terminated",
+    "start_date": "2017-09-01"
+  },
+  {
+    "nct_id": "NCT10000358",
+    "title": "Study of atezolizumab in Atrial Fibrillation",
+    "brief_summary": "This study evaluates atezolizumab for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 4",
+    "overall_status": "Terminated",
+    "start_date": "2017-03-01"
+  },
+  {
+    "nct_id": "NCT10000359",
+    "title": "Study of adalimumab in Metastatic Melanoma",
+    "brief_summary": "This study evaluates adalimumab for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 2",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2009-08-01"
+  },
+  {
+    "nct_id": "NCT10000360",
+    "title": "Study of sacubitril/valsartan in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates sacubitril/valsartan for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 4",
+    "overall_status": "Terminated",
+    "start_date": "2009-07-01"
+  },
+  {
+    "nct_id": "NCT10000361",
+    "title": "Study of etanercept in Psoriasis",
+    "brief_summary": "This study evaluates etanercept for the treatment of Psoriasis.",
+    "phase": "Phase 3",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2007-08-01"
+  },
+  {
+    "nct_id": "NCT10000362",
+    "title": "Study of pembrolizumab in Atrial Fibrillation",
+    "brief_summary": "This study evaluates pembrolizumab for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 1",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2017-11-01"
+  },
+  {
+    "nct_id": "NCT10000363",
+    "title": "Study of romosozumab in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates romosozumab for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 1",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2023-12-01"
+  },
+  {
+    "nct_id": "NCT10000364",
+    "title": "Study of alendronate in Psoriasis",
+    "brief_summary": "This study evaluates alendronate for the treatment of Psoriasis.",
+    "phase": "Phase 4",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2015-05-01"
+  },
+  {
+    "nct_id": "NCT10000365",
+    "title": "Study of denosumab in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates denosumab for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 2",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2020-04-01"
+  },
+  {
+    "nct_id": "NCT10000366",
+    "title": "Study of sacubitril/valsartan in Psoriasis",
+    "brief_summary": "This study evaluates sacubitril/valsartan for the treatment of Psoriasis.",
+    "phase": "Phase 4",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2014-07-01"
+  },
+  {
+    "nct_id": "NCT10000367",
+    "title": "Study of adalimumab in Metastatic Melanoma",
+    "brief_summary": "This study evaluates adalimumab for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 3",
+    "overall_status": "Recruiting",
+    "start_date": "2021-08-01"
+  },
+  {
+    "nct_id": "NCT10000368",
+    "title": "Study of romosozumab in Metastatic Melanoma",
+    "brief_summary": "This study evaluates romosozumab for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 1",
+    "overall_status": "Terminated",
+    "start_date": "2015-04-01"
+  },
+  {
+    "nct_id": "NCT10000369",
+    "title": "Study of pembrolizumab in Atrial Fibrillation",
+    "brief_summary": "This study evaluates pembrolizumab for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 3",
+    "overall_status": "Terminated",
+    "start_date": "2012-12-01"
+  },
+  {
+    "nct_id": "NCT10000370",
+    "title": "Study of sacubitril/valsartan in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates sacubitril/valsartan for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 1",
+    "overall_status": "Recruiting",
+    "start_date": "2023-10-01"
+  },
+  {
+    "nct_id": "NCT10000371",
+    "title": "Study of durvalumab in Osteoporosis",
+    "brief_summary": "This study evaluates durvalumab for the treatment of Osteoporosis.",
+    "phase": "Phase 3",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2012-07-01"
+  },
+  {
+    "nct_id": "NCT10000372",
+    "title": "Study of adalimumab in Psoriasis",
+    "brief_summary": "This study evaluates adalimumab for the treatment of Psoriasis.",
+    "phase": "Phase 4",
+    "overall_status": "Recruiting",
+    "start_date": "2020-12-01"
+  },
+  {
+    "nct_id": "NCT10000373",
+    "title": "Study of denosumab in Metastatic Melanoma",
+    "brief_summary": "This study evaluates denosumab for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 4",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2016-03-01"
+  },
+  {
+    "nct_id": "NCT10000374",
+    "title": "Study of sacubitril/valsartan in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates sacubitril/valsartan for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 4",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2006-09-01"
+  },
+  {
+    "nct_id": "NCT10000375",
+    "title": "Study of romosozumab in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates romosozumab for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 1",
+    "overall_status": "Completed",
+    "start_date": "2018-03-01"
+  },
+  {
+    "nct_id": "NCT10000376",
+    "title": "Study of pembrolizumab in Psoriasis",
+    "brief_summary": "This study evaluates pembrolizumab for the treatment of Psoriasis.",
+    "phase": "Phase 1",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2021-08-01"
+  },
+  {
+    "nct_id": "NCT10000377",
+    "title": "Study of dapagliflozin in Atrial Fibrillation",
+    "brief_summary": "This study evaluates dapagliflozin for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 1",
+    "overall_status": "Terminated",
+    "start_date": "2005-01-01"
+  },
+  {
+    "nct_id": "NCT10000378",
+    "title": "Study of sacubitril/valsartan in Osteoporosis",
+    "brief_summary": "This study evaluates sacubitril/valsartan for the treatment of Osteoporosis.",
+    "phase": "Phase 1",
+    "overall_status": "Completed",
+    "start_date": "2013-09-01"
+  },
+  {
+    "nct_id": "NCT10000379",
+    "title": "Study of romosozumab in Heart Failure",
+    "brief_summary": "This study evaluates romosozumab for the treatment of Heart Failure.",
+    "phase": "Phase 1",
+    "overall_status": "Terminated",
+    "start_date": "2010-02-01"
+  },
+  {
+    "nct_id": "NCT10000380",
+    "title": "Study of durvalumab in Breast Cancer",
+    "brief_summary": "This study evaluates durvalumab for the treatment of Breast Cancer.",
+    "phase": "Phase 2",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2021-05-01"
+  },
+  {
+    "nct_id": "NCT10000381",
+    "title": "Study of nivolumab in Atrial Fibrillation",
+    "brief_summary": "This study evaluates nivolumab for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 3",
+    "overall_status": "Terminated",
+    "start_date": "2017-08-01"
+  },
+  {
+    "nct_id": "NCT10000382",
+    "title": "Study of dapagliflozin in Psoriasis",
+    "brief_summary": "This study evaluates dapagliflozin for the treatment of Psoriasis.",
+    "phase": "Phase 2",
+    "overall_status": "Recruiting",
+    "start_date": "2007-11-01"
+  },
+  {
+    "nct_id": "NCT10000383",
+    "title": "Study of infliximab in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates infliximab for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 1",
+    "overall_status": "Terminated",
+    "start_date": "2022-08-01"
+  },
+  {
+    "nct_id": "NCT10000384",
+    "title": "Study of nivolumab in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates nivolumab for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 1",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2018-11-01"
+  },
+  {
+    "nct_id": "NCT10000385",
+    "title": "Study of durvalumab in Atrial Fibrillation",
+    "brief_summary": "This study evaluates durvalumab for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 1",
+    "overall_status": "Completed",
+    "start_date": "2023-08-01"
+  },
+  {
+    "nct_id": "NCT10000386",
+    "title": "Study of dapagliflozin in Heart Failure",
+    "brief_summary": "This study evaluates dapagliflozin for the treatment of Heart Failure.",
+    "phase": "Phase 1",
+    "overall_status": "Completed",
+    "start_date": "2013-09-01"
+  },
+  {
+    "nct_id": "NCT10000387",
+    "title": "Study of pembrolizumab in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates pembrolizumab for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 2",
+    "overall_status": "Recruiting",
+    "start_date": "2023-03-01"
+  },
+  {
+    "nct_id": "NCT10000388",
+    "title": "Study of atezolizumab in Osteoporosis",
+    "brief_summary": "This study evaluates atezolizumab for the treatment of Osteoporosis.",
+    "phase": "Phase 1",
+    "overall_status": "Recruiting",
+    "start_date": "2012-10-01"
+  },
+  {
+    "nct_id": "NCT10000389",
+    "title": "Study of romosozumab in Osteoporosis",
+    "brief_summary": "This study evaluates romosozumab for the treatment of Osteoporosis.",
+    "phase": "Phase 3",
+    "overall_status": "Terminated",
+    "start_date": "2009-12-01"
+  },
+  {
+    "nct_id": "NCT10000390",
+    "title": "Study of nivolumab in Breast Cancer",
+    "brief_summary": "This study evaluates nivolumab for the treatment of Breast Cancer.",
+    "phase": "Phase 3",
+    "overall_status": "Completed",
+    "start_date": "2012-02-01"
+  },
+  {
+    "nct_id": "NCT10000391",
+    "title": "Study of pembrolizumab in Atrial Fibrillation",
+    "brief_summary": "This study evaluates pembrolizumab for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 4",
+    "overall_status": "Recruiting",
+    "start_date": "2013-08-01"
+  },
+  {
+    "nct_id": "NCT10000392",
+    "title": "Study of sacubitril/valsartan in Metastatic Melanoma",
+    "brief_summary": "This study evaluates sacubitril/valsartan for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 2",
+    "overall_status": "Recruiting",
+    "start_date": "2017-07-01"
+  },
+  {
+    "nct_id": "NCT10000393",
+    "title": "Study of romosozumab in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates romosozumab for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 4",
+    "overall_status": "Completed",
+    "start_date": "2014-04-01"
+  },
+  {
+    "nct_id": "NCT10000394",
+    "title": "Study of atezolizumab in Breast Cancer",
+    "brief_summary": "This study evaluates atezolizumab for the treatment of Breast Cancer.",
+    "phase": "Phase 1",
+    "overall_status": "Recruiting",
+    "start_date": "2009-12-01"
+  },
+  {
+    "nct_id": "NCT10000395",
+    "title": "Study of nivolumab in Osteoporosis",
+    "brief_summary": "This study evaluates nivolumab for the treatment of Osteoporosis.",
+    "phase": "Phase 3",
+    "overall_status": "Recruiting",
+    "start_date": "2005-05-01"
+  },
+  {
+    "nct_id": "NCT10000396",
+    "title": "Study of nivolumab in Metastatic Melanoma",
+    "brief_summary": "This study evaluates nivolumab for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 3",
+    "overall_status": "Recruiting",
+    "start_date": "2007-03-01"
+  },
+  {
+    "nct_id": "NCT10000397",
+    "title": "Study of nivolumab in Osteoporosis",
+    "brief_summary": "This study evaluates nivolumab for the treatment of Osteoporosis.",
+    "phase": "Phase 4",
+    "overall_status": "Terminated",
+    "start_date": "2007-06-01"
+  },
+  {
+    "nct_id": "NCT10000398",
+    "title": "Study of pembrolizumab in Breast Cancer",
+    "brief_summary": "This study evaluates pembrolizumab for the treatment of Breast Cancer.",
+    "phase": "Phase 3",
+    "overall_status": "Terminated",
+    "start_date": "2018-07-01"
+  },
+  {
+    "nct_id": "NCT10000399",
+    "title": "Study of dapagliflozin in Breast Cancer",
+    "brief_summary": "This study evaluates dapagliflozin for the treatment of Breast Cancer.",
+    "phase": "Phase 2",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2010-03-01"
+  },
+  {
+    "nct_id": "NCT10000400",
+    "title": "Study of ustekinumab in Heart Failure",
+    "brief_summary": "This study evaluates ustekinumab for the treatment of Heart Failure.",
+    "phase": "Phase 3",
+    "overall_status": "Recruiting",
+    "start_date": "2007-03-01"
+  },
+  {
+    "nct_id": "NCT10000401",
+    "title": "Study of adalimumab in Osteoporosis",
+    "brief_summary": "This study evaluates adalimumab for the treatment of Osteoporosis.",
+    "phase": "Phase 3",
+    "overall_status": "Terminated",
+    "start_date": "2007-06-01"
+  },
+  {
+    "nct_id": "NCT10000402",
+    "title": "Study of empagliflozin in Heart Failure",
+    "brief_summary": "This study evaluates empagliflozin for the treatment of Heart Failure.",
+    "phase": "Phase 2",
+    "overall_status": "Terminated",
+    "start_date": "2011-08-01"
+  },
+  {
+    "nct_id": "NCT10000403",
+    "title": "Study of pembrolizumab in Breast Cancer",
+    "brief_summary": "This study evaluates pembrolizumab for the treatment of Breast Cancer.",
+    "phase": "Phase 2",
+    "overall_status": "Recruiting",
+    "start_date": "2017-06-01"
+  },
+  {
+    "nct_id": "NCT10000404",
+    "title": "Study of etanercept in Osteoporosis",
+    "brief_summary": "This study evaluates etanercept for the treatment of Osteoporosis.",
+    "phase": "Phase 3",
+    "overall_status": "Terminated",
+    "start_date": "2009-05-01"
+  },
+  {
+    "nct_id": "NCT10000405",
+    "title": "Study of etanercept in Atrial Fibrillation",
+    "brief_summary": "This study evaluates etanercept for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 2",
+    "overall_status": "Terminated",
+    "start_date": "2017-06-01"
+  },
+  {
+    "nct_id": "NCT10000406",
+    "title": "Study of etanercept in Heart Failure",
+    "brief_summary": "This study evaluates etanercept for the treatment of Heart Failure.",
+    "phase": "Phase 4",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2013-07-01"
+  },
+  {
+    "nct_id": "NCT10000407",
+    "title": "Study of empagliflozin in Atrial Fibrillation",
+    "brief_summary": "This study evaluates empagliflozin for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 1",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2010-11-01"
+  },
+  {
+    "nct_id": "NCT10000408",
+    "title": "Study of ustekinumab in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates ustekinumab for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 4",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2014-12-01"
+  },
+  {
+    "nct_id": "NCT10000409",
+    "title": "Study of atezolizumab in Breast Cancer",
+    "brief_summary": "This study evaluates atezolizumab for the treatment of Breast Cancer.",
+    "phase": "Phase 4",
+    "overall_status": "Terminated",
+    "start_date": "2014-04-01"
+  },
+  {
+    "nct_id": "NCT10000410",
+    "title": "Study of romosozumab in Heart Failure",
+    "brief_summary": "This study evaluates romosozumab for the treatment of Heart Failure.",
+    "phase": "Phase 2",
+    "overall_status": "Terminated",
+    "start_date": "2007-08-01"
+  },
+  {
+    "nct_id": "NCT10000411",
+    "title": "Study of sacubitril/valsartan in Metastatic Melanoma",
+    "brief_summary": "This study evaluates sacubitril/valsartan for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 4",
+    "overall_status": "Terminated",
+    "start_date": "2016-12-01"
+  },
+  {
+    "nct_id": "NCT10000412",
+    "title": "Study of dapagliflozin in Breast Cancer",
+    "brief_summary": "This study evaluates dapagliflozin for the treatment of Breast Cancer.",
+    "phase": "Phase 1",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2016-03-01"
+  },
+  {
+    "nct_id": "NCT10000413",
+    "title": "Study of romosozumab in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates romosozumab for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 4",
+    "overall_status": "Recruiting",
+    "start_date": "2008-01-01"
+  },
+  {
+    "nct_id": "NCT10000414",
+    "title": "Study of sacubitril/valsartan in Breast Cancer",
+    "brief_summary": "This study evaluates sacubitril/valsartan for the treatment of Breast Cancer.",
+    "phase": "Phase 3",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2021-09-01"
+  },
+  {
+    "nct_id": "NCT10000415",
+    "title": "Study of infliximab in Psoriasis",
+    "brief_summary": "This study evaluates infliximab for the treatment of Psoriasis.",
+    "phase": "Phase 4",
+    "overall_status": "Recruiting",
+    "start_date": "2023-12-01"
+  },
+  {
+    "nct_id": "NCT10000416",
+    "title": "Study of ustekinumab in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates ustekinumab for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 3",
+    "overall_status": "Completed",
+    "start_date": "2014-07-01"
+  },
+  {
+    "nct_id": "NCT10000417",
+    "title": "Study of etanercept in Breast Cancer",
+    "brief_summary": "This study evaluates etanercept for the treatment of Breast Cancer.",
+    "phase": "Phase 1",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2015-08-01"
+  },
+  {
+    "nct_id": "NCT10000418",
+    "title": "Study of ustekinumab in Psoriasis",
+    "brief_summary": "This study evaluates ustekinumab for the treatment of Psoriasis.",
+    "phase": "Phase 4",
+    "overall_status": "Recruiting",
+    "start_date": "2019-12-01"
+  },
+  {
+    "nct_id": "NCT10000419",
+    "title": "Study of adalimumab in Metastatic Melanoma",
+    "brief_summary": "This study evaluates adalimumab for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 3",
+    "overall_status": "Completed",
+    "start_date": "2008-01-01"
+  },
+  {
+    "nct_id": "NCT10000420",
+    "title": "Study of denosumab in Atrial Fibrillation",
+    "brief_summary": "This study evaluates denosumab for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 1",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2021-03-01"
+  },
+  {
+    "nct_id": "NCT10000421",
+    "title": "Study of ustekinumab in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates ustekinumab for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 3",
+    "overall_status": "Terminated",
+    "start_date": "2017-11-01"
+  },
+  {
+    "nct_id": "NCT10000422",
+    "title": "Study of infliximab in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates infliximab for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 2",
+    "overall_status": "Terminated",
+    "start_date": "2011-08-01"
+  },
+  {
+    "nct_id": "NCT10000423",
+    "title": "Study of denosumab in Osteoporosis",
+    "brief_summary": "This study evaluates denosumab for the treatment of Osteoporosis.",
+    "phase": "Phase 4",
+    "overall_status": "Completed",
+    "start_date": "2011-05-01"
+  },
+  {
+    "nct_id": "NCT10000424",
+    "title": "Study of etanercept in Breast Cancer",
+    "brief_summary": "This study evaluates etanercept for the treatment of Breast Cancer.",
+    "phase": "Phase 1",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2011-08-01"
+  },
+  {
+    "nct_id": "NCT10000425",
+    "title": "Study of sacubitril/valsartan in Breast Cancer",
+    "brief_summary": "This study evaluates sacubitril/valsartan for the treatment of Breast Cancer.",
+    "phase": "Phase 3",
+    "overall_status": "Terminated",
+    "start_date": "2015-10-01"
+  },
+  {
+    "nct_id": "NCT10000426",
+    "title": "Study of etanercept in Osteoporosis",
+    "brief_summary": "This study evaluates etanercept for the treatment of Osteoporosis.",
+    "phase": "Phase 4",
+    "overall_status": "Completed",
+    "start_date": "2019-10-01"
+  },
+  {
+    "nct_id": "NCT10000427",
+    "title": "Study of dapagliflozin in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates dapagliflozin for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 3",
+    "overall_status": "Completed",
+    "start_date": "2015-02-01"
+  },
+  {
+    "nct_id": "NCT10000428",
+    "title": "Study of atezolizumab in Psoriasis",
+    "brief_summary": "This study evaluates atezolizumab for the treatment of Psoriasis.",
+    "phase": "Phase 3",
+    "overall_status": "Completed",
+    "start_date": "2009-09-01"
+  },
+  {
+    "nct_id": "NCT10000429",
+    "title": "Study of empagliflozin in Osteoporosis",
+    "brief_summary": "This study evaluates empagliflozin for the treatment of Osteoporosis.",
+    "phase": "Phase 4",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2018-03-01"
+  },
+  {
+    "nct_id": "NCT10000430",
+    "title": "Study of ustekinumab in Metastatic Melanoma",
+    "brief_summary": "This study evaluates ustekinumab for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 2",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2009-03-01"
+  },
+  {
+    "nct_id": "NCT10000431",
+    "title": "Study of alendronate in Atrial Fibrillation",
+    "brief_summary": "This study evaluates alendronate for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 4",
+    "overall_status": "Completed",
+    "start_date": "2005-08-01"
+  },
+  {
+    "nct_id": "NCT10000432",
+    "title": "Study of sacubitril/valsartan in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates sacubitril/valsartan for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 2",
+    "overall_status": "Terminated",
+    "start_date": "2020-07-01"
+  },
+  {
+    "nct_id": "NCT10000433",
+    "title": "Study of ustekinumab in Metastatic Melanoma",
+    "brief_summary": "This study evaluates ustekinumab for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 4",
+    "overall_status": "Terminated",
+    "start_date": "2007-10-01"
+  },
+  {
+    "nct_id": "NCT10000434",
+    "title": "Study of pembrolizumab in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates pembrolizumab for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 2",
+    "overall_status": "Recruiting",
+    "start_date": "2012-09-01"
+  },
+  {
+    "nct_id": "NCT10000435",
+    "title": "Study of empagliflozin in Heart Failure",
+    "brief_summary": "This study evaluates empagliflozin for the treatment of Heart Failure.",
+    "phase": "Phase 2",
+    "overall_status": "Terminated",
+    "start_date": "2020-09-01"
+  },
+  {
+    "nct_id": "NCT10000436",
+    "title": "Study of romosozumab in Breast Cancer",
+    "brief_summary": "This study evaluates romosozumab for the treatment of Breast Cancer.",
+    "phase": "Phase 1",
+    "overall_status": "Recruiting",
+    "start_date": "2016-09-01"
+  },
+  {
+    "nct_id": "NCT10000437",
+    "title": "Study of infliximab in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates infliximab for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 4",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2012-05-01"
+  },
+  {
+    "nct_id": "NCT10000438",
+    "title": "Study of etanercept in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates etanercept for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 4",
+    "overall_status": "Recruiting",
+    "start_date": "2007-08-01"
+  },
+  {
+    "nct_id": "NCT10000439",
+    "title": "Study of romosozumab in Breast Cancer",
+    "brief_summary": "This study evaluates romosozumab for the treatment of Breast Cancer.",
+    "phase": "Phase 2",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2023-12-01"
+  },
+  {
+    "nct_id": "NCT10000440",
+    "title": "Study of empagliflozin in Atrial Fibrillation",
+    "brief_summary": "This study evaluates empagliflozin for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 4",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2011-04-01"
+  },
+  {
+    "nct_id": "NCT10000441",
+    "title": "Study of empagliflozin in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates empagliflozin for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 3",
+    "overall_status": "Recruiting",
+    "start_date": "2010-06-01"
+  },
+  {
+    "nct_id": "NCT10000442",
+    "title": "Study of alendronate in Heart Failure",
+    "brief_summary": "This study evaluates alendronate for the treatment of Heart Failure.",
+    "phase": "Phase 3",
+    "overall_status": "Recruiting",
+    "start_date": "2008-03-01"
+  },
+  {
+    "nct_id": "NCT10000443",
+    "title": "Study of alendronate in Osteoporosis",
+    "brief_summary": "This study evaluates alendronate for the treatment of Osteoporosis.",
+    "phase": "Phase 1",
+    "overall_status": "Recruiting",
+    "start_date": "2009-12-01"
+  },
+  {
+    "nct_id": "NCT10000444",
+    "title": "Study of denosumab in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates denosumab for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 2",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2012-11-01"
+  },
+  {
+    "nct_id": "NCT10000445",
+    "title": "Study of empagliflozin in Osteoporosis",
+    "brief_summary": "This study evaluates empagliflozin for the treatment of Osteoporosis.",
+    "phase": "Phase 4",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2013-11-01"
+  },
+  {
+    "nct_id": "NCT10000446",
+    "title": "Study of nivolumab in Osteoporosis",
+    "brief_summary": "This study evaluates nivolumab for the treatment of Osteoporosis.",
+    "phase": "Phase 4",
+    "overall_status": "Terminated",
+    "start_date": "2007-07-01"
+  },
+  {
+    "nct_id": "NCT10000447",
+    "title": "Study of ustekinumab in Heart Failure",
+    "brief_summary": "This study evaluates ustekinumab for the treatment of Heart Failure.",
+    "phase": "Phase 3",
+    "overall_status": "Terminated",
+    "start_date": "2023-01-01"
+  },
+  {
+    "nct_id": "NCT10000448",
+    "title": "Study of alendronate in Breast Cancer",
+    "brief_summary": "This study evaluates alendronate for the treatment of Breast Cancer.",
+    "phase": "Phase 4",
+    "overall_status": "Recruiting",
+    "start_date": "2022-07-01"
+  },
+  {
+    "nct_id": "NCT10000449",
+    "title": "Study of ustekinumab in Psoriasis",
+    "brief_summary": "This study evaluates ustekinumab for the treatment of Psoriasis.",
+    "phase": "Phase 4",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2015-05-01"
+  },
+  {
+    "nct_id": "NCT10000450",
+    "title": "Study of romosozumab in Atrial Fibrillation",
+    "brief_summary": "This study evaluates romosozumab for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 2",
+    "overall_status": "Terminated",
+    "start_date": "2006-01-01"
+  },
+  {
+    "nct_id": "NCT10000451",
+    "title": "Study of nivolumab in Breast Cancer",
+    "brief_summary": "This study evaluates nivolumab for the treatment of Breast Cancer.",
+    "phase": "Phase 4",
+    "overall_status": "Completed",
+    "start_date": "2010-08-01"
+  },
+  {
+    "nct_id": "NCT10000452",
+    "title": "Study of durvalumab in Metastatic Melanoma",
+    "brief_summary": "This study evaluates durvalumab for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 1",
+    "overall_status": "Terminated",
+    "start_date": "2009-11-01"
+  },
+  {
+    "nct_id": "NCT10000453",
+    "title": "Study of nivolumab in Heart Failure",
+    "brief_summary": "This study evaluates nivolumab for the treatment of Heart Failure.",
+    "phase": "Phase 2",
+    "overall_status": "Recruiting",
+    "start_date": "2016-05-01"
+  },
+  {
+    "nct_id": "NCT10000454",
+    "title": "Study of pembrolizumab in Breast Cancer",
+    "brief_summary": "This study evaluates pembrolizumab for the treatment of Breast Cancer.",
+    "phase": "Phase 3",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2014-12-01"
+  },
+  {
+    "nct_id": "NCT10000455",
+    "title": "Study of denosumab in Psoriasis",
+    "brief_summary": "This study evaluates denosumab for the treatment of Psoriasis.",
+    "phase": "Phase 4",
+    "overall_status": "Completed",
+    "start_date": "2005-04-01"
+  },
+  {
+    "nct_id": "NCT10000456",
+    "title": "Study of empagliflozin in Metastatic Melanoma",
+    "brief_summary": "This study evaluates empagliflozin for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 1",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2021-11-01"
+  },
+  {
+    "nct_id": "NCT10000457",
+    "title": "Study of denosumab in Metastatic Melanoma",
+    "brief_summary": "This study evaluates denosumab for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 1",
+    "overall_status": "Completed",
+    "start_date": "2008-07-01"
+  },
+  {
+    "nct_id": "NCT10000458",
+    "title": "Study of durvalumab in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates durvalumab for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 4",
+    "overall_status": "Completed",
+    "start_date": "2007-12-01"
+  },
+  {
+    "nct_id": "NCT10000459",
+    "title": "Study of etanercept in Breast Cancer",
+    "brief_summary": "This study evaluates etanercept for the treatment of Breast Cancer.",
+    "phase": "Phase 1",
+    "overall_status": "Recruiting",
+    "start_date": "2014-03-01"
+  },
+  {
+    "nct_id": "NCT10000460",
+    "title": "Study of nivolumab in Osteoporosis",
+    "brief_summary": "This study evaluates nivolumab for the treatment of Osteoporosis.",
+    "phase": "Phase 2",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2023-01-01"
+  },
+  {
+    "nct_id": "NCT10000461",
+    "title": "Study of denosumab in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates denosumab for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 4",
+    "overall_status": "Recruiting",
+    "start_date": "2009-07-01"
+  },
+  {
+    "nct_id": "NCT10000462",
+    "title": "Study of nivolumab in Metastatic Melanoma",
+    "brief_summary": "This study evaluates nivolumab for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 2",
+    "overall_status": "Completed",
+    "start_date": "2008-10-01"
+  },
+  {
+    "nct_id": "NCT10000463",
+    "title": "Study of etanercept in Osteoporosis",
+    "brief_summary": "This study evaluates etanercept for the treatment of Osteoporosis.",
+    "phase": "Phase 3",
+    "overall_status": "Terminated",
+    "start_date": "2009-04-01"
+  },
+  {
+    "nct_id": "NCT10000464",
+    "title": "Study of sacubitril/valsartan in Heart Failure",
+    "brief_summary": "This study evaluates sacubitril/valsartan for the treatment of Heart Failure.",
+    "phase": "Phase 1",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2014-12-01"
+  },
+  {
+    "nct_id": "NCT10000465",
+    "title": "Study of sacubitril/valsartan in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates sacubitril/valsartan for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 3",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2021-04-01"
+  },
+  {
+    "nct_id": "NCT10000466",
+    "title": "Study of romosozumab in Osteoporosis",
+    "brief_summary": "This study evaluates romosozumab for the treatment of Osteoporosis.",
+    "phase": "Phase 3",
+    "overall_status": "Completed",
+    "start_date": "2012-08-01"
+  },
+  {
+    "nct_id": "NCT10000467",
+    "title": "Study of ustekinumab in Osteoporosis",
+    "brief_summary": "This study evaluates ustekinumab for the treatment of Osteoporosis.",
+    "phase": "Phase 1",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2007-09-01"
+  },
+  {
+    "nct_id": "NCT10000468",
+    "title": "Study of atezolizumab in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates atezolizumab for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 3",
+    "overall_status": "Recruiting",
+    "start_date": "2023-07-01"
+  },
+  {
+    "nct_id": "NCT10000469",
+    "title": "Study of romosozumab in Atrial Fibrillation",
+    "brief_summary": "This study evaluates romosozumab for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 2",
+    "overall_status": "Terminated",
+    "start_date": "2005-10-01"
+  },
+  {
+    "nct_id": "NCT10000470",
+    "title": "Study of durvalumab in Breast Cancer",
+    "brief_summary": "This study evaluates durvalumab for the treatment of Breast Cancer.",
+    "phase": "Phase 1",
+    "overall_status": "Recruiting",
+    "start_date": "2006-07-01"
+  },
+  {
+    "nct_id": "NCT10000471",
+    "title": "Study of denosumab in Heart Failure",
+    "brief_summary": "This study evaluates denosumab for the treatment of Heart Failure.",
+    "phase": "Phase 4",
+    "overall_status": "Terminated",
+    "start_date": "2007-11-01"
+  },
+  {
+    "nct_id": "NCT10000472",
+    "title": "Study of adalimumab in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates adalimumab for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 3",
+    "overall_status": "Completed",
+    "start_date": "2021-04-01"
+  },
+  {
+    "nct_id": "NCT10000473",
+    "title": "Study of empagliflozin in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates empagliflozin for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 3",
+    "overall_status": "Terminated",
+    "start_date": "2007-05-01"
+  },
+  {
+    "nct_id": "NCT10000474",
+    "title": "Study of durvalumab in Osteoporosis",
+    "brief_summary": "This study evaluates durvalumab for the treatment of Osteoporosis.",
+    "phase": "Phase 2",
+    "overall_status": "Completed",
+    "start_date": "2018-02-01"
+  },
+  {
+    "nct_id": "NCT10000475",
+    "title": "Study of dapagliflozin in Metastatic Melanoma",
+    "brief_summary": "This study evaluates dapagliflozin for the treatment of Metastatic Melanoma.",
+    "phase": "Phase 1",
+    "overall_status": "Recruiting",
+    "start_date": "2010-02-01"
+  },
+  {
+    "nct_id": "NCT10000476",
+    "title": "Study of atezolizumab in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates atezolizumab for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 2",
+    "overall_status": "Completed",
+    "start_date": "2016-09-01"
+  },
+  {
+    "nct_id": "NCT10000477",
+    "title": "Study of atezolizumab in Heart Failure",
+    "brief_summary": "This study evaluates atezolizumab for the treatment of Heart Failure.",
+    "phase": "Phase 2",
+    "overall_status": "Recruiting",
+    "start_date": "2013-12-01"
+  },
+  {
+    "nct_id": "NCT10000478",
+    "title": "Study of romosozumab in Breast Cancer",
+    "brief_summary": "This study evaluates romosozumab for the treatment of Breast Cancer.",
+    "phase": "Phase 1",
+    "overall_status": "Recruiting",
+    "start_date": "2013-09-01"
+  },
+  {
+    "nct_id": "NCT10000479",
+    "title": "Study of ustekinumab in Breast Cancer",
+    "brief_summary": "This study evaluates ustekinumab for the treatment of Breast Cancer.",
+    "phase": "Phase 3",
+    "overall_status": "Completed",
+    "start_date": "2021-06-01"
+  },
+  {
+    "nct_id": "NCT10000480",
+    "title": "Study of etanercept in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates etanercept for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 4",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2013-02-01"
+  },
+  {
+    "nct_id": "NCT10000481",
+    "title": "Study of pembrolizumab in Breast Cancer",
+    "brief_summary": "This study evaluates pembrolizumab for the treatment of Breast Cancer.",
+    "phase": "Phase 2",
+    "overall_status": "Completed",
+    "start_date": "2005-04-01"
+  },
+  {
+    "nct_id": "NCT10000482",
+    "title": "Study of infliximab in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates infliximab for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 4",
+    "overall_status": "Recruiting",
+    "start_date": "2009-03-01"
+  },
+  {
+    "nct_id": "NCT10000483",
+    "title": "Study of etanercept in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates etanercept for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 4",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2018-12-01"
+  },
+  {
+    "nct_id": "NCT10000484",
+    "title": "Study of empagliflozin in Atrial Fibrillation",
+    "brief_summary": "This study evaluates empagliflozin for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 3",
+    "overall_status": "Completed",
+    "start_date": "2008-09-01"
+  },
+  {
+    "nct_id": "NCT10000485",
+    "title": "Study of romosozumab in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates romosozumab for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 2",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2006-07-01"
+  },
+  {
+    "nct_id": "NCT10000486",
+    "title": "Study of romosozumab in Breast Cancer",
+    "brief_summary": "This study evaluates romosozumab for the treatment of Breast Cancer.",
+    "phase": "Phase 4",
+    "overall_status": "Recruiting",
+    "start_date": "2014-06-01"
+  },
+  {
+    "nct_id": "NCT10000487",
+    "title": "Study of etanercept in Breast Cancer",
+    "brief_summary": "This study evaluates etanercept for the treatment of Breast Cancer.",
+    "phase": "Phase 4",
+    "overall_status": "Completed",
+    "start_date": "2014-10-01"
+  },
+  {
+    "nct_id": "NCT10000488",
+    "title": "Study of etanercept in Heart Failure",
+    "brief_summary": "This study evaluates etanercept for the treatment of Heart Failure.",
+    "phase": "Phase 2",
+    "overall_status": "Terminated",
+    "start_date": "2020-04-01"
+  },
+  {
+    "nct_id": "NCT10000489",
+    "title": "Study of infliximab in Psoriasis",
+    "brief_summary": "This study evaluates infliximab for the treatment of Psoriasis.",
+    "phase": "Phase 2",
+    "overall_status": "Completed",
+    "start_date": "2012-09-01"
+  },
+  {
+    "nct_id": "NCT10000490",
+    "title": "Study of pembrolizumab in Atrial Fibrillation",
+    "brief_summary": "This study evaluates pembrolizumab for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 1",
+    "overall_status": "Recruiting",
+    "start_date": "2017-12-01"
+  },
+  {
+    "nct_id": "NCT10000491",
+    "title": "Study of sacubitril/valsartan in Heart Failure",
+    "brief_summary": "This study evaluates sacubitril/valsartan for the treatment of Heart Failure.",
+    "phase": "Phase 1",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2018-08-01"
+  },
+  {
+    "nct_id": "NCT10000492",
+    "title": "Study of nivolumab in Non-Small Cell Lung Cancer",
+    "brief_summary": "This study evaluates nivolumab for the treatment of Non-Small Cell Lung Cancer.",
+    "phase": "Phase 2",
+    "overall_status": "Recruiting",
+    "start_date": "2012-09-01"
+  },
+  {
+    "nct_id": "NCT10000493",
+    "title": "Study of denosumab in Osteoporosis",
+    "brief_summary": "This study evaluates denosumab for the treatment of Osteoporosis.",
+    "phase": "Phase 3",
+    "overall_status": "Terminated",
+    "start_date": "2023-02-01"
+  },
+  {
+    "nct_id": "NCT10000494",
+    "title": "Study of empagliflozin in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates empagliflozin for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 4",
+    "overall_status": "Completed",
+    "start_date": "2006-07-01"
+  },
+  {
+    "nct_id": "NCT10000495",
+    "title": "Study of adalimumab in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates adalimumab for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 2",
+    "overall_status": "Recruiting",
+    "start_date": "2015-07-01"
+  },
+  {
+    "nct_id": "NCT10000496",
+    "title": "Study of adalimumab in Atrial Fibrillation",
+    "brief_summary": "This study evaluates adalimumab for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 3",
+    "overall_status": "Terminated",
+    "start_date": "2007-04-01"
+  },
+  {
+    "nct_id": "NCT10000497",
+    "title": "Study of nivolumab in Rheumatoid Arthritis",
+    "brief_summary": "This study evaluates nivolumab for the treatment of Rheumatoid Arthritis.",
+    "phase": "Phase 1",
+    "overall_status": "Active, not recruiting",
+    "start_date": "2019-08-01"
+  },
+  {
+    "nct_id": "NCT10000498",
+    "title": "Study of sacubitril/valsartan in Atrial Fibrillation",
+    "brief_summary": "This study evaluates sacubitril/valsartan for the treatment of Atrial Fibrillation.",
+    "phase": "Phase 4",
+    "overall_status": "Completed",
+    "start_date": "2011-08-01"
+  },
+  {
+    "nct_id": "NCT10000499",
+    "title": "Study of alendronate in Heart Failure",
+    "brief_summary": "This study evaluates alendronate for the treatment of Heart Failure.",
+    "phase": "Phase 4",
+    "overall_status": "Recruiting",
+    "start_date": "2007-03-01"
   }
 ]

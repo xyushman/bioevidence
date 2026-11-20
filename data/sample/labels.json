@@ -1,6 +1,24 @@
 [
   {
-    "set_id": "sample-pembrolizumab-000",
+    "set_id": "sample-farxiga-000",
+    "brand_names": [
+      "Farxiga"
+    ],
+    "generic_names": [
+      "dapagliflozin"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nFarxiga (dapagliflozin) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Farxiga is...",
+      "contraindications": "CONTRAINDICATIONS\nFarxiga is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Farxiga was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-keytruda-001",
     "brand_names": [
       "Keytruda"
     ],
@@ -18,61 +36,115 @@
     }
   },
   {
-    "set_id": "sample-nivolumab-001",
+    "set_id": "sample-remicade-002",
     "brand_names": [
-      "Opdivo"
+      "Remicade"
     ],
     "generic_names": [
-      "nivolumab"
+      "infliximab"
     ],
     "sections": {
-      "indications_and_usage": "INDICATIONS AND USAGE\nOpdivo (nivolumab) is indicated for the treatment of...",
-      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Opdivo is...",
-      "contraindications": "CONTRAINDICATIONS\nOpdivo is contraindicated in patients with...",
+      "indications_and_usage": "INDICATIONS AND USAGE\nRemicade (infliximab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Remicade is...",
+      "contraindications": "CONTRAINDICATIONS\nRemicade is contraindicated in patients with...",
       "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
       "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
       "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
-      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Opdivo was demonstrated in..."
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Remicade was demonstrated in..."
     }
   },
   {
-    "set_id": "sample-adalimumab-002",
+    "set_id": "sample-evenity-003",
     "brand_names": [
-      "Humira"
+      "Evenity"
     ],
     "generic_names": [
-      "adalimumab"
+      "romosozumab"
     ],
     "sections": {
-      "indications_and_usage": "INDICATIONS AND USAGE\nHumira (adalimumab) is indicated for the treatment of...",
-      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Humira is...",
-      "contraindications": "CONTRAINDICATIONS\nHumira is contraindicated in patients with...",
+      "indications_and_usage": "INDICATIONS AND USAGE\nEvenity (romosozumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Evenity is...",
+      "contraindications": "CONTRAINDICATIONS\nEvenity is contraindicated in patients with...",
       "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
       "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
       "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
-      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Humira was demonstrated in..."
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Evenity was demonstrated in..."
     }
   },
   {
-    "set_id": "sample-ustekinumab-003",
+    "set_id": "sample-fosamax-004",
     "brand_names": [
-      "Stelara"
+      "Fosamax"
     ],
     "generic_names": [
-      "ustekinumab"
+      "alendronate"
     ],
     "sections": {
-      "indications_and_usage": "INDICATIONS AND USAGE\nStelara (ustekinumab) is indicated for the treatment of...",
-      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Stelara is...",
-      "contraindications": "CONTRAINDICATIONS\nStelara is contraindicated in patients with...",
+      "indications_and_usage": "INDICATIONS AND USAGE\nFosamax (alendronate) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Fosamax is...",
+      "contraindications": "CONTRAINDICATIONS\nFosamax is contraindicated in patients with...",
       "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
       "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
       "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
-      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Stelara was demonstrated in..."
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Fosamax was demonstrated in..."
     }
   },
   {
-    "set_id": "sample-sacubitril/valsartan-004",
+    "set_id": "sample-remicade-005",
+    "brand_names": [
+      "Remicade"
+    ],
+    "generic_names": [
+      "infliximab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nRemicade (infliximab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Remicade is...",
+      "contraindications": "CONTRAINDICATIONS\nRemicade is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Remicade was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-jardiance-006",
+    "brand_names": [
+      "Jardiance"
+    ],
+    "generic_names": [
+      "empagliflozin"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nJardiance (empagliflozin) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Jardiance is...",
+      "contraindications": "CONTRAINDICATIONS\nJardiance is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Jardiance was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-farxiga-007",
+    "brand_names": [
+      "Farxiga"
+    ],
+    "generic_names": [
+      "dapagliflozin"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nFarxiga (dapagliflozin) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Farxiga is...",
+      "contraindications": "CONTRAINDICATIONS\nFarxiga is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Farxiga was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-entresto-008",
     "brand_names": [
       "Entresto"
     ],
@@ -90,7 +162,97 @@
     }
   },
   {
-    "set_id": "sample-denosumab-005",
+    "set_id": "sample-imfinzi-009",
+    "brand_names": [
+      "Imfinzi"
+    ],
+    "generic_names": [
+      "durvalumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nImfinzi (durvalumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Imfinzi is...",
+      "contraindications": "CONTRAINDICATIONS\nImfinzi is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Imfinzi was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-keytruda-010",
+    "brand_names": [
+      "Keytruda"
+    ],
+    "generic_names": [
+      "pembrolizumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nKeytruda (pembrolizumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Keytruda is...",
+      "contraindications": "CONTRAINDICATIONS\nKeytruda is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Keytruda was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-evenity-011",
+    "brand_names": [
+      "Evenity"
+    ],
+    "generic_names": [
+      "romosozumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nEvenity (romosozumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Evenity is...",
+      "contraindications": "CONTRAINDICATIONS\nEvenity is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Evenity was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-tecentriq-012",
+    "brand_names": [
+      "Tecentriq"
+    ],
+    "generic_names": [
+      "atezolizumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nTecentriq (atezolizumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Tecentriq is...",
+      "contraindications": "CONTRAINDICATIONS\nTecentriq is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Tecentriq was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-enbrel-013",
+    "brand_names": [
+      "Enbrel"
+    ],
+    "generic_names": [
+      "etanercept"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nEnbrel (etanercept) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Enbrel is...",
+      "contraindications": "CONTRAINDICATIONS\nEnbrel is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Enbrel was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-prolia-014",
     "brand_names": [
       "Prolia"
     ],
@@ -105,6 +267,3336 @@
       "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
       "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
       "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Prolia was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-imfinzi-015",
+    "brand_names": [
+      "Imfinzi"
+    ],
+    "generic_names": [
+      "durvalumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nImfinzi (durvalumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Imfinzi is...",
+      "contraindications": "CONTRAINDICATIONS\nImfinzi is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Imfinzi was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-keytruda-016",
+    "brand_names": [
+      "Keytruda"
+    ],
+    "generic_names": [
+      "pembrolizumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nKeytruda (pembrolizumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Keytruda is...",
+      "contraindications": "CONTRAINDICATIONS\nKeytruda is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Keytruda was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-jardiance-017",
+    "brand_names": [
+      "Jardiance"
+    ],
+    "generic_names": [
+      "empagliflozin"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nJardiance (empagliflozin) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Jardiance is...",
+      "contraindications": "CONTRAINDICATIONS\nJardiance is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Jardiance was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-farxiga-018",
+    "brand_names": [
+      "Farxiga"
+    ],
+    "generic_names": [
+      "dapagliflozin"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nFarxiga (dapagliflozin) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Farxiga is...",
+      "contraindications": "CONTRAINDICATIONS\nFarxiga is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Farxiga was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-jardiance-019",
+    "brand_names": [
+      "Jardiance"
+    ],
+    "generic_names": [
+      "empagliflozin"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nJardiance (empagliflozin) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Jardiance is...",
+      "contraindications": "CONTRAINDICATIONS\nJardiance is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Jardiance was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-tecentriq-020",
+    "brand_names": [
+      "Tecentriq"
+    ],
+    "generic_names": [
+      "atezolizumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nTecentriq (atezolizumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Tecentriq is...",
+      "contraindications": "CONTRAINDICATIONS\nTecentriq is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Tecentriq was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-jardiance-021",
+    "brand_names": [
+      "Jardiance"
+    ],
+    "generic_names": [
+      "empagliflozin"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nJardiance (empagliflozin) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Jardiance is...",
+      "contraindications": "CONTRAINDICATIONS\nJardiance is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Jardiance was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-enbrel-022",
+    "brand_names": [
+      "Enbrel"
+    ],
+    "generic_names": [
+      "etanercept"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nEnbrel (etanercept) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Enbrel is...",
+      "contraindications": "CONTRAINDICATIONS\nEnbrel is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Enbrel was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-jardiance-023",
+    "brand_names": [
+      "Jardiance"
+    ],
+    "generic_names": [
+      "empagliflozin"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nJardiance (empagliflozin) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Jardiance is...",
+      "contraindications": "CONTRAINDICATIONS\nJardiance is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Jardiance was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-imfinzi-024",
+    "brand_names": [
+      "Imfinzi"
+    ],
+    "generic_names": [
+      "durvalumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nImfinzi (durvalumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Imfinzi is...",
+      "contraindications": "CONTRAINDICATIONS\nImfinzi is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Imfinzi was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-fosamax-025",
+    "brand_names": [
+      "Fosamax"
+    ],
+    "generic_names": [
+      "alendronate"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nFosamax (alendronate) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Fosamax is...",
+      "contraindications": "CONTRAINDICATIONS\nFosamax is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Fosamax was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-enbrel-026",
+    "brand_names": [
+      "Enbrel"
+    ],
+    "generic_names": [
+      "etanercept"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nEnbrel (etanercept) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Enbrel is...",
+      "contraindications": "CONTRAINDICATIONS\nEnbrel is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Enbrel was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-farxiga-027",
+    "brand_names": [
+      "Farxiga"
+    ],
+    "generic_names": [
+      "dapagliflozin"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nFarxiga (dapagliflozin) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Farxiga is...",
+      "contraindications": "CONTRAINDICATIONS\nFarxiga is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Farxiga was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-enbrel-028",
+    "brand_names": [
+      "Enbrel"
+    ],
+    "generic_names": [
+      "etanercept"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nEnbrel (etanercept) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Enbrel is...",
+      "contraindications": "CONTRAINDICATIONS\nEnbrel is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Enbrel was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-stelara-029",
+    "brand_names": [
+      "Stelara"
+    ],
+    "generic_names": [
+      "ustekinumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nStelara (ustekinumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Stelara is...",
+      "contraindications": "CONTRAINDICATIONS\nStelara is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Stelara was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-prolia-030",
+    "brand_names": [
+      "Prolia"
+    ],
+    "generic_names": [
+      "denosumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nProlia (denosumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Prolia is...",
+      "contraindications": "CONTRAINDICATIONS\nProlia is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Prolia was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-jardiance-031",
+    "brand_names": [
+      "Jardiance"
+    ],
+    "generic_names": [
+      "empagliflozin"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nJardiance (empagliflozin) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Jardiance is...",
+      "contraindications": "CONTRAINDICATIONS\nJardiance is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Jardiance was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-humira-032",
+    "brand_names": [
+      "Humira"
+    ],
+    "generic_names": [
+      "adalimumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nHumira (adalimumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Humira is...",
+      "contraindications": "CONTRAINDICATIONS\nHumira is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Humira was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-tecentriq-033",
+    "brand_names": [
+      "Tecentriq"
+    ],
+    "generic_names": [
+      "atezolizumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nTecentriq (atezolizumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Tecentriq is...",
+      "contraindications": "CONTRAINDICATIONS\nTecentriq is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Tecentriq was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-evenity-034",
+    "brand_names": [
+      "Evenity"
+    ],
+    "generic_names": [
+      "romosozumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nEvenity (romosozumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Evenity is...",
+      "contraindications": "CONTRAINDICATIONS\nEvenity is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Evenity was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-imfinzi-035",
+    "brand_names": [
+      "Imfinzi"
+    ],
+    "generic_names": [
+      "durvalumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nImfinzi (durvalumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Imfinzi is...",
+      "contraindications": "CONTRAINDICATIONS\nImfinzi is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Imfinzi was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-imfinzi-036",
+    "brand_names": [
+      "Imfinzi"
+    ],
+    "generic_names": [
+      "durvalumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nImfinzi (durvalumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Imfinzi is...",
+      "contraindications": "CONTRAINDICATIONS\nImfinzi is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Imfinzi was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-jardiance-037",
+    "brand_names": [
+      "Jardiance"
+    ],
+    "generic_names": [
+      "empagliflozin"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nJardiance (empagliflozin) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Jardiance is...",
+      "contraindications": "CONTRAINDICATIONS\nJardiance is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Jardiance was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-stelara-038",
+    "brand_names": [
+      "Stelara"
+    ],
+    "generic_names": [
+      "ustekinumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nStelara (ustekinumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Stelara is...",
+      "contraindications": "CONTRAINDICATIONS\nStelara is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Stelara was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-remicade-039",
+    "brand_names": [
+      "Remicade"
+    ],
+    "generic_names": [
+      "infliximab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nRemicade (infliximab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Remicade is...",
+      "contraindications": "CONTRAINDICATIONS\nRemicade is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Remicade was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-tecentriq-040",
+    "brand_names": [
+      "Tecentriq"
+    ],
+    "generic_names": [
+      "atezolizumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nTecentriq (atezolizumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Tecentriq is...",
+      "contraindications": "CONTRAINDICATIONS\nTecentriq is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Tecentriq was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-keytruda-041",
+    "brand_names": [
+      "Keytruda"
+    ],
+    "generic_names": [
+      "pembrolizumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nKeytruda (pembrolizumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Keytruda is...",
+      "contraindications": "CONTRAINDICATIONS\nKeytruda is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Keytruda was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-keytruda-042",
+    "brand_names": [
+      "Keytruda"
+    ],
+    "generic_names": [
+      "pembrolizumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nKeytruda (pembrolizumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Keytruda is...",
+      "contraindications": "CONTRAINDICATIONS\nKeytruda is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Keytruda was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-tecentriq-043",
+    "brand_names": [
+      "Tecentriq"
+    ],
+    "generic_names": [
+      "atezolizumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nTecentriq (atezolizumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Tecentriq is...",
+      "contraindications": "CONTRAINDICATIONS\nTecentriq is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Tecentriq was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-imfinzi-044",
+    "brand_names": [
+      "Imfinzi"
+    ],
+    "generic_names": [
+      "durvalumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nImfinzi (durvalumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Imfinzi is...",
+      "contraindications": "CONTRAINDICATIONS\nImfinzi is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Imfinzi was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-keytruda-045",
+    "brand_names": [
+      "Keytruda"
+    ],
+    "generic_names": [
+      "pembrolizumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nKeytruda (pembrolizumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Keytruda is...",
+      "contraindications": "CONTRAINDICATIONS\nKeytruda is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Keytruda was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-humira-046",
+    "brand_names": [
+      "Humira"
+    ],
+    "generic_names": [
+      "adalimumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nHumira (adalimumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Humira is...",
+      "contraindications": "CONTRAINDICATIONS\nHumira is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Humira was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-humira-047",
+    "brand_names": [
+      "Humira"
+    ],
+    "generic_names": [
+      "adalimumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nHumira (adalimumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Humira is...",
+      "contraindications": "CONTRAINDICATIONS\nHumira is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Humira was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-fosamax-048",
+    "brand_names": [
+      "Fosamax"
+    ],
+    "generic_names": [
+      "alendronate"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nFosamax (alendronate) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Fosamax is...",
+      "contraindications": "CONTRAINDICATIONS\nFosamax is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Fosamax was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-tecentriq-049",
+    "brand_names": [
+      "Tecentriq"
+    ],
+    "generic_names": [
+      "atezolizumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nTecentriq (atezolizumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Tecentriq is...",
+      "contraindications": "CONTRAINDICATIONS\nTecentriq is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Tecentriq was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-tecentriq-050",
+    "brand_names": [
+      "Tecentriq"
+    ],
+    "generic_names": [
+      "atezolizumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nTecentriq (atezolizumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Tecentriq is...",
+      "contraindications": "CONTRAINDICATIONS\nTecentriq is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Tecentriq was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-keytruda-051",
+    "brand_names": [
+      "Keytruda"
+    ],
+    "generic_names": [
+      "pembrolizumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nKeytruda (pembrolizumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Keytruda is...",
+      "contraindications": "CONTRAINDICATIONS\nKeytruda is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Keytruda was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-farxiga-052",
+    "brand_names": [
+      "Farxiga"
+    ],
+    "generic_names": [
+      "dapagliflozin"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nFarxiga (dapagliflozin) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Farxiga is...",
+      "contraindications": "CONTRAINDICATIONS\nFarxiga is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Farxiga was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-imfinzi-053",
+    "brand_names": [
+      "Imfinzi"
+    ],
+    "generic_names": [
+      "durvalumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nImfinzi (durvalumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Imfinzi is...",
+      "contraindications": "CONTRAINDICATIONS\nImfinzi is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Imfinzi was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-imfinzi-054",
+    "brand_names": [
+      "Imfinzi"
+    ],
+    "generic_names": [
+      "durvalumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nImfinzi (durvalumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Imfinzi is...",
+      "contraindications": "CONTRAINDICATIONS\nImfinzi is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Imfinzi was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-farxiga-055",
+    "brand_names": [
+      "Farxiga"
+    ],
+    "generic_names": [
+      "dapagliflozin"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nFarxiga (dapagliflozin) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Farxiga is...",
+      "contraindications": "CONTRAINDICATIONS\nFarxiga is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Farxiga was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-evenity-056",
+    "brand_names": [
+      "Evenity"
+    ],
+    "generic_names": [
+      "romosozumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nEvenity (romosozumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Evenity is...",
+      "contraindications": "CONTRAINDICATIONS\nEvenity is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Evenity was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-opdivo-057",
+    "brand_names": [
+      "Opdivo"
+    ],
+    "generic_names": [
+      "nivolumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nOpdivo (nivolumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Opdivo is...",
+      "contraindications": "CONTRAINDICATIONS\nOpdivo is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Opdivo was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-tecentriq-058",
+    "brand_names": [
+      "Tecentriq"
+    ],
+    "generic_names": [
+      "atezolizumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nTecentriq (atezolizumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Tecentriq is...",
+      "contraindications": "CONTRAINDICATIONS\nTecentriq is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Tecentriq was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-entresto-059",
+    "brand_names": [
+      "Entresto"
+    ],
+    "generic_names": [
+      "sacubitril/valsartan"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nEntresto (sacubitril/valsartan) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Entresto is...",
+      "contraindications": "CONTRAINDICATIONS\nEntresto is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Entresto was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-enbrel-060",
+    "brand_names": [
+      "Enbrel"
+    ],
+    "generic_names": [
+      "etanercept"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nEnbrel (etanercept) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Enbrel is...",
+      "contraindications": "CONTRAINDICATIONS\nEnbrel is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Enbrel was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-remicade-061",
+    "brand_names": [
+      "Remicade"
+    ],
+    "generic_names": [
+      "infliximab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nRemicade (infliximab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Remicade is...",
+      "contraindications": "CONTRAINDICATIONS\nRemicade is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Remicade was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-evenity-062",
+    "brand_names": [
+      "Evenity"
+    ],
+    "generic_names": [
+      "romosozumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nEvenity (romosozumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Evenity is...",
+      "contraindications": "CONTRAINDICATIONS\nEvenity is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Evenity was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-humira-063",
+    "brand_names": [
+      "Humira"
+    ],
+    "generic_names": [
+      "adalimumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nHumira (adalimumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Humira is...",
+      "contraindications": "CONTRAINDICATIONS\nHumira is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Humira was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-imfinzi-064",
+    "brand_names": [
+      "Imfinzi"
+    ],
+    "generic_names": [
+      "durvalumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nImfinzi (durvalumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Imfinzi is...",
+      "contraindications": "CONTRAINDICATIONS\nImfinzi is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Imfinzi was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-evenity-065",
+    "brand_names": [
+      "Evenity"
+    ],
+    "generic_names": [
+      "romosozumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nEvenity (romosozumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Evenity is...",
+      "contraindications": "CONTRAINDICATIONS\nEvenity is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Evenity was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-fosamax-066",
+    "brand_names": [
+      "Fosamax"
+    ],
+    "generic_names": [
+      "alendronate"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nFosamax (alendronate) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Fosamax is...",
+      "contraindications": "CONTRAINDICATIONS\nFosamax is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Fosamax was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-stelara-067",
+    "brand_names": [
+      "Stelara"
+    ],
+    "generic_names": [
+      "ustekinumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nStelara (ustekinumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Stelara is...",
+      "contraindications": "CONTRAINDICATIONS\nStelara is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Stelara was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-opdivo-068",
+    "brand_names": [
+      "Opdivo"
+    ],
+    "generic_names": [
+      "nivolumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nOpdivo (nivolumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Opdivo is...",
+      "contraindications": "CONTRAINDICATIONS\nOpdivo is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Opdivo was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-jardiance-069",
+    "brand_names": [
+      "Jardiance"
+    ],
+    "generic_names": [
+      "empagliflozin"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nJardiance (empagliflozin) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Jardiance is...",
+      "contraindications": "CONTRAINDICATIONS\nJardiance is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Jardiance was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-entresto-070",
+    "brand_names": [
+      "Entresto"
+    ],
+    "generic_names": [
+      "sacubitril/valsartan"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nEntresto (sacubitril/valsartan) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Entresto is...",
+      "contraindications": "CONTRAINDICATIONS\nEntresto is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Entresto was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-evenity-071",
+    "brand_names": [
+      "Evenity"
+    ],
+    "generic_names": [
+      "romosozumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nEvenity (romosozumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Evenity is...",
+      "contraindications": "CONTRAINDICATIONS\nEvenity is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Evenity was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-stelara-072",
+    "brand_names": [
+      "Stelara"
+    ],
+    "generic_names": [
+      "ustekinumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nStelara (ustekinumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Stelara is...",
+      "contraindications": "CONTRAINDICATIONS\nStelara is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Stelara was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-tecentriq-073",
+    "brand_names": [
+      "Tecentriq"
+    ],
+    "generic_names": [
+      "atezolizumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nTecentriq (atezolizumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Tecentriq is...",
+      "contraindications": "CONTRAINDICATIONS\nTecentriq is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Tecentriq was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-enbrel-074",
+    "brand_names": [
+      "Enbrel"
+    ],
+    "generic_names": [
+      "etanercept"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nEnbrel (etanercept) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Enbrel is...",
+      "contraindications": "CONTRAINDICATIONS\nEnbrel is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Enbrel was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-stelara-075",
+    "brand_names": [
+      "Stelara"
+    ],
+    "generic_names": [
+      "ustekinumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nStelara (ustekinumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Stelara is...",
+      "contraindications": "CONTRAINDICATIONS\nStelara is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Stelara was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-humira-076",
+    "brand_names": [
+      "Humira"
+    ],
+    "generic_names": [
+      "adalimumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nHumira (adalimumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Humira is...",
+      "contraindications": "CONTRAINDICATIONS\nHumira is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Humira was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-evenity-077",
+    "brand_names": [
+      "Evenity"
+    ],
+    "generic_names": [
+      "romosozumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nEvenity (romosozumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Evenity is...",
+      "contraindications": "CONTRAINDICATIONS\nEvenity is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Evenity was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-imfinzi-078",
+    "brand_names": [
+      "Imfinzi"
+    ],
+    "generic_names": [
+      "durvalumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nImfinzi (durvalumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Imfinzi is...",
+      "contraindications": "CONTRAINDICATIONS\nImfinzi is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Imfinzi was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-fosamax-079",
+    "brand_names": [
+      "Fosamax"
+    ],
+    "generic_names": [
+      "alendronate"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nFosamax (alendronate) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Fosamax is...",
+      "contraindications": "CONTRAINDICATIONS\nFosamax is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Fosamax was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-imfinzi-080",
+    "brand_names": [
+      "Imfinzi"
+    ],
+    "generic_names": [
+      "durvalumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nImfinzi (durvalumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Imfinzi is...",
+      "contraindications": "CONTRAINDICATIONS\nImfinzi is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Imfinzi was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-remicade-081",
+    "brand_names": [
+      "Remicade"
+    ],
+    "generic_names": [
+      "infliximab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nRemicade (infliximab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Remicade is...",
+      "contraindications": "CONTRAINDICATIONS\nRemicade is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Remicade was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-humira-082",
+    "brand_names": [
+      "Humira"
+    ],
+    "generic_names": [
+      "adalimumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nHumira (adalimumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Humira is...",
+      "contraindications": "CONTRAINDICATIONS\nHumira is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Humira was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-tecentriq-083",
+    "brand_names": [
+      "Tecentriq"
+    ],
+    "generic_names": [
+      "atezolizumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nTecentriq (atezolizumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Tecentriq is...",
+      "contraindications": "CONTRAINDICATIONS\nTecentriq is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Tecentriq was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-stelara-084",
+    "brand_names": [
+      "Stelara"
+    ],
+    "generic_names": [
+      "ustekinumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nStelara (ustekinumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Stelara is...",
+      "contraindications": "CONTRAINDICATIONS\nStelara is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Stelara was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-imfinzi-085",
+    "brand_names": [
+      "Imfinzi"
+    ],
+    "generic_names": [
+      "durvalumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nImfinzi (durvalumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Imfinzi is...",
+      "contraindications": "CONTRAINDICATIONS\nImfinzi is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Imfinzi was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-entresto-086",
+    "brand_names": [
+      "Entresto"
+    ],
+    "generic_names": [
+      "sacubitril/valsartan"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nEntresto (sacubitril/valsartan) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Entresto is...",
+      "contraindications": "CONTRAINDICATIONS\nEntresto is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Entresto was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-stelara-087",
+    "brand_names": [
+      "Stelara"
+    ],
+    "generic_names": [
+      "ustekinumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nStelara (ustekinumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Stelara is...",
+      "contraindications": "CONTRAINDICATIONS\nStelara is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Stelara was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-remicade-088",
+    "brand_names": [
+      "Remicade"
+    ],
+    "generic_names": [
+      "infliximab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nRemicade (infliximab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Remicade is...",
+      "contraindications": "CONTRAINDICATIONS\nRemicade is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Remicade was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-enbrel-089",
+    "brand_names": [
+      "Enbrel"
+    ],
+    "generic_names": [
+      "etanercept"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nEnbrel (etanercept) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Enbrel is...",
+      "contraindications": "CONTRAINDICATIONS\nEnbrel is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Enbrel was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-keytruda-090",
+    "brand_names": [
+      "Keytruda"
+    ],
+    "generic_names": [
+      "pembrolizumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nKeytruda (pembrolizumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Keytruda is...",
+      "contraindications": "CONTRAINDICATIONS\nKeytruda is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Keytruda was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-imfinzi-091",
+    "brand_names": [
+      "Imfinzi"
+    ],
+    "generic_names": [
+      "durvalumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nImfinzi (durvalumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Imfinzi is...",
+      "contraindications": "CONTRAINDICATIONS\nImfinzi is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Imfinzi was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-opdivo-092",
+    "brand_names": [
+      "Opdivo"
+    ],
+    "generic_names": [
+      "nivolumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nOpdivo (nivolumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Opdivo is...",
+      "contraindications": "CONTRAINDICATIONS\nOpdivo is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Opdivo was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-humira-093",
+    "brand_names": [
+      "Humira"
+    ],
+    "generic_names": [
+      "adalimumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nHumira (adalimumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Humira is...",
+      "contraindications": "CONTRAINDICATIONS\nHumira is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Humira was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-entresto-094",
+    "brand_names": [
+      "Entresto"
+    ],
+    "generic_names": [
+      "sacubitril/valsartan"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nEntresto (sacubitril/valsartan) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Entresto is...",
+      "contraindications": "CONTRAINDICATIONS\nEntresto is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Entresto was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-imfinzi-095",
+    "brand_names": [
+      "Imfinzi"
+    ],
+    "generic_names": [
+      "durvalumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nImfinzi (durvalumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Imfinzi is...",
+      "contraindications": "CONTRAINDICATIONS\nImfinzi is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Imfinzi was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-opdivo-096",
+    "brand_names": [
+      "Opdivo"
+    ],
+    "generic_names": [
+      "nivolumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nOpdivo (nivolumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Opdivo is...",
+      "contraindications": "CONTRAINDICATIONS\nOpdivo is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Opdivo was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-entresto-097",
+    "brand_names": [
+      "Entresto"
+    ],
+    "generic_names": [
+      "sacubitril/valsartan"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nEntresto (sacubitril/valsartan) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Entresto is...",
+      "contraindications": "CONTRAINDICATIONS\nEntresto is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Entresto was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-imfinzi-098",
+    "brand_names": [
+      "Imfinzi"
+    ],
+    "generic_names": [
+      "durvalumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nImfinzi (durvalumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Imfinzi is...",
+      "contraindications": "CONTRAINDICATIONS\nImfinzi is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Imfinzi was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-humira-099",
+    "brand_names": [
+      "Humira"
+    ],
+    "generic_names": [
+      "adalimumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nHumira (adalimumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Humira is...",
+      "contraindications": "CONTRAINDICATIONS\nHumira is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Humira was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-prolia-100",
+    "brand_names": [
+      "Prolia"
+    ],
+    "generic_names": [
+      "denosumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nProlia (denosumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Prolia is...",
+      "contraindications": "CONTRAINDICATIONS\nProlia is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Prolia was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-prolia-101",
+    "brand_names": [
+      "Prolia"
+    ],
+    "generic_names": [
+      "denosumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nProlia (denosumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Prolia is...",
+      "contraindications": "CONTRAINDICATIONS\nProlia is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Prolia was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-keytruda-102",
+    "brand_names": [
+      "Keytruda"
+    ],
+    "generic_names": [
+      "pembrolizumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nKeytruda (pembrolizumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Keytruda is...",
+      "contraindications": "CONTRAINDICATIONS\nKeytruda is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Keytruda was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-fosamax-103",
+    "brand_names": [
+      "Fosamax"
+    ],
+    "generic_names": [
+      "alendronate"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nFosamax (alendronate) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Fosamax is...",
+      "contraindications": "CONTRAINDICATIONS\nFosamax is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Fosamax was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-remicade-104",
+    "brand_names": [
+      "Remicade"
+    ],
+    "generic_names": [
+      "infliximab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nRemicade (infliximab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Remicade is...",
+      "contraindications": "CONTRAINDICATIONS\nRemicade is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Remicade was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-farxiga-105",
+    "brand_names": [
+      "Farxiga"
+    ],
+    "generic_names": [
+      "dapagliflozin"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nFarxiga (dapagliflozin) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Farxiga is...",
+      "contraindications": "CONTRAINDICATIONS\nFarxiga is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Farxiga was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-fosamax-106",
+    "brand_names": [
+      "Fosamax"
+    ],
+    "generic_names": [
+      "alendronate"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nFosamax (alendronate) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Fosamax is...",
+      "contraindications": "CONTRAINDICATIONS\nFosamax is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Fosamax was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-imfinzi-107",
+    "brand_names": [
+      "Imfinzi"
+    ],
+    "generic_names": [
+      "durvalumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nImfinzi (durvalumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Imfinzi is...",
+      "contraindications": "CONTRAINDICATIONS\nImfinzi is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Imfinzi was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-imfinzi-108",
+    "brand_names": [
+      "Imfinzi"
+    ],
+    "generic_names": [
+      "durvalumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nImfinzi (durvalumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Imfinzi is...",
+      "contraindications": "CONTRAINDICATIONS\nImfinzi is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Imfinzi was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-evenity-109",
+    "brand_names": [
+      "Evenity"
+    ],
+    "generic_names": [
+      "romosozumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nEvenity (romosozumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Evenity is...",
+      "contraindications": "CONTRAINDICATIONS\nEvenity is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Evenity was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-prolia-110",
+    "brand_names": [
+      "Prolia"
+    ],
+    "generic_names": [
+      "denosumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nProlia (denosumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Prolia is...",
+      "contraindications": "CONTRAINDICATIONS\nProlia is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Prolia was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-evenity-111",
+    "brand_names": [
+      "Evenity"
+    ],
+    "generic_names": [
+      "romosozumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nEvenity (romosozumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Evenity is...",
+      "contraindications": "CONTRAINDICATIONS\nEvenity is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Evenity was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-fosamax-112",
+    "brand_names": [
+      "Fosamax"
+    ],
+    "generic_names": [
+      "alendronate"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nFosamax (alendronate) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Fosamax is...",
+      "contraindications": "CONTRAINDICATIONS\nFosamax is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Fosamax was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-evenity-113",
+    "brand_names": [
+      "Evenity"
+    ],
+    "generic_names": [
+      "romosozumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nEvenity (romosozumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Evenity is...",
+      "contraindications": "CONTRAINDICATIONS\nEvenity is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Evenity was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-stelara-114",
+    "brand_names": [
+      "Stelara"
+    ],
+    "generic_names": [
+      "ustekinumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nStelara (ustekinumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Stelara is...",
+      "contraindications": "CONTRAINDICATIONS\nStelara is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Stelara was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-keytruda-115",
+    "brand_names": [
+      "Keytruda"
+    ],
+    "generic_names": [
+      "pembrolizumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nKeytruda (pembrolizumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Keytruda is...",
+      "contraindications": "CONTRAINDICATIONS\nKeytruda is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Keytruda was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-jardiance-116",
+    "brand_names": [
+      "Jardiance"
+    ],
+    "generic_names": [
+      "empagliflozin"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nJardiance (empagliflozin) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Jardiance is...",
+      "contraindications": "CONTRAINDICATIONS\nJardiance is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Jardiance was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-prolia-117",
+    "brand_names": [
+      "Prolia"
+    ],
+    "generic_names": [
+      "denosumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nProlia (denosumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Prolia is...",
+      "contraindications": "CONTRAINDICATIONS\nProlia is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Prolia was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-evenity-118",
+    "brand_names": [
+      "Evenity"
+    ],
+    "generic_names": [
+      "romosozumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nEvenity (romosozumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Evenity is...",
+      "contraindications": "CONTRAINDICATIONS\nEvenity is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Evenity was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-imfinzi-119",
+    "brand_names": [
+      "Imfinzi"
+    ],
+    "generic_names": [
+      "durvalumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nImfinzi (durvalumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Imfinzi is...",
+      "contraindications": "CONTRAINDICATIONS\nImfinzi is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Imfinzi was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-farxiga-120",
+    "brand_names": [
+      "Farxiga"
+    ],
+    "generic_names": [
+      "dapagliflozin"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nFarxiga (dapagliflozin) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Farxiga is...",
+      "contraindications": "CONTRAINDICATIONS\nFarxiga is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Farxiga was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-entresto-121",
+    "brand_names": [
+      "Entresto"
+    ],
+    "generic_names": [
+      "sacubitril/valsartan"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nEntresto (sacubitril/valsartan) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Entresto is...",
+      "contraindications": "CONTRAINDICATIONS\nEntresto is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Entresto was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-jardiance-122",
+    "brand_names": [
+      "Jardiance"
+    ],
+    "generic_names": [
+      "empagliflozin"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nJardiance (empagliflozin) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Jardiance is...",
+      "contraindications": "CONTRAINDICATIONS\nJardiance is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Jardiance was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-evenity-123",
+    "brand_names": [
+      "Evenity"
+    ],
+    "generic_names": [
+      "romosozumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nEvenity (romosozumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Evenity is...",
+      "contraindications": "CONTRAINDICATIONS\nEvenity is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Evenity was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-tecentriq-124",
+    "brand_names": [
+      "Tecentriq"
+    ],
+    "generic_names": [
+      "atezolizumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nTecentriq (atezolizumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Tecentriq is...",
+      "contraindications": "CONTRAINDICATIONS\nTecentriq is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Tecentriq was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-farxiga-125",
+    "brand_names": [
+      "Farxiga"
+    ],
+    "generic_names": [
+      "dapagliflozin"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nFarxiga (dapagliflozin) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Farxiga is...",
+      "contraindications": "CONTRAINDICATIONS\nFarxiga is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Farxiga was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-imfinzi-126",
+    "brand_names": [
+      "Imfinzi"
+    ],
+    "generic_names": [
+      "durvalumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nImfinzi (durvalumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Imfinzi is...",
+      "contraindications": "CONTRAINDICATIONS\nImfinzi is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Imfinzi was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-entresto-127",
+    "brand_names": [
+      "Entresto"
+    ],
+    "generic_names": [
+      "sacubitril/valsartan"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nEntresto (sacubitril/valsartan) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Entresto is...",
+      "contraindications": "CONTRAINDICATIONS\nEntresto is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Entresto was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-stelara-128",
+    "brand_names": [
+      "Stelara"
+    ],
+    "generic_names": [
+      "ustekinumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nStelara (ustekinumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Stelara is...",
+      "contraindications": "CONTRAINDICATIONS\nStelara is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Stelara was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-jardiance-129",
+    "brand_names": [
+      "Jardiance"
+    ],
+    "generic_names": [
+      "empagliflozin"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nJardiance (empagliflozin) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Jardiance is...",
+      "contraindications": "CONTRAINDICATIONS\nJardiance is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Jardiance was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-humira-130",
+    "brand_names": [
+      "Humira"
+    ],
+    "generic_names": [
+      "adalimumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nHumira (adalimumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Humira is...",
+      "contraindications": "CONTRAINDICATIONS\nHumira is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Humira was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-opdivo-131",
+    "brand_names": [
+      "Opdivo"
+    ],
+    "generic_names": [
+      "nivolumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nOpdivo (nivolumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Opdivo is...",
+      "contraindications": "CONTRAINDICATIONS\nOpdivo is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Opdivo was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-keytruda-132",
+    "brand_names": [
+      "Keytruda"
+    ],
+    "generic_names": [
+      "pembrolizumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nKeytruda (pembrolizumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Keytruda is...",
+      "contraindications": "CONTRAINDICATIONS\nKeytruda is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Keytruda was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-tecentriq-133",
+    "brand_names": [
+      "Tecentriq"
+    ],
+    "generic_names": [
+      "atezolizumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nTecentriq (atezolizumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Tecentriq is...",
+      "contraindications": "CONTRAINDICATIONS\nTecentriq is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Tecentriq was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-remicade-134",
+    "brand_names": [
+      "Remicade"
+    ],
+    "generic_names": [
+      "infliximab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nRemicade (infliximab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Remicade is...",
+      "contraindications": "CONTRAINDICATIONS\nRemicade is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Remicade was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-imfinzi-135",
+    "brand_names": [
+      "Imfinzi"
+    ],
+    "generic_names": [
+      "durvalumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nImfinzi (durvalumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Imfinzi is...",
+      "contraindications": "CONTRAINDICATIONS\nImfinzi is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Imfinzi was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-entresto-136",
+    "brand_names": [
+      "Entresto"
+    ],
+    "generic_names": [
+      "sacubitril/valsartan"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nEntresto (sacubitril/valsartan) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Entresto is...",
+      "contraindications": "CONTRAINDICATIONS\nEntresto is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Entresto was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-keytruda-137",
+    "brand_names": [
+      "Keytruda"
+    ],
+    "generic_names": [
+      "pembrolizumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nKeytruda (pembrolizumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Keytruda is...",
+      "contraindications": "CONTRAINDICATIONS\nKeytruda is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Keytruda was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-keytruda-138",
+    "brand_names": [
+      "Keytruda"
+    ],
+    "generic_names": [
+      "pembrolizumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nKeytruda (pembrolizumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Keytruda is...",
+      "contraindications": "CONTRAINDICATIONS\nKeytruda is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Keytruda was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-fosamax-139",
+    "brand_names": [
+      "Fosamax"
+    ],
+    "generic_names": [
+      "alendronate"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nFosamax (alendronate) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Fosamax is...",
+      "contraindications": "CONTRAINDICATIONS\nFosamax is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Fosamax was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-tecentriq-140",
+    "brand_names": [
+      "Tecentriq"
+    ],
+    "generic_names": [
+      "atezolizumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nTecentriq (atezolizumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Tecentriq is...",
+      "contraindications": "CONTRAINDICATIONS\nTecentriq is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Tecentriq was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-entresto-141",
+    "brand_names": [
+      "Entresto"
+    ],
+    "generic_names": [
+      "sacubitril/valsartan"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nEntresto (sacubitril/valsartan) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Entresto is...",
+      "contraindications": "CONTRAINDICATIONS\nEntresto is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Entresto was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-prolia-142",
+    "brand_names": [
+      "Prolia"
+    ],
+    "generic_names": [
+      "denosumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nProlia (denosumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Prolia is...",
+      "contraindications": "CONTRAINDICATIONS\nProlia is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Prolia was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-fosamax-143",
+    "brand_names": [
+      "Fosamax"
+    ],
+    "generic_names": [
+      "alendronate"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nFosamax (alendronate) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Fosamax is...",
+      "contraindications": "CONTRAINDICATIONS\nFosamax is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Fosamax was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-fosamax-144",
+    "brand_names": [
+      "Fosamax"
+    ],
+    "generic_names": [
+      "alendronate"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nFosamax (alendronate) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Fosamax is...",
+      "contraindications": "CONTRAINDICATIONS\nFosamax is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Fosamax was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-remicade-145",
+    "brand_names": [
+      "Remicade"
+    ],
+    "generic_names": [
+      "infliximab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nRemicade (infliximab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Remicade is...",
+      "contraindications": "CONTRAINDICATIONS\nRemicade is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Remicade was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-jardiance-146",
+    "brand_names": [
+      "Jardiance"
+    ],
+    "generic_names": [
+      "empagliflozin"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nJardiance (empagliflozin) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Jardiance is...",
+      "contraindications": "CONTRAINDICATIONS\nJardiance is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Jardiance was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-imfinzi-147",
+    "brand_names": [
+      "Imfinzi"
+    ],
+    "generic_names": [
+      "durvalumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nImfinzi (durvalumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Imfinzi is...",
+      "contraindications": "CONTRAINDICATIONS\nImfinzi is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Imfinzi was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-farxiga-148",
+    "brand_names": [
+      "Farxiga"
+    ],
+    "generic_names": [
+      "dapagliflozin"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nFarxiga (dapagliflozin) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Farxiga is...",
+      "contraindications": "CONTRAINDICATIONS\nFarxiga is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Farxiga was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-imfinzi-149",
+    "brand_names": [
+      "Imfinzi"
+    ],
+    "generic_names": [
+      "durvalumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nImfinzi (durvalumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Imfinzi is...",
+      "contraindications": "CONTRAINDICATIONS\nImfinzi is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Imfinzi was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-stelara-150",
+    "brand_names": [
+      "Stelara"
+    ],
+    "generic_names": [
+      "ustekinumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nStelara (ustekinumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Stelara is...",
+      "contraindications": "CONTRAINDICATIONS\nStelara is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Stelara was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-jardiance-151",
+    "brand_names": [
+      "Jardiance"
+    ],
+    "generic_names": [
+      "empagliflozin"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nJardiance (empagliflozin) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Jardiance is...",
+      "contraindications": "CONTRAINDICATIONS\nJardiance is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Jardiance was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-enbrel-152",
+    "brand_names": [
+      "Enbrel"
+    ],
+    "generic_names": [
+      "etanercept"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nEnbrel (etanercept) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Enbrel is...",
+      "contraindications": "CONTRAINDICATIONS\nEnbrel is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Enbrel was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-stelara-153",
+    "brand_names": [
+      "Stelara"
+    ],
+    "generic_names": [
+      "ustekinumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nStelara (ustekinumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Stelara is...",
+      "contraindications": "CONTRAINDICATIONS\nStelara is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Stelara was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-opdivo-154",
+    "brand_names": [
+      "Opdivo"
+    ],
+    "generic_names": [
+      "nivolumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nOpdivo (nivolumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Opdivo is...",
+      "contraindications": "CONTRAINDICATIONS\nOpdivo is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Opdivo was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-stelara-155",
+    "brand_names": [
+      "Stelara"
+    ],
+    "generic_names": [
+      "ustekinumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nStelara (ustekinumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Stelara is...",
+      "contraindications": "CONTRAINDICATIONS\nStelara is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Stelara was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-fosamax-156",
+    "brand_names": [
+      "Fosamax"
+    ],
+    "generic_names": [
+      "alendronate"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nFosamax (alendronate) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Fosamax is...",
+      "contraindications": "CONTRAINDICATIONS\nFosamax is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Fosamax was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-jardiance-157",
+    "brand_names": [
+      "Jardiance"
+    ],
+    "generic_names": [
+      "empagliflozin"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nJardiance (empagliflozin) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Jardiance is...",
+      "contraindications": "CONTRAINDICATIONS\nJardiance is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Jardiance was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-imfinzi-158",
+    "brand_names": [
+      "Imfinzi"
+    ],
+    "generic_names": [
+      "durvalumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nImfinzi (durvalumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Imfinzi is...",
+      "contraindications": "CONTRAINDICATIONS\nImfinzi is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Imfinzi was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-prolia-159",
+    "brand_names": [
+      "Prolia"
+    ],
+    "generic_names": [
+      "denosumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nProlia (denosumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Prolia is...",
+      "contraindications": "CONTRAINDICATIONS\nProlia is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Prolia was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-remicade-160",
+    "brand_names": [
+      "Remicade"
+    ],
+    "generic_names": [
+      "infliximab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nRemicade (infliximab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Remicade is...",
+      "contraindications": "CONTRAINDICATIONS\nRemicade is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Remicade was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-jardiance-161",
+    "brand_names": [
+      "Jardiance"
+    ],
+    "generic_names": [
+      "empagliflozin"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nJardiance (empagliflozin) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Jardiance is...",
+      "contraindications": "CONTRAINDICATIONS\nJardiance is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Jardiance was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-prolia-162",
+    "brand_names": [
+      "Prolia"
+    ],
+    "generic_names": [
+      "denosumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nProlia (denosumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Prolia is...",
+      "contraindications": "CONTRAINDICATIONS\nProlia is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Prolia was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-fosamax-163",
+    "brand_names": [
+      "Fosamax"
+    ],
+    "generic_names": [
+      "alendronate"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nFosamax (alendronate) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Fosamax is...",
+      "contraindications": "CONTRAINDICATIONS\nFosamax is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Fosamax was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-farxiga-164",
+    "brand_names": [
+      "Farxiga"
+    ],
+    "generic_names": [
+      "dapagliflozin"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nFarxiga (dapagliflozin) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Farxiga is...",
+      "contraindications": "CONTRAINDICATIONS\nFarxiga is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Farxiga was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-farxiga-165",
+    "brand_names": [
+      "Farxiga"
+    ],
+    "generic_names": [
+      "dapagliflozin"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nFarxiga (dapagliflozin) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Farxiga is...",
+      "contraindications": "CONTRAINDICATIONS\nFarxiga is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Farxiga was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-prolia-166",
+    "brand_names": [
+      "Prolia"
+    ],
+    "generic_names": [
+      "denosumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nProlia (denosumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Prolia is...",
+      "contraindications": "CONTRAINDICATIONS\nProlia is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Prolia was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-remicade-167",
+    "brand_names": [
+      "Remicade"
+    ],
+    "generic_names": [
+      "infliximab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nRemicade (infliximab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Remicade is...",
+      "contraindications": "CONTRAINDICATIONS\nRemicade is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Remicade was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-enbrel-168",
+    "brand_names": [
+      "Enbrel"
+    ],
+    "generic_names": [
+      "etanercept"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nEnbrel (etanercept) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Enbrel is...",
+      "contraindications": "CONTRAINDICATIONS\nEnbrel is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Enbrel was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-entresto-169",
+    "brand_names": [
+      "Entresto"
+    ],
+    "generic_names": [
+      "sacubitril/valsartan"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nEntresto (sacubitril/valsartan) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Entresto is...",
+      "contraindications": "CONTRAINDICATIONS\nEntresto is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Entresto was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-stelara-170",
+    "brand_names": [
+      "Stelara"
+    ],
+    "generic_names": [
+      "ustekinumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nStelara (ustekinumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Stelara is...",
+      "contraindications": "CONTRAINDICATIONS\nStelara is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Stelara was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-imfinzi-171",
+    "brand_names": [
+      "Imfinzi"
+    ],
+    "generic_names": [
+      "durvalumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nImfinzi (durvalumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Imfinzi is...",
+      "contraindications": "CONTRAINDICATIONS\nImfinzi is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Imfinzi was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-stelara-172",
+    "brand_names": [
+      "Stelara"
+    ],
+    "generic_names": [
+      "ustekinumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nStelara (ustekinumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Stelara is...",
+      "contraindications": "CONTRAINDICATIONS\nStelara is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Stelara was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-farxiga-173",
+    "brand_names": [
+      "Farxiga"
+    ],
+    "generic_names": [
+      "dapagliflozin"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nFarxiga (dapagliflozin) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Farxiga is...",
+      "contraindications": "CONTRAINDICATIONS\nFarxiga is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Farxiga was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-enbrel-174",
+    "brand_names": [
+      "Enbrel"
+    ],
+    "generic_names": [
+      "etanercept"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nEnbrel (etanercept) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Enbrel is...",
+      "contraindications": "CONTRAINDICATIONS\nEnbrel is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Enbrel was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-remicade-175",
+    "brand_names": [
+      "Remicade"
+    ],
+    "generic_names": [
+      "infliximab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nRemicade (infliximab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Remicade is...",
+      "contraindications": "CONTRAINDICATIONS\nRemicade is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Remicade was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-humira-176",
+    "brand_names": [
+      "Humira"
+    ],
+    "generic_names": [
+      "adalimumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nHumira (adalimumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Humira is...",
+      "contraindications": "CONTRAINDICATIONS\nHumira is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Humira was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-tecentriq-177",
+    "brand_names": [
+      "Tecentriq"
+    ],
+    "generic_names": [
+      "atezolizumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nTecentriq (atezolizumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Tecentriq is...",
+      "contraindications": "CONTRAINDICATIONS\nTecentriq is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Tecentriq was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-prolia-178",
+    "brand_names": [
+      "Prolia"
+    ],
+    "generic_names": [
+      "denosumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nProlia (denosumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Prolia is...",
+      "contraindications": "CONTRAINDICATIONS\nProlia is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Prolia was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-stelara-179",
+    "brand_names": [
+      "Stelara"
+    ],
+    "generic_names": [
+      "ustekinumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nStelara (ustekinumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Stelara is...",
+      "contraindications": "CONTRAINDICATIONS\nStelara is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Stelara was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-entresto-180",
+    "brand_names": [
+      "Entresto"
+    ],
+    "generic_names": [
+      "sacubitril/valsartan"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nEntresto (sacubitril/valsartan) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Entresto is...",
+      "contraindications": "CONTRAINDICATIONS\nEntresto is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Entresto was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-stelara-181",
+    "brand_names": [
+      "Stelara"
+    ],
+    "generic_names": [
+      "ustekinumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nStelara (ustekinumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Stelara is...",
+      "contraindications": "CONTRAINDICATIONS\nStelara is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Stelara was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-fosamax-182",
+    "brand_names": [
+      "Fosamax"
+    ],
+    "generic_names": [
+      "alendronate"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nFosamax (alendronate) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Fosamax is...",
+      "contraindications": "CONTRAINDICATIONS\nFosamax is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Fosamax was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-tecentriq-183",
+    "brand_names": [
+      "Tecentriq"
+    ],
+    "generic_names": [
+      "atezolizumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nTecentriq (atezolizumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Tecentriq is...",
+      "contraindications": "CONTRAINDICATIONS\nTecentriq is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Tecentriq was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-opdivo-184",
+    "brand_names": [
+      "Opdivo"
+    ],
+    "generic_names": [
+      "nivolumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nOpdivo (nivolumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Opdivo is...",
+      "contraindications": "CONTRAINDICATIONS\nOpdivo is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Opdivo was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-opdivo-185",
+    "brand_names": [
+      "Opdivo"
+    ],
+    "generic_names": [
+      "nivolumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nOpdivo (nivolumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Opdivo is...",
+      "contraindications": "CONTRAINDICATIONS\nOpdivo is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Opdivo was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-remicade-186",
+    "brand_names": [
+      "Remicade"
+    ],
+    "generic_names": [
+      "infliximab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nRemicade (infliximab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Remicade is...",
+      "contraindications": "CONTRAINDICATIONS\nRemicade is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Remicade was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-farxiga-187",
+    "brand_names": [
+      "Farxiga"
+    ],
+    "generic_names": [
+      "dapagliflozin"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nFarxiga (dapagliflozin) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Farxiga is...",
+      "contraindications": "CONTRAINDICATIONS\nFarxiga is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Farxiga was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-humira-188",
+    "brand_names": [
+      "Humira"
+    ],
+    "generic_names": [
+      "adalimumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nHumira (adalimumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Humira is...",
+      "contraindications": "CONTRAINDICATIONS\nHumira is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Humira was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-enbrel-189",
+    "brand_names": [
+      "Enbrel"
+    ],
+    "generic_names": [
+      "etanercept"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nEnbrel (etanercept) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Enbrel is...",
+      "contraindications": "CONTRAINDICATIONS\nEnbrel is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Enbrel was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-prolia-190",
+    "brand_names": [
+      "Prolia"
+    ],
+    "generic_names": [
+      "denosumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nProlia (denosumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Prolia is...",
+      "contraindications": "CONTRAINDICATIONS\nProlia is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Prolia was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-entresto-191",
+    "brand_names": [
+      "Entresto"
+    ],
+    "generic_names": [
+      "sacubitril/valsartan"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nEntresto (sacubitril/valsartan) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Entresto is...",
+      "contraindications": "CONTRAINDICATIONS\nEntresto is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Entresto was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-prolia-192",
+    "brand_names": [
+      "Prolia"
+    ],
+    "generic_names": [
+      "denosumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nProlia (denosumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Prolia is...",
+      "contraindications": "CONTRAINDICATIONS\nProlia is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Prolia was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-evenity-193",
+    "brand_names": [
+      "Evenity"
+    ],
+    "generic_names": [
+      "romosozumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nEvenity (romosozumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Evenity is...",
+      "contraindications": "CONTRAINDICATIONS\nEvenity is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Evenity was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-farxiga-194",
+    "brand_names": [
+      "Farxiga"
+    ],
+    "generic_names": [
+      "dapagliflozin"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nFarxiga (dapagliflozin) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Farxiga is...",
+      "contraindications": "CONTRAINDICATIONS\nFarxiga is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Farxiga was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-prolia-195",
+    "brand_names": [
+      "Prolia"
+    ],
+    "generic_names": [
+      "denosumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nProlia (denosumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Prolia is...",
+      "contraindications": "CONTRAINDICATIONS\nProlia is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Prolia was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-keytruda-196",
+    "brand_names": [
+      "Keytruda"
+    ],
+    "generic_names": [
+      "pembrolizumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nKeytruda (pembrolizumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Keytruda is...",
+      "contraindications": "CONTRAINDICATIONS\nKeytruda is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Keytruda was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-evenity-197",
+    "brand_names": [
+      "Evenity"
+    ],
+    "generic_names": [
+      "romosozumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nEvenity (romosozumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Evenity is...",
+      "contraindications": "CONTRAINDICATIONS\nEvenity is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Evenity was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-imfinzi-198",
+    "brand_names": [
+      "Imfinzi"
+    ],
+    "generic_names": [
+      "durvalumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nImfinzi (durvalumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Imfinzi is...",
+      "contraindications": "CONTRAINDICATIONS\nImfinzi is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Imfinzi was demonstrated in..."
+    }
+  },
+  {
+    "set_id": "sample-imfinzi-199",
+    "brand_names": [
+      "Imfinzi"
+    ],
+    "generic_names": [
+      "durvalumab"
+    ],
+    "sections": {
+      "indications_and_usage": "INDICATIONS AND USAGE\nImfinzi (durvalumab) is indicated for the treatment of...",
+      "dosage_and_administration": "DOSAGE AND ADMINISTRATION\nThe recommended dose of Imfinzi is...",
+      "contraindications": "CONTRAINDICATIONS\nImfinzi is contraindicated in patients with...",
+      "warnings_and_cautions": "WARNINGS AND PRECAUTIONS\nSerious adverse reactions include...",
+      "adverse_reactions": "ADVERSE REACTIONS\nThe most common adverse reactions are...",
+      "drug_interactions": "DRUG INTERACTIONS\nNo formal drug interaction studies have been conducted...",
+      "clinical_studies": "CLINICAL STUDIES\nThe efficacy of Imfinzi was demonstrated in..."
     }
   }
 ]
