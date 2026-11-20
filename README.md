@@ -4,6 +4,8 @@ A production-style RAG + agent system over public biomedical data (ClinicalTrial
 where the **main story is model work**: baseline -> hybrid retrieval -> fine-tuned embeddings -> fine-tuned reranker ->
 LoRA-tuned extractor -> tool-calling agent -> trial-duration forecasting, with a numeric **ablation table** for every step.
 
+> **Medical disclaimer:** This is a research demo, not medical advice. Do not use its outputs for clinical decisions.
+
 ## Why this project
 Targets AI/Data engineer roles (e.g. Amgen AI and Data Intern). Maps to: LLMs, RAG, agents, Python + SQL, ML model
 development and evaluation, forecasting, data quality/governance, pipelines, APIs, React UI, cloud/DevOps.

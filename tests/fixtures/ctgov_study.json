@@ -1,0 +1,70 @@
+{
+  "protocolSection": {
+    "identificationModule": {
+      "nctId": "NCT01234567",
+      "briefTitle": "A Study of Pembrolizumab in Advanced Non-Small Cell Lung Cancer",
+      "officialTitle": "Phase 2/3 Trial of Pembrolizumab in Participants With Advanced NSCLC"
+    },
+    "statusModule": {
+      "overallStatus": "COMPLETED",
+      "startDateStruct": {"date": "2018-04"},
+      "completionDateStruct": {"date": "2021-06-30"}
+    },
+    "sponsorCollaboratorsModule": {
+      "leadSponsor": {"name": "Example Oncology Institute", "class": "OTHER"}
+    },
+    "descriptionModule": {
+      "briefSummary": "<p>This study evaluates pembrolizumab in advanced non-small cell lung cancer.</p>",
+      "detailedDescription": "Participants were randomized to pembrolizumab or platinum-based chemotherapy."
+    },
+    "conditionsModule": {
+      "conditions": ["Non-Small Cell Lung Cancer", "Lung Neoplasms"],
+      "keywords": ["NSCLC", "immunotherapy"]
+    },
+    "designModule": {
+      "studyType": "INTERVENTIONAL",
+      "phases": ["PHASE2", "PHASE3"],
+      "designInfo": {
+        "allocation": "RANDOMIZED",
+        "maskingInfo": {"masking": "NONE"}
+      },
+      "enrollmentInfo": {"count": 250, "type": "ACTUAL"}
+    },
+    "armsInterventionsModule": {
+      "armGroups": [
+        {"label": "Experimental", "type": "EXPERIMENTAL", "interventionNames": ["Drug: pembrolizumab"]},
+        {"label": "Control", "type": "ACTIVE_COMPARATOR", "interventionNames": ["Drug: carboplatin"]}
+      ],
+      "interventions": [
+        {"type": "DRUG", "name": "pembrolizumab", "description": "200 mg every 3 weeks"},
+        {"type": "DRUG", "name": "carboplatin", "description": "AUC 5 every 3 weeks"}
+      ]
+    },
+    "outcomesModule": {
+      "primaryOutcomes": [
+        {"measure": "Overall Survival", "timeFrame": "24 months", "description": "Time from randomization to death"}
+      ],
+      "secondaryOutcomes": [
+        {"measure": "Progression-Free Survival", "timeFrame": "12 months"},
+        {"measure": "Objective Response Rate", "timeFrame": "12 months"}
+      ]
+    },
+    "eligibilityModule": {
+      "eligibilityCriteria": "Inclusion Criteria:\n\n* Age 18 Years or older\n* Confirmed NSCLC\n\nExclusion Criteria:\n\n* Active autoimmune disease",
+      "sex": "ALL",
+      "minimumAge": "18 Years",
+      "maximumAge": "75 Years"
+    },
+    "contactsLocationsModule": {
+      "locations": [{"country": "United States"}, {"country": "Canada"}, {"country": "United States"}]
+    }
+  },
+  "derivedSection": {
+    "conditionBrowseModule": {
+      "meshes": [
+        {"id": "D002289", "term": "Carcinoma, Non-Small-Cell Lung"},
+        {"id": "D008175", "term": "Lung Neoplasms"}
+      ]
+    }
+  }
+}

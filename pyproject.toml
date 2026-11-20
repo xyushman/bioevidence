@@ -122,13 +122,10 @@ module = [
     "bioevidence.__main__",
     "bioevidence.agent.*",
     "bioevidence.api.*",
-    "bioevidence.chunking.*",
     "bioevidence.embedding.*",
     "bioevidence.eval.*",
     "bioevidence.extraction.*",
     "bioevidence.forecasting.*",
-    "bioevidence.ingest.*",
-    "bioevidence.quality.*",
     "bioevidence.retrieval.*",
 ]
 ignore_errors = true

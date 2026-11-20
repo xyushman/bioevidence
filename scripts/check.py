@@ -8,10 +8,10 @@ from pathlib import Path
 
 
 COMMANDS: tuple[tuple[str, ...], ...] = (
-    ("uv", "run", "ruff", "check", "src", "tests"),
-    ("uv", "run", "ruff", "format", "--check", "src", "tests"),
-    ("uv", "run", "mypy", "src"),
-    ("uv", "run", "pytest"),
+    ("uv", "run", "--frozen", "ruff", "check", "src", "tests"),
+    ("uv", "run", "--frozen", "ruff", "format", "--check", "src", "tests"),
+    ("uv", "run", "--frozen", "mypy", "src"),
+    ("uv", "run", "--frozen", "pytest"),
 )
 
 

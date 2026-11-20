@@ -7,6 +7,7 @@ from rich.console import Console
 
 from bioevidence.agent import BioEvidenceAgent
 from bioevidence.chunking import build_chunks, get_split_stats, make_splits, verify_no_leakage
+from bioevidence.chunking.splits import SplitConfig
 from bioevidence.config import get_config
 from bioevidence.embedding import build_embeddings
 from bioevidence.extraction import prepare_extraction_dataset
@@ -43,6 +44,7 @@ def callback():
 def ingest(
     source: str = typer.Argument(..., help="Source to ingest: ctgov, pubmed, openfda, or all"),
     max_pages: int = typer.Option(None, "--max-pages", help="Max pages for CT.gov"),
+    max_studies: int = typer.Option(None, "--max-studies", help="Max studies for CT.gov"),
     max_articles: int = typer.Option(None, "--max-articles", help="Max articles for PubMed"),
     max_labels: int = typer.Option(None, "--max-labels", help="Max labels for openFDA"),
     rate_limit: float = typer.Option(3.0, "--rate-limit", help="Requests per second"),
@@ -55,7 +57,10 @@ def ingest(
     if source in ("ctgov", "all"):
         console.print("[blue]ClinicalTrials.gov...[/blue]")
         stats = ingest_ctgov_fn(
-            max_pages=max_pages, rate_limit=rate_limit, start_date_min=f"{start_year}-01-01"
+            max_pages=max_pages,
+            max_studies=max_studies,
+            rate_limit=rate_limit,
+            start_date_min=f"{start_year}-01-01",
         )
         console.print(
             f"  Fetched: {stats.fetched}, Inserted: {stats.inserted}, Updated: {stats.updated}, Errors: {stats.errors}"
@@ -81,13 +86,17 @@ def ingest(
 @app.command()
 def ingest_ctgov(
     max_pages: int = typer.Option(None, "--max-pages", help="Max pages to fetch"),
+    max_studies: int = typer.Option(None, "--max-studies", help="Max studies to fetch"),
     rate_limit: float = typer.Option(3.0, "--rate-limit", help="Requests per second"),
     start_year: int = typer.Option(2005, "--start-year", help="Minimum start year"),
 ):
     """Ingest from ClinicalTrials.gov only."""
     console.print("[yellow]Ingesting from ClinicalTrials.gov...[/yellow]")
-    stats = ingest_ctgov(
-        max_pages=max_pages, rate_limit=rate_limit, start_date_min=f"{start_year}-01-01"
+    stats = ingest_ctgov_fn(
+        max_pages=max_pages,
+        max_studies=max_studies,
+        rate_limit=rate_limit,
+        start_date_min=f"{start_year}-01-01",
     )
     console.print(
         f"Fetched: {stats.fetched}, Inserted: {stats.inserted}, Updated: {stats.updated}, Errors: {stats.errors}"
@@ -102,7 +111,9 @@ def ingest_pubmed(
 ):
     """Ingest from PubMed only."""
     console.print("[yellow]Ingesting from PubMed...[/yellow]")
-    stats = ingest_pubmed(max_articles=max_articles, rate_limit=rate_limit, start_year=start_year)
+    stats = ingest_pubmed_fn(
+        max_articles=max_articles, rate_limit=rate_limit, start_year=start_year
+    )
     console.print(
         f"Fetched: {stats.fetched}, Inserted: {stats.inserted}, Updated: {stats.updated}, Errors: {stats.errors}"
     )
@@ -116,7 +127,7 @@ def ingest_openfda(
 ):
     """Ingest from openFDA only."""
     console.print("[yellow]Ingesting from openFDA...[/yellow]")
-    stats = ingest_openfda(max_labels=max_labels, rate_limit=rate_limit, use_bulk=use_bulk)
+    stats = ingest_openfda_fn(max_labels=max_labels, rate_limit=rate_limit, use_bulk=use_bulk)
     console.print(
         f"Fetched: {stats.fetched}, Inserted: {stats.inserted}, Updated: {stats.updated}, Errors: {stats.errors}"
     )
@@ -310,9 +321,17 @@ def db(
     action: str = typer.Argument("migrate", help="Action: migrate"),
 ):
     """Database operations."""
-    console.print(f"[yellow]Running db {action}...[/yellow]")
-    # TODO: Implement DB operations
-    raise typer.Exit(code=1)
+    if action != "migrate":
+        console.print(f"[red]Unknown action: {action}[/red]")
+        raise typer.Exit(code=1)
+
+    console.print("[yellow]Applying database migrations...[/yellow]")
+    from alembic import command
+    from alembic.config import Config as AlembicConfig
+
+    alembic_config = AlembicConfig("alembic.ini")
+    command.upgrade(alembic_config, "head")
+    console.print("[green]Database schema is up to date[/green]")
 
 
 @app.command()
@@ -327,10 +346,12 @@ def splits(
     if action == "make":
         console.print("[yellow]Creating splits...[/yellow]")
         splits = make_splits(
-            train_ratio=train_ratio,
-            dev_ratio=dev_ratio,
-            test_ratio=test_ratio,
-            seed=seed,
+            config=SplitConfig(
+                train_ratio=train_ratio,
+                dev_ratio=dev_ratio,
+                test_ratio=test_ratio,
+                seed=seed,
+            )
         )
         console.print("Splits created:")
         console.print(
@@ -493,10 +514,17 @@ def sample(
     labels: int = typer.Option(200, "--labels", help="Number of sample drug labels"),
     output_dir: str = typer.Option("data/sample", "--output-dir", help="Output directory"),
     format: str = typer.Option("json", "--format", help="Export format: json, jsonl"),
+    seed: int = typer.Option(42, "--seed", help="Random seed for deterministic samples"),
 ):
     """Create or export sample dataset for demos/CI."""
     if action == "create":
-        create_sample(trials=trials, pubmed=pubmed, labels=labels, output_dir=output_dir)
+        create_sample(
+            trials=trials,
+            pubmed=pubmed,
+            labels=labels,
+            output_dir=output_dir,
+            seed=seed,
+        )
     elif action == "export":
         export_sample(output_dir=output_dir, format=format)
     else:

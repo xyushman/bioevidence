@@ -28,6 +28,11 @@ class Base(DeclarativeBase):
     pass
 
 
+def _enum_values(enum_type: type[PyEnum]) -> list[str]:
+    """Persist enum values (not member names) to match Alembic migrations."""
+    return [str(member.value) for member in enum_type]
+
+
 class DocType(PyEnum):
     TRIAL = "trial"
     PUBMED = "pubmed"
@@ -134,7 +139,9 @@ class TrialOutcome(Base):
     nct_id: Mapped[str] = mapped_column(
         ForeignKey("trials.nct_id", ondelete="CASCADE"), nullable=False
     )
-    kind: Mapped[OutcomeKind] = mapped_column(Enum(OutcomeKind), nullable=False)
+    kind: Mapped[OutcomeKind] = mapped_column(
+        Enum(OutcomeKind, values_callable=_enum_values), nullable=False
+    )
     measure: Mapped[str] = mapped_column(Text, nullable=False)
     time_frame: Mapped[str | None] = mapped_column(Text)
     description: Mapped[str | None] = mapped_column(Text)
@@ -170,16 +177,23 @@ class DrugLabel(Base):
     generic_names: Mapped[list[str] | None] = mapped_column(ARRAY(Text))
     sections: Mapped[dict[str, Any]] = mapped_column(JSON, default=dict)
     effective_date: Mapped[date | None] = mapped_column(Date)
+    matched_interventions: Mapped[list[str] | None] = mapped_column(ARRAY(Text))
     source_url: Mapped[str] = mapped_column(Text)
+    fetched_at: Mapped[datetime | None] = mapped_column(DateTime)
 
-    __table_args__ = (Index("ix_drug_labels_effective_date", "effective_date"),)
+    __table_args__ = (
+        Index("ix_drug_labels_effective_date", "effective_date"),
+        Index("ix_drug_labels_fetched_at", "fetched_at"),
+    )
 
 
 class Chunk(Base):
     __tablename__ = "chunks"
 
     id: Mapped[int] = mapped_column(BigInteger, primary_key=True, autoincrement=True)
-    doc_type: Mapped[DocType] = mapped_column(Enum(DocType), nullable=False)
+    doc_type: Mapped[DocType] = mapped_column(
+        Enum(DocType, values_callable=_enum_values), nullable=False
+    )
     doc_id: Mapped[str] = mapped_column(Text, nullable=False)
     section: Mapped[str | None] = mapped_column(Text)
     text: Mapped[str] = mapped_column(Text, nullable=False)
@@ -189,7 +203,7 @@ class Chunk(Base):
     embedding_ft: Mapped[list[float] | None] = mapped_column(Vector(384))
     tsv: Mapped[str | None] = mapped_column(TSVECTOR)
     split: Mapped[SplitType] = mapped_column(
-        Enum(SplitType), nullable=False, default=SplitType.TRAIN
+        Enum(SplitType, values_callable=_enum_values), nullable=False, default=SplitType.TRAIN
     )
     created_at: Mapped[datetime] = mapped_column(DateTime, default=func.now())
 

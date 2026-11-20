@@ -1,61 +1,155 @@
-"""ClinicalTrials.gov v2 API ingestor."""
+"""ClinicalTrials.gov API v2 ingestor."""
 
-import gzip
+from __future__ import annotations
+
 import json
-import time
-from dataclasses import dataclass
-from datetime import date, datetime
+import re
+from datetime import date
 from pathlib import Path
 from typing import Any
 
 import httpx
 import structlog
+from pydantic import ValidationError
+from sqlalchemy import func, select
+from sqlalchemy.orm import Session
 from tenacity import retry, stop_after_attempt, wait_exponential
 
-from bioevidence.config import get_config
-from bioevidence.db.models import Trial, TrialCondition, TrialIntervention, TrialOutcome
+from bioevidence.config import Config, get_config
+from bioevidence.db.models import (
+    OutcomeKind,
+    Trial,
+    TrialCondition,
+    TrialIntervention,
+    TrialOutcome,
+)
 from bioevidence.db.session import get_session
+from bioevidence.ingest.common import IngestStats, RateLimiter, RawCache, clean_text, utcnow
+from bioevidence.ingest.runs import record_ingest_run
+from bioevidence.quality.quarantine import quarantine_record
+from bioevidence.quality.schemas import (
+    ConditionRecord,
+    InterventionRecord,
+    OutcomeRecord,
+    TrialRecord,
+)
 
 logger = structlog.get_logger(__name__)
 
+__all__ = ["CTGovIngestor", "IngestStats", "ingest_ctgov"]
 
-@dataclass
-class IngestStats:
-    """Statistics for an ingestion run."""
+STUDY_FIELDS = (
+    "protocolSection.identificationModule.nctId",
+    "protocolSection.identificationModule.briefTitle",
+    "protocolSection.identificationModule.officialTitle",
+    "protocolSection.descriptionModule.briefSummary",
+    "protocolSection.descriptionModule.detailedDescription",
+    "protocolSection.statusModule.overallStatus",
+    "protocolSection.statusModule.startDateStruct.date",
+    "protocolSection.statusModule.completionDateStruct.date",
+    "protocolSection.designModule.studyType",
+    "protocolSection.designModule.phases",
+    "protocolSection.designModule.designInfo.allocation",
+    "protocolSection.designModule.designInfo.maskingInfo.masking",
+    "protocolSection.designModule.enrollmentInfo.count",
+    "protocolSection.designModule.enrollmentInfo.type",
+    "protocolSection.sponsorCollaboratorsModule.leadSponsor.name",
+    "protocolSection.sponsorCollaboratorsModule.leadSponsor.class",
+    "protocolSection.eligibilityModule.eligibilityCriteria",
+    "protocolSection.eligibilityModule.sex",
+    "protocolSection.eligibilityModule.minimumAge",
+    "protocolSection.eligibilityModule.maximumAge",
+    "protocolSection.conditionsModule.conditions",
+    "protocolSection.contactsLocationsModule.locations.country",
+    "protocolSection.armsInterventionsModule.interventions",
+    "protocolSection.outcomesModule.primaryOutcomes",
+    "protocolSection.outcomesModule.secondaryOutcomes",
+    "derivedSection.conditionBrowseModule.meshes",
+)
 
-    fetched: int = 0
-    inserted: int = 0
-    updated: int = 0
-    skipped: int = 0
-    errors: int = 0
+_AGE_PATTERN = re.compile(r"(\d+(?:\.\d+)?)\s*(year|month|week|day)", re.IGNORECASE)
+
+
+def nested_get(data: dict[str, Any], path: str, default: Any = None) -> Any:
+    """Read a dotted key from a nested API response."""
+    current: Any = data
+    for part in path.split("."):
+        if not isinstance(current, dict) or part not in current:
+            return default
+        current = current[part]
+    return current
+
+
+def parse_date(date_str: str | None) -> tuple[date | None, bool]:
+    """Parse an ISO date, returning ``(date, was_imputed)``."""
+    if not date_str:
+        return None, False
+    parts = date_str.split("-")
+    try:
+        if len(parts) == 3:
+            return date(int(parts[0]), int(parts[1]), int(parts[2])), False
+        if len(parts) == 2:
+            return date(int(parts[0]), int(parts[1]), 1), True
+        if len(parts) == 1:
+            return date(int(parts[0]), 1, 1), True
+    except ValueError:
+        return None, False
+    return None, False
+
+
+def parse_age(age_str: str | None) -> float | None:
+    """Convert age strings such as ``'18 Years'`` or ``'6 Months'`` to years."""
+    if not age_str:
+        return None
+    match = _AGE_PATTERN.search(age_str)
+    if not match:
+        return None
+    value = float(match.group(1))
+    unit = match.group(2).lower()
+    factors = {"year": 1.0, "month": 1 / 12, "week": 1 / 52, "day": 1 / 365}
+    return round(value * factors[unit], 3)
+
+
+def parse_phase(phases: str | list[str] | None) -> str | None:
+    """Normalize API v2 phase values to display strings."""
+    if not phases:
+        return None
+    raw_values = [phases] if isinstance(phases, str) else phases
+    normalized: list[str] = []
+    for raw in raw_values:
+        if not raw:
+            continue
+        for token in str(raw).upper().split("/"):
+            token = token.strip()
+            if not token or token == "NA":
+                continue
+            if token.startswith("EARLY_PHASE"):
+                normalized.append("Early Phase 1")
+                continue
+            number = token.replace("PHASE", "").strip()
+            if number:
+                normalized.append(f"Phase {number}")
+    phases = list(dict.fromkeys(normalized))
+    if not phases:
+        return None
+    if all(phase.startswith("Phase ") for phase in phases):
+        return "Phase " + "/".join(phase.removeprefix("Phase ") for phase in phases)
+    return "/".join(phases)
 
 
 class CTGovClient:
-    """Client for ClinicalTrials.gov API v2."""
+    """Rate-limited client for ClinicalTrials.gov API v2."""
 
     BASE_URL = "https://clinicaltrials.gov/api/v2/studies"
 
-    def __init__(self, rate_limit: float = 3.0):
-        self.rate_limit = rate_limit
-        self._last_request = 0.0
-        self.client = httpx.Client(timeout=60.0)
+    def __init__(self, rate_limit: float = 3.0, timeout: float = 60.0) -> None:
+        self.limiter = RateLimiter(rate_limit)
+        self.client = httpx.Client(timeout=timeout)
 
-    def _rate_limit(self):
-        """Enforce rate limit between requests."""
-        elapsed = time.time() - self._last_request
-        min_interval = 1.0 / self.rate_limit
-        if elapsed < min_interval:
-            time.sleep(min_interval - elapsed)
-        self._last_request = time.time()
-
-    @retry(
-        wait=wait_exponential(multiplier=1, min=2, max=30),
-        stop=stop_after_attempt(3),
-    )
-    def _get(self, url: str, params: dict[str, Any]) -> httpx.Response:
-        """Make a GET request with retry logic."""
-        self._rate_limit()
-        response = self.client.get(url, params=params)
+    @retry(wait=wait_exponential(multiplier=1, min=2, max=30), stop=stop_after_attempt(3))
+    def _get(self, params: dict[str, Any]) -> httpx.Response:
+        self.limiter.wait()
+        response = self.client.get(self.BASE_URL, params=params)
         response.raise_for_status()
         return response
 
@@ -67,286 +161,246 @@ class CTGovClient:
         page_size: int = 1000,
         page_token: str | None = None,
     ) -> dict[str, Any]:
-        """Search for studies with pagination."""
-        params = {
+        """Fetch one page of studies using API v2 filter syntax."""
+        params: dict[str, Any] = {
             "pageSize": page_size,
             "format": "json",
-            "fields": "NCTId,BriefTitle,OfficialTitle,BriefSummary,DetailedDescription,"
-            "Phase,OverallStatus,StudyType,Allocation,Masking,Enrollment,"
-            "EnrollmentType,StartDate,CompletionDate,Sponsor,LeadSponsor,"
-            "MinimumAge,MaximumAge,Sex,LocationCountry,ArmGroup,"
-            "PrimaryOutcome,SecondaryOutcome,Condition,Keyword",
+            "fields": ",".join(STUDY_FIELDS),
         }
+        advanced_filters = ["AREA[StudyType]INTERVENTIONAL"]
         if condition:
             params["query.cond"] = condition
         if overall_status:
-            params["filter.overallStatus"] = "|".join(overall_status)
+            params["filter.overallStatus"] = ",".join(overall_status)
         if start_date_min:
-            params["filter.startDate"] = f"{start_date_min}:MAX"
+            advanced_filters.append(f"AREA[StartDate]RANGE[{start_date_min},MAX]")
+        params["filter.advanced"] = " AND ".join(advanced_filters)
         if page_token:
             params["pageToken"] = page_token
-
-        response = self._get(self.BASE_URL, params)
-        return response.json()
+        payload = self._get(params).json()
+        return payload if isinstance(payload, dict) else {}
 
     def get_study(self, nct_id: str) -> dict[str, Any]:
-        """Get a single study by NCT ID."""
-        url = f"{self.BASE_URL}/{nct_id}"
-        params = {"format": "json"}
-        response = self._get(url, params)
-        return response.json()
+        """Fetch one study by NCT ID."""
+        self.limiter.wait()
+        response = self.client.get(f"{self.BASE_URL}/{nct_id}", params={"format": "json"})
+        response.raise_for_status()
+        payload = response.json()
+        return payload if isinstance(payload, dict) else {}
 
-    def close(self):
-        """Close the HTTP client."""
+    def close(self) -> None:
+        """Close the underlying HTTP client."""
         self.client.close()
 
 
-class RawCache:
-    """Disk-based raw response cache."""
-
-    def __init__(self, cache_dir: Path):
-        self.cache_dir = cache_dir
-        self.cache_dir.mkdir(parents=True, exist_ok=True)
-
-    def _cache_path(self, key: str) -> Path:
-        """Get cache file path for a key."""
-        safe_key = key.replace("/", "_").replace(":", "_")
-        return self.cache_dir / f"{safe_key}.json.gz"
-
-    def get(self, key: str) -> dict[str, Any] | None:
-        """Get cached response if available."""
-        path = self._cache_path(key)
-        if path.exists():
-            try:
-                with gzip.open(path, "rt") as f:
-                    data = json.load(f)
-            except Exception as e:
-                logger.warning("cache_read_failed", key=key, error=str(e))
-            else:
-                logger.debug("cache_hit", key=key)
-                return data
-        return None
-
-    def set(self, key: str, data: dict[str, Any]) -> None:
-        """Cache a response."""
-        path = self._cache_path(key)
-        try:
-            with gzip.open(path, "wt") as f:
-                json.dump(data, f)
-            logger.debug("cache_write", key=key)
-        except Exception as e:
-            logger.warning("cache_write_failed", key=key, error=str(e))
-
-
-def parse_date(date_str: str | None) -> tuple[date | None, bool]:
-    """Parse date string, handling partial dates. Returns (date, imputed_flag)."""
-    if not date_str:
-        return None, False
-
-    # Handle formats: YYYY-MM-DD, YYYY-MM, YYYY
-    parts = date_str.split("-")
-    try:
-        if len(parts) == 3:
-            return date(int(parts[0]), int(parts[1]), int(parts[2])), False
-        elif len(parts) == 2:
-            return date(int(parts[0]), int(parts[1]), 1), True
-        elif len(parts) == 1:
-            return date(int(parts[0]), 1, 1), True
-    except ValueError:
-        pass
-    return None, False
-
-
-def parse_age(age_str: str | None) -> float | None:
-    """Parse age string like '18 Years' to numeric years."""
-    if not age_str:
-        return None
-    try:
-        # Remove units and convert
-        num_str = "".join(c for c in age_str if c.isdigit() or c == ".")
-        return float(num_str) if num_str else None
-    except ValueError:
-        return None
-
-
-def parse_phase(phase_str: str | None) -> str | None:
-    """Normalize phase string."""
-    if not phase_str:
-        return None
-    # Handle "PHASE2/PHASE3" -> "Phase 2/3"
-    phases = []
-    for p in phase_str.replace("PHASE", "").split("/"):
-        p = p.strip()
-        if p:
-            phases.append(f"Phase {p}")
-    return "/".join(phases) if phases else None
-
-
 class CTGovIngestor:
-    """Ingestor for ClinicalTrials.gov data."""
+    """Parse and upsert ClinicalTrials.gov studies."""
 
-    def __init__(self, cache_dir: Path | None = None, rate_limit: float = 3.0):
-        config = get_config()
-        self.client = CTGovClient(rate_limit=rate_limit)
-        self.cache = RawCache(cache_dir or Path(config.llm.cache_dir).parent / "raw" / "ctgov")
+    def __init__(
+        self,
+        cache_dir: Path | None = None,
+        rate_limit: float = 3.0,
+        config: Config | None = None,
+        client: CTGovClient | None = None,
+    ) -> None:
+        self.config = config or get_config()
+        self.client = client or CTGovClient(rate_limit=rate_limit)
+        raw_root = Path(self.config.llm.cache_dir).parent / "raw" / "ctgov"
+        self.cache = RawCache(cache_dir or raw_root)
         self.stats = IngestStats()
 
-    def _extract_conditions(self, study: dict) -> list[dict]:
-        """Extract conditions from study."""
-        conditions = []
-        for cond in study.get("Condition", []):
-            conditions.append(
-                {
-                    "condition": cond,
-                    "condition_mesh": None,  # Could be enhanced with MeSH mapping
-                }
+    @staticmethod
+    def _condition_records(study: dict[str, Any]) -> list[ConditionRecord]:
+        conditions = nested_get(study, "protocolSection.conditionsModule.conditions", []) or []
+        meshes = nested_get(study, "derivedSection.conditionBrowseModule.meshes", []) or []
+        mesh_terms = [mesh.get("term", "") for mesh in meshes if isinstance(mesh, dict)]
+        records: list[ConditionRecord] = []
+        for condition in conditions:
+            if not condition:
+                continue
+            lowered = str(condition).lower()
+            match = next(
+                (term for term in mesh_terms if lowered in term.lower() or term.lower() in lowered),
+                None,
             )
-        return conditions
-
-    def _extract_interventions(self, study: dict) -> list[dict]:
-        """Extract interventions from study."""
-        interventions = []
-        for arm in study.get("ArmGroup", []):
-            for intervention in arm.get("InterventionName", []):
-                interventions.append(
-                    {
-                        "name": intervention,
-                        "type": arm.get("ArmGroupType"),
-                        "description": arm.get("Description"),
-                    }
+            records.append(
+                ConditionRecord(
+                    condition=clean_text(str(condition)) or str(condition), condition_mesh=match
                 )
-        return interventions
-
-    def _extract_outcomes(self, study: dict) -> list[dict]:
-        """Extract outcomes from study."""
-        outcomes = []
-        for outcome in study.get("PrimaryOutcome", []):
-            outcomes.append(
-                {
-                    "kind": "primary",
-                    "measure": outcome.get("Measure"),
-                    "time_frame": outcome.get("TimeFrame"),
-                    "description": outcome.get("Description"),
-                }
             )
-        for outcome in study.get("SecondaryOutcome", []):
-            outcomes.append(
-                {
-                    "kind": "secondary",
-                    "measure": outcome.get("Measure"),
-                    "time_frame": outcome.get("TimeFrame"),
-                    "description": outcome.get("Description"),
-                }
-            )
-        return outcomes
+        return records
 
-    def _parse_study(self, study: dict) -> dict:
-        """Parse study into trial dict."""
-        protocol = study.get("ProtocolSection", {})
-        identification = protocol.get("IdentificationModule", {})
-        status = protocol.get("StatusModule", {})
-        design = protocol.get("DesignModule", {})
-        description = protocol.get("DescriptionModule", {})
-        eligibility = protocol.get("EligibilityModule", {})
-        sponsor = protocol.get("SponsorCollaboratorsModule", {})
-        arms = protocol.get("ArmsInterventionsModule", {})
-        locations = protocol.get("LocationsModule", {})
-
-        nct_id = identification.get("NCTId")
-        if not nct_id:
-            raise ValueError("Missing NCTId")
-
-        # Parse dates
-        start_date_str = status.get("StartDateStruct", {}).get("Date") or status.get("StartDate")
-        completion_date_str = status.get("CompletionDateStruct", {}).get("Date") or status.get(
-            "CompletionDate"
+    @staticmethod
+    def _intervention_records(study: dict[str, Any]) -> list[InterventionRecord]:
+        interventions = (
+            nested_get(study, "protocolSection.armsInterventionsModule.interventions", []) or []
         )
-        start_date, start_imputed = parse_date(start_date_str)
-        completion_date, completion_imputed = parse_date(completion_date_str)
+        records: list[InterventionRecord] = []
+        for item in interventions:
+            if not isinstance(item, dict) or not item.get("name"):
+                continue
+            records.append(
+                InterventionRecord(
+                    name=item["name"],
+                    type=item.get("type"),
+                    description=item.get("description"),
+                )
+            )
+        if records:
+            return records
 
-        # Parse age
-        min_age = parse_age(eligibility.get("MinimumAge"))
-        max_age = parse_age(eligibility.get("MaximumAge"))
+        # Some partial field sets expose only arm group intervention names.
+        for arm in nested_get(study, "protocolSection.armsInterventionsModule.armGroups", []) or []:
+            for raw_name in arm.get("interventionNames", []) or []:
+                name = str(raw_name).split(":", 1)[-1].strip()
+                if name:
+                    records.append(
+                        InterventionRecord(
+                            name=name,
+                            type=arm.get("type"),
+                            description=arm.get("description"),
+                        )
+                    )
+        return records
 
-        # Parse phase
-        phase = parse_phase(design.get("Phase"))
+    @staticmethod
+    def _outcome_records(study: dict[str, Any]) -> list[OutcomeRecord]:
+        records: list[OutcomeRecord] = []
+        for kind, path in (
+            ("primary", "protocolSection.outcomesModule.primaryOutcomes"),
+            ("secondary", "protocolSection.outcomesModule.secondaryOutcomes"),
+        ):
+            for item in nested_get(study, path, []) or []:
+                if not isinstance(item, dict) or not item.get("measure"):
+                    continue
+                records.append(
+                    OutcomeRecord(
+                        kind=kind,
+                        measure=item["measure"],
+                        time_frame=item.get("timeFrame"),
+                        description=item.get("description"),
+                    )
+                )
+        return records
 
-        # Countries
-        countries = locations.get("LocationCountry", [])
+    @staticmethod
+    def parse_study(study: dict[str, Any]) -> TrialRecord:
+        """Convert one API v2 study into a validated record."""
+        nct_id = nested_get(study, "protocolSection.identificationModule.nctId")
+        if not nct_id:
+            msg = "Study is missing protocolSection.identificationModule.nctId"
+            raise ValueError(msg)
 
-        # Arms count
-        num_arms = len(arms.get("ArmGroup", []))
+        start_date, start_imputed = parse_date(
+            nested_get(study, "protocolSection.statusModule.startDateStruct.date")
+        )
+        completion_date, completion_imputed = parse_date(
+            nested_get(study, "protocolSection.statusModule.completionDateStruct.date")
+        )
+        countries = []
+        for location in (
+            nested_get(study, "protocolSection.contactsLocationsModule.locations", []) or []
+        ):
+            country = location.get("country") if isinstance(location, dict) else None
+            if country and country not in countries:
+                countries.append(country)
 
-        trial_data = {
-            "nct_id": nct_id,
-            "title": identification.get("BriefTitle")
-            or identification.get("OfficialTitle")
-            or "Unknown",
-            "brief_summary": description.get("BriefSummary"),
-            "detailed_description": description.get("DetailedDescription"),
-            "eligibility_text": eligibility.get("EligibilityCriteria"),
-            "phase": phase,
-            "overall_status": status.get("OverallStatus"),
-            "study_type": design.get("StudyType"),
-            "allocation": design.get("Allocation"),
-            "masking": design.get("Masking"),
-            "enrollment": design.get("Enrollment"),
-            "enrollment_type": design.get("EnrollmentType"),
-            "start_date": start_date,
-            "completion_date": completion_date,
-            "sponsor": sponsor.get("LeadSponsor", {}).get("Name"),
-            "sponsor_class": sponsor.get("LeadSponsor", {}).get("Class"),
-            "min_age_years": min_age,
-            "max_age_years": max_age,
-            "sex": eligibility.get("Sex"),
-            "countries": countries if countries else None,
-            "num_arms": num_arms,
-            "source_url": f"https://clinicaltrials.gov/study/{nct_id}",
-            "fetched_at": datetime.utcnow(),
-            "date_imputed": start_imputed or completion_imputed,
-        }
+        phase = parse_phase(nested_get(study, "protocolSection.designModule.phases"))
+        return TrialRecord(
+            nct_id=str(nct_id),
+            title=nested_get(study, "protocolSection.identificationModule.briefTitle")
+            or nested_get(study, "protocolSection.identificationModule.officialTitle")
+            or f"Study {nct_id}",
+            brief_summary=nested_get(study, "protocolSection.descriptionModule.briefSummary"),
+            detailed_description=nested_get(
+                study, "protocolSection.descriptionModule.detailedDescription"
+            ),
+            eligibility_text=nested_get(
+                study, "protocolSection.eligibilityModule.eligibilityCriteria"
+            ),
+            phase=phase,
+            overall_status=nested_get(study, "protocolSection.statusModule.overallStatus"),
+            study_type=nested_get(study, "protocolSection.designModule.studyType"),
+            allocation=nested_get(study, "protocolSection.designModule.designInfo.allocation"),
+            masking=nested_get(
+                study, "protocolSection.designModule.designInfo.maskingInfo.masking"
+            ),
+            enrollment=nested_get(study, "protocolSection.designModule.enrollmentInfo.count"),
+            enrollment_type=nested_get(study, "protocolSection.designModule.enrollmentInfo.type"),
+            start_date=start_date,
+            completion_date=completion_date,
+            sponsor=nested_get(
+                study, "protocolSection.sponsorCollaboratorsModule.leadSponsor.name"
+            ),
+            sponsor_class=nested_get(
+                study, "protocolSection.sponsorCollaboratorsModule.leadSponsor.class"
+            ),
+            min_age_years=parse_age(
+                nested_get(study, "protocolSection.eligibilityModule.minimumAge")
+            ),
+            max_age_years=parse_age(
+                nested_get(study, "protocolSection.eligibilityModule.maximumAge")
+            ),
+            sex=nested_get(study, "protocolSection.eligibilityModule.sex"),
+            countries=countries or None,
+            num_arms=len(
+                nested_get(study, "protocolSection.armsInterventionsModule.armGroups", []) or []
+            ),
+            date_imputed=start_imputed or completion_imputed,
+            source_url=f"https://clinicaltrials.gov/study/{nct_id}",
+            fetched_at=utcnow(),
+            conditions=CTGovIngestor._condition_records(study),
+            interventions=CTGovIngestor._intervention_records(study),
+            outcomes=CTGovIngestor._outcome_records(study),
+        )
 
-        return trial_data
-
-    def _upsert_trial(self, session, trial_data: dict, study: dict) -> tuple[Trial, bool]:
-        """Upsert trial and related data. Returns (trial, is_new)."""
-        nct_id = trial_data["nct_id"]
-
-        # Check existing
-        existing = session.get(Trial, nct_id)
-        is_new = existing is None
-
-        if is_new:
-            trial = Trial(**trial_data)
+    @staticmethod
+    def upsert_trial(session: Session, record: TrialRecord) -> tuple[Trial, bool]:
+        """Upsert a trial and replace its related rows. Returns ``(trial, is_new)``."""
+        trial = session.get(Trial, record.nct_id)
+        is_new = trial is None
+        if trial is None:
+            trial = Trial(nct_id=record.nct_id, **record.to_orm_kwargs())
             session.add(trial)
         else:
-            # Update fields
-            for key, value in trial_data.items():
+            for key, value in record.to_orm_kwargs().items():
                 if key != "nct_id":
-                    setattr(existing, key, value)
-            trial = existing
-
+                    setattr(trial, key, value)
         session.flush()
 
-        # Upsert conditions
-        session.query(TrialCondition).filter(TrialCondition.nct_id == nct_id).delete()
-        for cond_data in self._extract_conditions(study):
-            cond = TrialCondition(nct_id=nct_id, **cond_data)
-            session.add(cond)
+        for model in (TrialCondition, TrialIntervention, TrialOutcome):
+            session.query(model).filter(model.nct_id == record.nct_id).delete()
 
-        # Upsert interventions
-        session.query(TrialIntervention).filter(TrialIntervention.nct_id == nct_id).delete()
-        for int_data in self._extract_interventions(study):
-            intervention = TrialIntervention(nct_id=nct_id, **int_data)
-            session.add(intervention)
-
-        # Upsert outcomes
-        session.query(TrialOutcome).filter(TrialOutcome.nct_id == nct_id).delete()
-        for out_data in self._extract_outcomes(study):
-            outcome = TrialOutcome(nct_id=nct_id, **out_data)
-            session.add(outcome)
-
+        for condition in record.conditions:
+            session.add(TrialCondition(nct_id=record.nct_id, **condition.model_dump()))
+        for intervention in record.interventions:
+            session.add(TrialIntervention(nct_id=record.nct_id, **intervention.model_dump()))
+        for outcome in record.outcomes:
+            session.add(
+                TrialOutcome(
+                    nct_id=record.nct_id,
+                    kind=OutcomeKind(outcome.kind),
+                    measure=outcome.measure,
+                    time_frame=outcome.time_frame,
+                    description=outcome.description,
+                )
+            )
         return trial, is_new
+
+    @staticmethod
+    def _scope_keywords(config: Config) -> list[str]:
+        keywords: list[str] = []
+        for area in config.scope.therapeutic_areas:
+            keywords.extend(area.keywords)
+        return list(dict.fromkeys(keywords)) or ["cancer"]
+
+    @staticmethod
+    def _scope_statuses(config: Config) -> list[str]:
+        configured = config.scope.trial_filters.get("overall_statuses") or []
+        return [str(status).upper().replace(", ", "_").replace(" ", "_") for status in configured]
+
+    def _cache_key(self, params: dict[str, Any]) -> str:
+        return f"ctgov:{json.dumps(params, sort_keys=True)}"
 
     def ingest(
         self,
@@ -354,64 +408,91 @@ class CTGovIngestor:
         statuses: list[str] | None = None,
         start_date_min: str = "2005-01-01",
         max_pages: int | None = None,
+        max_studies: int | None = None,
+        page_size: int = 1000,
     ) -> IngestStats:
-        """Run ingestion for given conditions."""
-        conditions = conditions or ["cancer"]
-        statuses = statuses or ["Completed", "Active, not recruiting", "Recruiting"]
+        """Ingest interventional studies until the configured volume target is met."""
+        self.stats = IngestStats()
+        target = max_studies or self.config.scope.targets.get("trials", 20_000)
+        conditions = conditions or self._scope_keywords(self.config)
+        statuses = statuses or self._scope_statuses(self.config) or ["COMPLETED", "RECRUITING"]
+        seen: set[str] = set()
 
-        for condition in conditions:
-            logger.info("ingesting_condition", condition=condition)
-            page_token = None
-            page = 0
-
-            while True:
-                if max_pages and page >= max_pages:
+        try:
+            for condition in conditions:
+                if len(seen) >= target:
                     break
+                page_token: str | None = None
+                page = 0
+                logger.info("ctgov_condition_start", condition=condition, target=target)
 
-                cache_key = f"search_{condition}_{page_token or 'first'}"
-                data = self.cache.get(cache_key)
+                while True:
+                    if max_pages is not None and page >= max_pages:
+                        break
+                    params: dict[str, Any] = {
+                        "condition": condition,
+                        "statuses": statuses,
+                        "start_date_min": start_date_min,
+                        "page_size": page_size,
+                        "page_token": page_token,
+                    }
+                    cache_key = self._cache_key(params)
+                    data = self.cache.get(cache_key)
+                    if data is None:
+                        data = self.client.search_studies(
+                            condition=condition,
+                            overall_status=statuses,
+                            start_date_min=start_date_min,
+                            page_size=page_size,
+                            page_token=page_token,
+                        )
+                        self.cache.set(cache_key, data)
 
-                if data is None:
-                    data = self.client.search_studies(
-                        condition=condition,
-                        overall_status=statuses,
-                        start_date_min=start_date_min,
-                        page_token=page_token,
-                    )
-                    self.cache.set(cache_key, data)
+                    studies = data.get("studies", [])
+                    if not studies:
+                        break
 
-                studies = data.get("studies", [])
-                if not studies:
-                    break
-
-                for study in studies:
-                    try:
-                        self.stats.fetched += 1
-                        trial_data = self._parse_study(study)
-
-                        with get_session() as session:
-                            trial, is_new = self._upsert_trial(session, trial_data, study)
+                    with get_session() as session:
+                        for study in studies:
+                            if len(seen) >= target:
+                                break
+                            try:
+                                record = self.parse_study(study)
+                            except ValidationError as exc:
+                                self.stats.skipped += 1
+                                quarantine_record("ctgov", study, str(exc))
+                                logger.warning("ctgov_record_rejected", error=str(exc))
+                                continue
+                            except Exception as exc:
+                                self.stats.errors += 1
+                                quarantine_record("ctgov", study, str(exc))
+                                logger.warning("ctgov_parse_failed", error=str(exc))
+                                continue
+                            if record.nct_id in seen:
+                                continue
+                            seen.add(record.nct_id)
+                            _, is_new = self.upsert_trial(session, record)
                             if is_new:
                                 self.stats.inserted += 1
                             else:
                                 self.stats.updated += 1
-                            session.commit()
+                        session.commit()
 
-                    except Exception:
-                        self.stats.errors += 1
-                        logger.exception(
-                            "ingest_error",
-                            nct_id=study.get("ProtocolSection", {})
-                            .get("IdentificationModule", {})
-                            .get("NCTId"),
-                        )
+                    if len(seen) >= target:
+                        break
 
-                page_token = data.get("nextPageToken")
-                if not page_token:
-                    break
-                page += 1
+                    page_token = data.get("nextPageToken")
+                    if not page_token:
+                        break
+                    page += 1
+        finally:
+            self.client.close()
 
-        self.client.close()
+        self.stats.fetched = len(seen)
+        with get_session() as session:
+            row_count = int(session.scalar(select(func.count()).select_from(Trial)) or 0)
+            record_ingest_run("ctgov", self.stats, row_count)
+        logger.info("ctgov_ingest_complete", **self.stats.as_dict())
         return self.stats
 
 
@@ -420,10 +501,17 @@ def ingest_ctgov(
     statuses: list[str] | None = None,
     start_date_min: str = "2005-01-01",
     max_pages: int | None = None,
+    max_studies: int | None = None,
     rate_limit: float = 3.0,
 ) -> IngestStats:
-    """Main entry point for CT.gov ingestion."""
+    """Main entry point for ClinicalTrials.gov ingestion."""
     config = get_config()
-    cache_dir = Path(config.llm.cache_dir).parent / "raw" / "ctgov"
-    ingestor = CTGovIngestor(cache_dir=cache_dir, rate_limit=rate_limit)
-    return ingestor.ingest(conditions, statuses, start_date_min, max_pages)
+    raw_root = Path(config.llm.cache_dir).parent / "raw" / "ctgov"
+    ingestor = CTGovIngestor(cache_dir=raw_root, rate_limit=rate_limit, config=config)
+    return ingestor.ingest(
+        conditions=conditions,
+        statuses=statuses,
+        start_date_min=start_date_min,
+        max_pages=max_pages,
+        max_studies=max_studies,
+    )

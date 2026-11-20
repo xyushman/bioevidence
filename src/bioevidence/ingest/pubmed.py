@@ -1,282 +1,307 @@
 """PubMed E-utilities ingestor."""
 
-import contextlib
-import gzip
-import json
-import time
+from __future__ import annotations
+
 import xml.etree.ElementTree as ET
-from dataclasses import dataclass
-from datetime import datetime
+from collections.abc import Iterator
+from datetime import UTC, date, datetime, timedelta
 from pathlib import Path
 from typing import Any
 
 import httpx
 import structlog
+from pydantic import ValidationError
+from sqlalchemy import func, select
+from sqlalchemy.orm import Session
 from tenacity import retry, stop_after_attempt, wait_exponential
 
-from bioevidence.config import get_config
+from bioevidence.config import Config, get_config
 from bioevidence.db.models import PubMedArticle
 from bioevidence.db.session import get_session
+from bioevidence.ingest.common import IngestStats, RateLimiter, RawCache, clean_text, utcnow
+from bioevidence.ingest.runs import record_ingest_run
+from bioevidence.quality.quarantine import quarantine_record
+from bioevidence.quality.schemas import PubMedRecord
 
 logger = structlog.get_logger(__name__)
 
+# E-utilities only exposes the first 9,999 matches for a PubMed query, and efetch
+# rejects retstart values that would exceed that window.
+MAX_SEARCH_WINDOW = 9_999
 
-@dataclass
-class IngestStats:
-    """Statistics for an ingestion run."""
-
-    fetched: int = 0
-    inserted: int = 0
-    updated: int = 0
-    skipped: int = 0
-    errors: int = 0
+__all__ = [
+    "IngestStats",
+    "PubMedClient",
+    "PubMedIngestor",
+    "ingest_pubmed",
+    "parse_pubmed_xml",
+    "parse_pubmed_xml_with_rejections",
+]
 
 
 class PubMedClient:
-    """Client for PubMed E-utilities API."""
+    """Rate-limited client for NCBI E-utilities."""
 
     BASE_URL = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
 
-    def __init__(self, api_key: str | None = None, rate_limit: float = 3.0):
+    def __init__(
+        self,
+        api_key: str | None = None,
+        rate_limit: float = 3.0,
+        timeout: float = 60.0,
+    ) -> None:
         self.api_key = api_key
-        self.rate_limit = rate_limit
-        self._last_request = 0.0
-        self.client = httpx.Client(timeout=60.0)
+        self.limiter = RateLimiter(rate_limit)
+        self.client = httpx.Client(timeout=timeout)
 
-    def _rate_limit(self):
-        """Enforce rate limit between requests."""
-        elapsed = time.time() - self._last_request
-        min_interval = 1.0 / self.rate_limit
-        if elapsed < min_interval:
-            time.sleep(min_interval - elapsed)
-        self._last_request = time.time()
-
-    @retry(
-        wait=wait_exponential(multiplier=1, min=2, max=30),
-        stop=stop_after_attempt(3),
-    )
+    @retry(wait=wait_exponential(multiplier=1, min=2, max=30), stop=stop_after_attempt(3))
     def _get(self, endpoint: str, params: dict[str, Any]) -> httpx.Response:
-        """Make a GET request with retry logic."""
-        self._rate_limit()
+        self.limiter.wait()
+        payload = {**params, "tool": "BioEvidence"}
         if self.api_key:
-            params["api_key"] = self.api_key
-        url = f"{self.BASE_URL}/{endpoint}"
-        response = self.client.get(url, params=params)
+            payload["api_key"] = self.api_key
+        response = self.client.get(f"{self.BASE_URL}/{endpoint}", params=payload)
         response.raise_for_status()
         return response
 
-    def esearch(
-        self,
-        term: str,
-        db: str = "pubmed",
-        retmax: int = 10000,
-        use_history: bool = True,
-        retstart: int = 0,
-    ) -> dict[str, Any]:
-        """Search PubMed and return query key + web environment for history server."""
-        params = {
-            "db": db,
+    def esearch(self, term: str, use_history: bool = True) -> dict[str, Any]:
+        """Search PubMed and optionally keep the result set on NCBI's history server."""
+        params: dict[str, Any] = {
+            "db": "pubmed",
             "term": term,
-            "retmax": retmax,
-            "retstart": retstart,
+            "retmax": 0 if use_history else 10_000,
             "retmode": "json",
         }
         if use_history:
             params["usehistory"] = "y"
-
-        response = self._get("esearch.fcgi", params)
-        return response.json()
+        payload = self._get("esearch.fcgi", params).json()
+        return payload if isinstance(payload, dict) else {}
 
     def efetch(
         self,
-        id_list: list[str] | None = None,
         query_key: str | None = None,
         web_env: str | None = None,
-        db: str = "pubmed",
-        retmode: str = "xml",
+        id_list: list[str] | None = None,
         retstart: int = 0,
         retmax: int = 200,
     ) -> str:
-        """Fetch records in XML format."""
-        params = {
-            "db": db,
-            "retmode": retmode,
+        """Fetch one XML batch from a history set or an explicit ID list."""
+        params: dict[str, Any] = {
+            "db": "pubmed",
+            "retmode": "xml",
             "retstart": retstart,
             "retmax": retmax,
         }
-        if id_list:
-            params["id"] = ",".join(id_list)
         if query_key and web_env:
-            params["query_key"] = query_key
-            params["WebEnv"] = web_env
+            params.update({"query_key": query_key, "WebEnv": web_env})
+        elif id_list:
+            params["id"] = ",".join(id_list)
+        else:
+            msg = "efetch requires history keys or an ID list"
+            raise ValueError(msg)
+        return self._get("efetch.fcgi", params).text
 
-        response = self._get("efetch.fcgi", params)
-        return response.text
-
-    def close(self):
-        """Close the HTTP client."""
+    def close(self) -> None:
+        """Close the underlying HTTP client."""
         self.client.close()
 
 
-class RawCache:
-    """Disk-based raw response cache."""
+class RawPubMedCache(RawCache):
+    """Raw cache specialized for PubMed responses."""
 
-    def __init__(self, cache_dir: Path):
-        self.cache_dir = cache_dir
-        self.cache_dir.mkdir(parents=True, exist_ok=True)
+    def get_json(self, key: str) -> dict[str, Any] | None:
+        """Return a cached JSON payload."""
+        value = self.get(key)
+        return value if isinstance(value, dict) else None
 
-    def _cache_path(self, key: str) -> Path:
-        """Get cache file path for a key."""
-        safe_key = key.replace("/", "_").replace(":", "_").replace("?", "_")
-        return self.cache_dir / f"{safe_key}.json.gz"
+    def get_text(self, key: str) -> str | None:
+        """Return a cached XML payload."""
+        value = self.get(key)
+        return value if isinstance(value, str) else None
 
-    def get(self, key: str) -> dict[str, Any] | str | None:
-        """Get cached response if available."""
-        path = self._cache_path(key)
-        if path.exists():
-            try:
-                with gzip.open(path, "rt") as f:
-                    if path.suffix == ".gz":
-                        content = f.read()
-                        try:
-                            return json.loads(content)
-                        except json.JSONDecodeError:
-                            return content
-            except Exception as e:
-                logger.warning("cache_read_failed", key=key, error=str(e))
+
+def _element_text(element: ET.Element | None) -> str | None:
+    if element is None:
         return None
-
-    def set(self, key: str, data: dict[str, Any] | str) -> None:
-        """Cache a response."""
-        path = self._cache_path(key)
-        try:
-            with gzip.open(path, "wt") as f:
-                if isinstance(data, dict):
-                    json.dump(data, f)
-                else:
-                    f.write(data)
-            logger.debug("cache_write", key=key)
-        except Exception as e:
-            logger.warning("cache_write_failed", key=key, error=str(e))
+    return "".join(element.itertext()).strip() or None
 
 
-def parse_pubmed_xml(xml_text: str) -> list[dict]:
-    """Parse PubMed XML into article dicts."""
-    articles = []
+def _article_payload(article_elem: ET.Element) -> dict[str, Any]:
+    """Return raw fields for one PubMed article element."""
+    pmid = _element_text(article_elem.find(".//PMID"))
+    abstract_parts: list[str] = []
+    for abs_text in article_elem.findall(".//Abstract/AbstractText"):
+        text = _element_text(abs_text)
+        if not text:
+            continue
+        label = abs_text.get("Label") or abs_text.get("NlmCategory")
+        abstract_parts.append(f"{label}: {text}" if label else text)
+
+    year: int | None = None
+    pub_date = article_elem.find(".//Journal/JournalIssue/PubDate")
+    if pub_date is not None:
+        year_text = _element_text(pub_date.find("Year"))
+        if year_text is None:
+            medline_date = _element_text(pub_date.find("MedlineDate"))
+            year_text = medline_date.split()[0] if medline_date else None
+        if year_text and year_text[:4].isdigit():
+            year = int(year_text[:4])
+
+    return {
+        "pmid": clean_text(pmid) if pmid else None,
+        "title": _element_text(article_elem.find(".//ArticleTitle")),
+        "abstract": "\n".join(abstract_parts).strip() or None,
+        "journal": _element_text(article_elem.find(".//Journal/Title")),
+        "year": year,
+        "mesh_terms": [
+            term.text.strip()
+            for term in article_elem.findall(".//MeshHeading/DescriptorName")
+            if term.text and term.text.strip()
+        ]
+        or None,
+    }
+
+
+def parse_pubmed_xml_with_rejections(
+    xml_text: str,
+) -> tuple[list[PubMedRecord], list[dict[str, Any]], int]:
+    """Parse PubMed XML, returning valid records, rejections, and abstract-less count."""
     try:
         root = ET.fromstring(xml_text)
-    except ET.ParseError:
-        logger.exception("xml_parse_error")
-        return articles
+    except ET.ParseError as exc:
+        msg = "PubMed response was not valid XML"
+        raise ValueError(msg) from exc
 
+    records: list[PubMedRecord] = []
+    rejected: list[dict[str, Any]] = []
+    skipped = 0
     for article_elem in root.findall(".//PubmedArticle"):
-        try:
-            pmid_elem = article_elem.find(".//PMID")
-            pmid = pmid_elem.text if pmid_elem is not None else None
-            if not pmid:
-                continue
-
-            # Title
-            title_elem = article_elem.find(".//ArticleTitle")
-            title = title_elem.text if title_elem is not None else ""
-
-            # Abstract
-            abstract_text = ""
-            abstract_elem = article_elem.find(".//Abstract/AbstractText")
-            if abstract_elem is not None:
-                abstract_text = abstract_elem.text or ""
-            else:
-                # Handle structured abstracts
-                abstract_parts = []
-                for abs_text in article_elem.findall(".//AbstractText"):
-                    label = abs_text.get("Label")
-                    text = abs_text.text or ""
-                    if label:
-                        abstract_parts.append(f"{label}: {text}")
-                    else:
-                        abstract_parts.append(text)
-                abstract_text = " ".join(abstract_parts)
-
-            # Journal
-            journal_elem = article_elem.find(".//Journal/Title")
-            journal = journal_elem.text if journal_elem is not None else None
-
-            # Year
-            year = None
-            pub_date = article_elem.find(".//PubDate")
-            if pub_date is not None:
-                year_elem = pub_date.find("Year")
-                if year_elem is not None:
-                    with contextlib.suppress(ValueError, TypeError):
-                        year = int(year_elem.text)
-                else:
-                    medline_date = pub_date.find("MedlineDate")
-                    if medline_date is not None and medline_date.text:
-                        with contextlib.suppress(ValueError, IndexError):
-                            year = int(medline_date.text.split()[0])
-
-            # MeSH terms
-            mesh_terms = []
-            for mesh in article_elem.findall(".//MeshHeading/DescriptorName"):
-                if mesh.text:
-                    mesh_terms.append(mesh.text)
-
-            article = {
-                "pmid": pmid,
-                "title": title,
-                "abstract": abstract_text if abstract_text else None,
-                "journal": journal,
-                "year": year,
-                "mesh_terms": mesh_terms if mesh_terms else None,
-                "source_url": f"https://pubmed.ncbi.nlm.nih.gov/{pmid}/",
-                "fetched_at": datetime.utcnow(),
-            }
-            articles.append(article)
-
-        except Exception as e:
-            logger.warning("article_parse_error", error=str(e))
+        payload = _article_payload(article_elem)
+        if not payload["pmid"]:
+            rejected.append({"reason": "missing PMID", "record": payload})
+            continue
+        if not payload["abstract"]:
+            skipped += 1
+            logger.debug("pubmed_without_abstract_skipped", pmid=payload["pmid"])
             continue
 
-    return articles
+        payload.update(
+            {
+                "title": payload["title"] or f"PubMed {payload['pmid']}",
+                "source_url": f"https://pubmed.ncbi.nlm.nih.gov/{payload['pmid']}/",
+                "fetched_at": utcnow(),
+            }
+        )
+        try:
+            records.append(PubMedRecord(**payload))
+        except ValidationError as exc:
+            rejected.append({"reason": str(exc), "record": payload})
+            logger.warning("pubmed_record_rejected", pmid=payload["pmid"], error=str(exc))
+    return records, rejected, skipped
+
+
+def parse_pubmed_xml(xml_text: str) -> list[PubMedRecord]:
+    """Parse PubMed XML into validated records with abstracts only."""
+    records, _, _ = parse_pubmed_xml_with_rejections(xml_text)
+    return records
 
 
 class PubMedIngestor:
-    """Ingestor for PubMed data."""
+    """Parse and upsert PubMed abstracts."""
 
     def __init__(
-        self, cache_dir: Path | None = None, api_key: str | None = None, rate_limit: float = 3.0
-    ):
-        config = get_config()
-        self.client = PubMedClient(
-            api_key=api_key or config.rate_limits.ncbi_api_key or None,
-            rate_limit=rate_limit or config.rate_limits.ncbi,
-        )
-        self.cache = RawCache(cache_dir or Path(config.llm.cache_dir).parent / "raw" / "pubmed")
+        self,
+        cache_dir: Path | None = None,
+        api_key: str | None = None,
+        rate_limit: float = 3.0,
+        config: Config | None = None,
+        client: PubMedClient | None = None,
+    ) -> None:
+        self.config = config or get_config()
+        self.client = client or PubMedClient(api_key=api_key, rate_limit=rate_limit)
+        raw_root = Path(self.config.llm.cache_dir).parent / "raw" / "pubmed"
+        self.cache = RawPubMedCache(cache_dir or raw_root)
         self.stats = IngestStats()
 
-    def _build_query(
-        self, conditions: list[str], mesh_terms: list[str], start_year: int = 2005
-    ) -> str:
-        """Build PubMed query from conditions and MeSH terms."""
-        parts = []
+    @staticmethod
+    def _scope_keywords(config: Config) -> list[str]:
+        keywords: list[str] = []
+        for area in config.scope.therapeutic_areas:
+            keywords.extend(area.keywords)
+        return list(dict.fromkeys(keywords))
 
-        # Add condition keywords
+    @staticmethod
+    def _scope_mesh(config: Config) -> list[str]:
+        terms: list[str] = []
+        for area in config.scope.therapeutic_areas:
+            terms.extend(area.mesh_terms)
+        return list(dict.fromkeys(terms))
+
+    @staticmethod
+    def _scope_query(conditions: list[str], mesh_terms: list[str]) -> list[str]:
+        parts: list[str] = []
         if conditions:
-            cond_query = " OR ".join(f'"{c}"[Title/Abstract]' for c in conditions)
-            parts.append(f"({cond_query})")
-
-        # Add MeSH terms
+            condition_query = " OR ".join(f'"{term}"[Title/Abstract]' for term in conditions)
+            parts.append(f"({condition_query})")
         if mesh_terms:
-            mesh_query = " OR ".join(f'"{m}"[MeSH Terms]' for m in mesh_terms)
+            mesh_query = " OR ".join(f'"{term}"[MeSH Terms]' for term in mesh_terms)
             parts.append(f"({mesh_query})")
+        return parts
 
-        # Add year filter
+    @staticmethod
+    def build_query(conditions: list[str], mesh_terms: list[str], start_year: int = 2005) -> str:
+        """Build a legacy unbounded query, kept for compatibility and tests."""
+        parts = PubMedIngestor._scope_query(conditions, mesh_terms)
         parts.append(f"({start_year}:3000[pdat])")
-
-        # English only
         parts.append("english[lang]")
-
         return " AND ".join(parts)
+
+    @staticmethod
+    def build_query_for_range(
+        conditions: list[str],
+        mesh_terms: list[str],
+        start_date: date | str,
+        end_date: date | str,
+    ) -> str:
+        """Build a PubMed query for a bounded publication-date window."""
+        parts = PubMedIngestor._scope_query(conditions, mesh_terms)
+        start = start_date.isoformat() if isinstance(start_date, date) else start_date
+        end = end_date.isoformat() if isinstance(end_date, date) else end_date
+        parts.append(f'("{start}"[Date - Publication] : "{end}"[Date - Publication])')
+        parts.append("english[lang]")
+        return " AND ".join(parts)
+
+    @staticmethod
+    def iter_date_ranges(
+        start_year: int, end_date: date | None = None
+    ) -> Iterator[tuple[date, date]]:
+        """Yield daily date windows, newest first, within the configured scope."""
+        current = end_date or datetime.now(UTC).date()
+        last = date(start_year, 1, 1)
+        while current >= last:
+            yield current, current
+            current -= timedelta(days=1)
+
+    @staticmethod
+    def upsert_article(session: Session, record: PubMedRecord) -> tuple[PubMedArticle, bool]:
+        """Upsert one PubMed article. Returns ``(article, is_new)``."""
+        article = session.get(PubMedArticle, record.pmid)
+        is_new = article is None
+        values = record.to_orm_kwargs()
+        if article is None:
+            article = PubMedArticle(**values)
+            session.add(article)
+        else:
+            for key, value in values.items():
+                if key != "pmid":
+                    setattr(article, key, value)
+        return article, is_new
+
+    def _search_key(self, query: str) -> str:
+        return f"pubmed:esearch:{query}"
+
+    def _fetch_key(self, query: str, retstart: int, batch_size: int) -> str:
+        return f"pubmed:efetch:{query}:{retstart}:{batch_size}"
 
     def ingest(
         self,
@@ -286,73 +311,102 @@ class PubMedIngestor:
         max_articles: int | None = None,
         batch_size: int = 200,
     ) -> IngestStats:
-        """Run ingestion for given conditions."""
-        config = get_config()
-        scope_config = config.scope
+        """Ingest abstracts via esearch history and batched efetch."""
+        self.stats = IngestStats()
+        targets = self.config.scope.targets
+        target = (
+            max_articles
+            or targets.get("pubmed_articles")
+            or targets.get("pubmed_abstracts")
+            or 80_000
+        )
+        conditions = conditions or self._scope_keywords(self.config)
+        mesh_terms = mesh_terms or self._scope_mesh(self.config)
+        logger.info("pubmed_target", target=target, start_year=start_year)
 
-        conditions = conditions or [
-            kw for area in scope_config.therapeutic_areas for kw in area.get("keywords", [])
-        ]
-        mesh_terms = mesh_terms or [
-            mt for area in scope_config.therapeutic_areas for mt in area.get("mesh_terms", [])
-        ]
+        seen: set[str] = set()
+        try:
+            for window_start, window_end in self.iter_date_ranges(start_year):
+                if len(seen) >= target:
+                    break
+                query = self.build_query_for_range(conditions, mesh_terms, window_start, window_end)
+                search_key = self._search_key(query)
+                search_data = self.cache.get_json(search_key)
+                if search_data is None:
+                    search_data = self.client.esearch(term=query, use_history=True)
+                    self.cache.set(search_key, search_data)
 
-        query = self._build_query(conditions, mesh_terms, start_year)
-        logger.info("pubmed_query", query=query)
+                result = search_data.get("esearchresult", {}) if search_data else {}
+                if error := result.get("ERROR"):
+                    self.stats.errors += 1
+                    logger.warning("pubmed_search_failed", date=str(window_start), error=str(error))
+                    continue
+                count = int(result.get("count", 0) or 0)
+                if count <= 0:
+                    continue
+                query_key = result.get("querykey")
+                web_env = result.get("webenv")
+                if not query_key or not web_env:
+                    self.stats.errors += 1
+                    logger.warning("pubmed_missing_history_keys", date=str(window_start))
+                    continue
 
-        # Search
-        cache_key = f"esearch_{hash(query)}"
-        search_data = self.cache.get(cache_key)
+                available = min(count, MAX_SEARCH_WINDOW)
+                for retstart in range(0, available, batch_size):
+                    if len(seen) >= target:
+                        break
+                    retmax = min(batch_size, MAX_SEARCH_WINDOW - retstart)
+                    fetch_key = self._fetch_key(query, retstart, batch_size)
+                    xml_data = self.cache.get_text(fetch_key)
+                    if xml_data is None:
+                        xml_data = self.client.efetch(
+                            query_key=str(query_key),
+                            web_env=str(web_env),
+                            retstart=retstart,
+                            retmax=retmax,
+                        )
+                        self.cache.set(fetch_key, xml_data)
 
-        if search_data is None:
-            search_data = self.client.esearch(term=query, retmax=max_articles or 100000)
-            self.cache.set(cache_key, search_data)
+                    try:
+                        records, rejected, skipped = parse_pubmed_xml_with_rejections(xml_data)
+                    except ValueError as exc:
+                        self.stats.errors += 1
+                        logger.warning(
+                            "pubmed_batch_parse_failed", retstart=retstart, error=str(exc)
+                        )
+                        continue
 
-        id_list = search_data.get("esearchresult", {}).get("idlist", [])
-        total_count = int(search_data.get("esearchresult", {}).get("count", 0))
-        logger.info("pubmed_search_results", total=total_count, returned=len(id_list))
-
-        if max_articles:
-            id_list = id_list[:max_articles]
-
-        # Fetch in batches
-        for i in range(0, len(id_list), batch_size):
-            batch_ids = id_list[i : i + batch_size]
-            logger.info("fetching_batch", start=i, size=len(batch_ids))
-
-            fetch_cache_key = f"efetch_{'_'.join(batch_ids[:5])}"
-            xml_data = self.cache.get(fetch_cache_key)
-
-            if xml_data is None:
-                xml_data = self.client.efetch(id_list=batch_ids)
-                self.cache.set(fetch_cache_key, xml_data)
-
-            articles = parse_pubmed_xml(xml_data)
-
-            for article in articles:
-                try:
-                    self.stats.fetched += 1
+                    self.stats.skipped += skipped
+                    for item in rejected:
+                        self.stats.skipped += 1
+                        quarantine_record("pubmed", item["record"], str(item["reason"]))
 
                     with get_session() as session:
-                        existing = session.get(PubMedArticle, article["pmid"])
-                        if existing:
-                            # Update
-                            for key, value in article.items():
-                                if key != "pmid":
-                                    setattr(existing, key, value)
-                            self.stats.updated += 1
-                        else:
-                            # Insert
-                            pubmed_article = PubMedArticle(**article)
-                            session.add(pubmed_article)
-                            self.stats.inserted += 1
+                        for record in records:
+                            if record.pmid in seen or len(seen) >= target:
+                                continue
+                            seen.add(record.pmid)
+                            _, is_new = self.upsert_article(session, record)
+                            if is_new:
+                                self.stats.inserted += 1
+                            else:
+                                self.stats.updated += 1
                         session.commit()
 
-                except Exception:
-                    self.stats.errors += 1
-                    logger.exception("ingest_error", pmid=article.get("pmid"))
+                logger.info(
+                    "pubmed_window_complete",
+                    date=str(window_start),
+                    matches=count,
+                    fetched=len(seen),
+                )
+        finally:
+            self.client.close()
 
-        self.client.close()
+        self.stats.fetched = len(seen)
+        with get_session() as session:
+            row_count = int(session.scalar(select(func.count()).select_from(PubMedArticle)) or 0)
+            record_ingest_run("pubmed", self.stats, row_count)
+        logger.info("pubmed_ingest_complete", **self.stats.as_dict())
         return self.stats
 
 
@@ -362,11 +416,24 @@ def ingest_pubmed(
     start_year: int = 2005,
     max_articles: int | None = None,
     batch_size: int = 200,
-    rate_limit: float = 3.0,
+    rate_limit: float | None = None,
     api_key: str | None = None,
 ) -> IngestStats:
     """Main entry point for PubMed ingestion."""
     config = get_config()
-    cache_dir = Path(config.llm.cache_dir).parent / "raw" / "pubmed"
-    ingestor = PubMedIngestor(cache_dir=cache_dir, api_key=api_key, rate_limit=rate_limit)
-    return ingestor.ingest(conditions, mesh_terms, start_year, max_articles, batch_size)
+    resolved_key = api_key or config.rate_limits.ncbi_api_key or None
+    effective_rate = rate_limit or (10.0 if resolved_key else float(config.rate_limits.ncbi))
+    raw_root = Path(config.llm.cache_dir).parent / "raw" / "pubmed"
+    ingestor = PubMedIngestor(
+        cache_dir=raw_root,
+        api_key=resolved_key,
+        rate_limit=effective_rate,
+        config=config,
+    )
+    return ingestor.ingest(
+        conditions=conditions,
+        mesh_terms=mesh_terms,
+        start_year=start_year,
+        max_articles=max_articles,
+        batch_size=batch_size,
+    )

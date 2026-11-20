@@ -32,80 +32,80 @@ help:
 # Install dependencies and setup
 setup:
 	uv sync --all-extras --frozen
-	uv run pre-commit install
+	uv run --frozen pre-commit install
 	mkdir -p data/raw/ctgov data/raw/pubmed data/raw/openfda data/processed data/splits data/goldens results/retrieval results/extraction results/agent results/forecast reports mlruns models
 
 # Linting
 lint:
-	uv run ruff check src tests
-	uv run ruff format --check src tests
-	uv run mypy src
+	uv run --frozen ruff check src tests
+	uv run --frozen ruff format --check src tests
+	uv run --frozen mypy src
 
 # Testing
 test:
-	uv run pytest
+	uv run --frozen pytest
 
 check: lint test
 
 test-cov:
-	uv run pytest --cov=src/bioevidence --cov-report=term-missing --cov-report=html
+	uv run --frozen pytest --cov=src/bioevidence --cov-report=term-missing --cov-report=html
 
 # Database
 migrate:
-	uv run alembic upgrade head
+	uv run --frozen alembic upgrade head
 
 # Ingestion
 ingest:
-	uv run python -m bioevidence ingest ctgov
-	uv run python -m bioevidence ingest pubmed
-	uv run python -m bioevidence ingest openfda
+	uv run --frozen python -m bioevidence ingest ctgov
+	uv run --frozen python -m bioevidence ingest pubmed
+	uv run --frozen python -m bioevidence ingest openfda
 
 ingest-ctgov:
-	uv run python -m bioevidence ingest ctgov
+	uv run --frozen python -m bioevidence ingest ctgov
 
 ingest-pubmed:
-	uv run python -m bioevidence ingest pubmed
+	uv run --frozen python -m bioevidence ingest pubmed
 
 ingest-openfda:
-	uv run python -m bioevidence ingest openfda
+	uv run --frozen python -m bioevidence ingest openfda
 
 # Quality
 quality:
-	uv run python -m bioevidence quality run
+	uv run --frozen python -m bioevidence quality run
 
 # Chunking and splits
 chunks:
-	uv run python -m bioevidence chunk build
-	uv run python -m bioevidence splits make
+	uv run --frozen python -m bioevidence chunk build
+	uv run --frozen python -m bioevidence splits make
 
 # Embeddings
 embed:
-	uv run python -m bioevidence embed build --model $(EMBEDDING_MODEL)
+	uv run --frozen python -m bioevidence embed build --model $(EMBEDDING_MODEL)
 
 # Training
 train-embed:
-	uv run python -m bioevidence train embed
+	uv run --frozen python -m bioevidence train embed
 
 train-rerank:
-	uv run python -m bioevidence train rerank
+	uv run --frozen python -m bioevidence train rerank
 
 train-lora:
-	uv run python -m bioevidence train lora
+	uv run --frozen python -m bioevidence train lora
 
 # Evaluation
 eval:
-	uv run python -m bioevidence eval run
+	uv run --frozen python -m bioevidence eval run
 
 eval-ci:
-	uv run python -m bioevidence eval ci
+	uv run --frozen python -m bioevidence eval ci
 
 # Forecasting
 forecast:
-	uv run python -m bioevidence forecast run
+	uv run --frozen python -m bioevidence forecast run
 
 # API and Web
 api:
-	uv run uvicorn bioevidence.api.main:app --host $(API_HOST) --port $(API_PORT) --reload
+	uv run --frozen uvicorn bioevidence.api.main:app --host $(API_HOST) --port $(API_PORT) --reload
 
 web:
 	cd web && npm run dev

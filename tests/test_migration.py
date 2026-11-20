@@ -41,6 +41,10 @@ def test_initial_migration_creates_schema_and_indexes() -> None:
         assert f"CREATE INDEX {index}" in sql
 
     assert "CREATE EXTENSION IF NOT EXISTS vector" in sql
+    assert sql.count("CREATE TABLE trials") == 1
+    assert sql.count("ALTER TABLE drug_labels ADD COLUMN matched_interventions") == 1
+    assert sql.count("ALTER TABLE drug_labels ADD COLUMN fetched_at") == 1
+    assert "CREATE INDEX ix_drug_labels_fetched_at" in sql
     assert sql.count("CREATE TYPE doctype") == 1
     assert sql.count("CREATE TYPE outcomekind") == 1
     assert sql.count("CREATE TYPE splittype") == 1
