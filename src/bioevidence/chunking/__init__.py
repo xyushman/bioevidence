@@ -1,6 +1,7 @@
 """BioEvidence chunking package."""
 
 from bioevidence.chunking.chunker import (
+    ChunkConfig,
     Chunker,
     build_chunks,
     count_tokens,
@@ -10,28 +11,41 @@ from bioevidence.chunking.chunker import (
     get_tokenizer,
     split_drug_label,
     split_pubmed_article,
+    split_text_by_paragraphs,
     split_text_by_tokens,
     split_trial_sections,
 )
 from bioevidence.chunking.splits import (
+    DEFAULT_SPLITS_PATH,
+    SplitConfig,
     get_split_stats,
     make_splits,
+    resolve_splits_path,
+    split_doc_ids,
+    verify_no_db_leakage,
     verify_no_leakage,
 )
 
 __all__ = [
+    "ChunkConfig",
     "Chunker",
+    "DEFAULT_SPLITS_PATH",
+    "SplitConfig",
     "build_chunks",
     "count_tokens",
     "extract_exclusion_criteria",
     "extract_inclusion_criteria",
     "extract_outcomes_text",
-    "get_tokenizer",
     "get_split_stats",
+    "get_tokenizer",
     "make_splits",
+    "resolve_splits_path",
     "split_drug_label",
+    "split_doc_ids",
     "split_pubmed_article",
+    "split_text_by_paragraphs",
     "split_text_by_tokens",
     "split_trial_sections",
+    "verify_no_db_leakage",
     "verify_no_leakage",
 ]
