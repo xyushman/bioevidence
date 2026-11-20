@@ -56,6 +56,24 @@ Split by **document id** (not chunk): 80/10/10 train/dev/test for trials and Pub
 ## CLI
 `ingest ctgov|pubmed|openfda`, `quality run`, `db migrate`, `chunk build`, `embed build --model <name>`, `splits make`.
 
+## M1 implementation notes
+- Run live ingestion with the CLI (for example `python -m bioevidence ingest ctgov --rate-limit 3`,
+  `python -m bioevidence ingest pubmed --rate-limit 3`, and
+  `python -m bioevidence ingest openfda --rate-limit 10`). Each source records a timestamped JSON run
+  summary under `results/ingestion/`; reruns upsert by natural key and include updated counts, not duplicates.
+- PubMed ingestion partitions queries by publication date because E-utilities exposes only the first 9,999 matches
+  per query. Daily windows are walked newest-first and cached by query, offset, and batch size.
+- openFDA searches are built from frequently used, drug-like intervention names. Individual bad search terms are
+  logged and skipped, and a bounded scan of `openfda.generic_name:*` supplies remaining labels when targeted searches
+  fall short; rejected records are deduplicated under `data/processed/`.
+- `python -m bioevidence chunk build` writes chunks and a timestamped summary under `results/chunking/`.
+  `python -m bioevidence splits make` writes the committed document-id split file under `data/splits/` and
+  `python -m bioevidence splits verify` checks that no test document appears in training data.
+- `python -m bioevidence quality run` writes `reports/data_quality.md` plus a JSON summary, and exits non-zero when
+  any critical check fails.
+- `python -m bioevidence sample create` rebuilds the deterministic demo dataset from the configured seed;
+  `sample export` writes the compact JSON files under `data/sample/` used by demos and CI.
+
 ## Acceptance criteria
 - Clean clone -> `make ingest` populates DB with counts within targets; second run adds 0 duplicates.
 - `reports/data_quality.md` generated with completeness table and zero critical failures.
