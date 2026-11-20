@@ -9,6 +9,7 @@ from bioevidence.agent import BioEvidenceAgent
 from bioevidence.chunking import build_chunks, get_split_stats, make_splits, verify_no_leakage
 from bioevidence.config import get_config
 from bioevidence.embedding import build_embeddings
+from bioevidence.extraction import prepare_extraction_dataset
 from bioevidence.ingest import (
     ingest_ctgov as ingest_ctgov_fn,
 )
@@ -419,6 +420,69 @@ def eval_retrieval(
     console.print(f"Recall@5: {result['aggregate'].recall_at_5:.4f}")
     console.print(f"MRR@10: {result['aggregate'].mrr_at_10:.4f}")
     console.print(f"nDCG@10: {result['aggregate'].ndcg_at_10:.4f}")
+
+
+@app.command()
+def extract(
+    action: str = typer.Argument("prepare", help="Action: prepare, evaluate, run"),
+    nct_id: str = typer.Option(None, "--nct-id", help="NCT ID for single trial extraction"),
+    method: str = typer.Option("lora", "--method", help="Extraction method: lora, constrained"),
+    model_path: str = typer.Option(None, "--model-path", help="LoRA model path"),
+    test_file: str = typer.Option(
+        "data/processed/extraction_test.jsonl", "--test-file", help="Test file for evaluation"
+    ),
+    output: str = typer.Option("results/extraction", "--output", help="Output directory"),
+):
+    """Trial field extraction."""
+    if action == "prepare":
+        console.print("[yellow]Preparing extraction dataset...[/yellow]")
+        train, val, test = prepare_extraction_dataset()
+        console.print(f"Train: {len(train)}, Val: {len(val)}, Test: {len(test)}")
+
+    elif action == "evaluate":
+        console.print("[yellow]Evaluating extraction...[/yellow]")
+        console.print("[red]Evaluation requires trained model - not implemented yet[/red]")
+        raise typer.Exit(code=1)
+
+    elif action == "run":
+        if not nct_id:
+            console.print("[red]--nct-id required for run action[/red]")
+            raise typer.Exit(code=1)
+
+        console.print(f"[yellow]Extracting fields for {nct_id}...[/yellow]")
+        from bioevidence.db.models import Trial, TrialCondition, TrialIntervention, TrialOutcome
+        from bioevidence.db.session import get_session
+
+        with get_session() as session:
+            trial = session.get(Trial, nct_id)
+            if not trial:
+                console.print(f"[red]Trial {nct_id} not found[/red]")
+                raise typer.Exit(code=1)
+
+            from bioevidence.scripts.prepare_extraction_data import build_trial_text
+
+            trial_data = {
+                "trial": trial,
+                "conditions": session.query(TrialCondition)
+                .filter(TrialCondition.nct_id == nct_id)
+                .all(),
+                "interventions": session.query(TrialIntervention)
+                .filter(TrialIntervention.nct_id == nct_id)
+                .all(),
+                "outcomes": session.query(TrialOutcome).filter(TrialOutcome.nct_id == nct_id).all(),
+            }
+            trial_text = build_trial_text(trial_data)
+
+        from bioevidence.extraction import extract_trial_fields
+
+        result = extract_trial_fields(trial_text, method=method, model_path=model_path)
+
+        console.print("\n[bold]Extracted Fields:[/bold]")
+        console.print_json(data=result)
+
+    else:
+        console.print(f"[red]Unknown action: {action}[/red]")
+        raise typer.Exit(code=1)
 
 
 @app.command()
