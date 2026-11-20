@@ -166,6 +166,7 @@ def evaluate_extraction(
         field_metrics=field_metrics,
         macro_f1=macro_f1,
         valid_json=valid_json,
+        latency_ms=0.0,  # Will be set by caller if timing
     )
 
 
