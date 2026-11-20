@@ -10,7 +10,7 @@ from typing import Any
 
 import structlog
 
-from bioevidence.config import get_config
+from bioevidence.config import Config, get_config
 
 logger = structlog.get_logger(__name__)
 
@@ -31,7 +31,7 @@ class LLMProvider(ABC):
     """Abstract base class for LLM providers."""
 
     @abstractmethod
-    def complete(self, prompt: str, system_prompt: str | None = None, **kwargs) -> LLMResponse:
+    def complete(self, prompt: str, system_prompt: str | None = None, **kwargs: Any) -> LLMResponse:
         """Generate a completion."""
         pass
 
@@ -51,7 +51,7 @@ class GeminiProvider(LLMProvider):
         self.max_tokens = max_tokens
         self._client = None
 
-    def _get_client(self):
+    def _get_client(self) -> Any:
         if self._client is None:
             try:
                 import google.generativeai as genai
@@ -64,7 +64,7 @@ class GeminiProvider(LLMProvider):
                 ) from e
         return self._client
 
-    def complete(self, prompt: str, system_prompt: str | None = None, **kwargs) -> LLMResponse:
+    def complete(self, prompt: str, system_prompt: str | None = None, **kwargs: Any) -> LLMResponse:
         start = time.perf_counter()
         client = self._get_client()
 
@@ -111,7 +111,7 @@ class AnthropicProvider(LLMProvider):
         self.max_tokens = max_tokens
         self._client = None
 
-    def _get_client(self):
+    def _get_client(self) -> Any:
         if self._client is None:
             try:
                 import anthropic
@@ -121,7 +121,7 @@ class AnthropicProvider(LLMProvider):
                 raise RuntimeError("anthropic not installed. Run: uv add anthropic") from e
         return self._client
 
-    def complete(self, prompt: str, system_prompt: str | None = None, **kwargs) -> LLMResponse:
+    def complete(self, prompt: str, system_prompt: str | None = None, **kwargs: Any) -> LLMResponse:
         start = time.perf_counter()
         client = self._get_client()
 
@@ -164,7 +164,7 @@ class OpenAIProvider(LLMProvider):
         self.max_tokens = max_tokens
         self._client = None
 
-    def _get_client(self):
+    def _get_client(self) -> Any:
         if self._client is None:
             try:
                 from openai import OpenAI
@@ -174,7 +174,7 @@ class OpenAIProvider(LLMProvider):
                 raise RuntimeError("openai not installed. Run: uv add openai") from e
         return self._client
 
-    def complete(self, prompt: str, system_prompt: str | None = None, **kwargs) -> LLMResponse:
+    def complete(self, prompt: str, system_prompt: str | None = None, **kwargs: Any) -> LLMResponse:
         start = time.perf_counter()
         client = self._get_client()
 
@@ -214,7 +214,7 @@ class StubProvider(LLMProvider):
         self.responses = responses or {}
         self.call_log: list[dict[str, Any]] = []
 
-    def complete(self, prompt: str, system_prompt: str | None = None, **kwargs) -> LLMResponse:
+    def complete(self, prompt: str, system_prompt: str | None = None, **kwargs: Any) -> LLMResponse:
         self.call_log.append({"prompt": prompt, "system_prompt": system_prompt, "kwargs": kwargs})
 
         # Check for exact match first
@@ -347,7 +347,7 @@ class LLMCache:
         except Exception as e:
             logger.warning("llm_cache_write_failed", key=key, error=str(e))
 
-    def stats(self) -> dict[str, int]:
+    def stats(self) -> dict[str, float]:
         """Get cache statistics."""
         return {
             "hits": self.hits,
@@ -360,8 +360,11 @@ class LLMClient:
     """Main LLM client with provider selection and caching."""
 
     def __init__(
-        self, config=None, cache: LLMCache | None = None, provider: LLMProvider | None = None
-    ):
+        self,
+        config: Config | None = None,
+        cache: LLMCache | None = None,
+        provider: LLMProvider | None = None,
+    ) -> None:
         self.config = config or get_config()
         self.cache = cache or LLMCache(self.config.llm.cache_dir)
         self.provider = provider or self._create_provider()
@@ -396,11 +399,15 @@ class LLMClient:
             raise ValueError(f"Unknown LLM provider: {provider_name}")
 
     def complete(
-        self, prompt: str, system_prompt: str | None = None, use_cache: bool = True, **kwargs
+        self,
+        prompt: str,
+        system_prompt: str | None = None,
+        use_cache: bool = True,
+        **kwargs: Any,
     ) -> LLMResponse:
         """Generate a completion with optional caching."""
         model_name = self.provider.get_model_name()
-        params = {
+        params: dict[str, Any] = {
             "temperature": kwargs.get("temperature", 0.0),
             "max_tokens": kwargs.get("max_tokens", 4096),
         }
@@ -420,7 +427,7 @@ class LLMClient:
 
         return response
 
-    def get_cache_stats(self) -> dict[str, int]:
+    def get_cache_stats(self) -> dict[str, float]:
         """Get cache statistics."""
         return self.cache.stats()
 

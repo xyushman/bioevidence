@@ -1,6 +1,6 @@
 # BioEvidence Makefile
 
-.PHONY: help setup lint test test-cov migrate ingest quality chunks embed train-embed train-rerank train-lora eval eval-ci forecast api web up down clean
+.PHONY: help setup lint test test-cov check migrate ingest quality chunks embed train-embed train-rerank train-lora eval eval-ci forecast api web up down clean
 
 # Default target
 help:
@@ -11,6 +11,7 @@ help:
 	@echo "  lint          - Run ruff and mypy"
 	@echo "  test          - Run pytest"
 	@echo "  test-cov      - Run pytest with coverage"
+	@echo "  check         - Run lint and test together"
 	@echo "  migrate       - Run Alembic migrations"
 	@echo "  ingest        - Run all ingestors (ctgov, pubmed, openfda)"
 	@echo "  quality       - Run data quality checks"
@@ -30,7 +31,7 @@ help:
 
 # Install dependencies and setup
 setup:
-	uv sync --all-extras
+	uv sync --all-extras --frozen
 	uv run pre-commit install
 	mkdir -p data/raw/ctgov data/raw/pubmed data/raw/openfda data/processed data/splits data/goldens results/retrieval results/extraction results/agent results/forecast reports mlruns models
 
@@ -43,6 +44,8 @@ lint:
 # Testing
 test:
 	uv run pytest
+
+check: lint test
 
 test-cov:
 	uv run pytest --cov=src/bioevidence --cov-report=term-missing --cov-report=html

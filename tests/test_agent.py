@@ -1,7 +1,5 @@
 """Tests for BioEvidence agent multi-step reasoning."""
 
-import pytest
-
 from bioevidence.agent.agent import (
     AgentResponse,
     BioEvidenceAgent,
@@ -10,7 +8,6 @@ from bioevidence.agent.agent import (
     ToolResult,
     create_agent,
 )
-from bioevidence.llm import create_stub_client
 
 
 class TestBioEvidenceAgent:

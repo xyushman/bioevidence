@@ -11,7 +11,6 @@ ENV/
 
 # uv
 .uv/
-uv.lock
 
 # Environment files
 .env
@@ -43,8 +42,10 @@ docker-compose.override.yml
 
 # Test/coverage
 .coverage
+coverage.xml
 htmlcov/
 .pytest_cache/
+.mypy_cache/
 .tox/
 
 # Build

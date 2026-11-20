@@ -1,22 +1,26 @@
 """Database session management."""
 
+from collections.abc import Iterator
 from contextlib import contextmanager
 
-from sqlalchemy import create_engine
+from sqlalchemy import Engine, create_engine
 from sqlalchemy.orm import Session, sessionmaker
 
 from bioevidence.config import get_config
 from bioevidence.db.models import Base
 
-_engine = None
-_SessionFactory = None
+_engine: Engine | None = None
+_SessionFactory: sessionmaker[Session] | None = None
 
 
-def get_engine():
+def get_engine() -> Engine:
     """Get or create the database engine."""
     global _engine
     if _engine is None:
         config = get_config()
+        if not config.database.url:
+            msg = "DATABASE_URL is not configured"
+            raise RuntimeError(msg)
         _engine = create_engine(
             config.database.url,
             pool_size=config.database.pool_size,
@@ -27,7 +31,7 @@ def get_engine():
     return _engine
 
 
-def get_session_factory():
+def get_session_factory() -> sessionmaker[Session]:
     """Get or create the session factory."""
     global _SessionFactory
     if _SessionFactory is None:
@@ -36,7 +40,7 @@ def get_session_factory():
 
 
 @contextmanager
-def get_session() -> Session:
+def get_session() -> Iterator[Session]:
     """Get a database session."""
     session = get_session_factory()()
     try:
@@ -49,13 +53,11 @@ def get_session() -> Session:
         session.close()
 
 
-def init_db():
+def init_db() -> None:
     """Initialize database tables."""
-    engine = get_engine()
-    Base.metadata.create_all(engine)
+    Base.metadata.create_all(get_engine())
 
 
-def drop_db():
+def drop_db() -> None:
     """Drop all database tables."""
-    engine = get_engine()
-    Base.metadata.drop_all(engine)
+    Base.metadata.drop_all(get_engine())

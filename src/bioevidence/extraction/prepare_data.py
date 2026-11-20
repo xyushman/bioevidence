@@ -6,6 +6,8 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
+import structlog
+
 from bioevidence.config import get_config
 from bioevidence.db.models import (
     Chunk,
@@ -17,9 +19,6 @@ from bioevidence.db.models import (
     TrialOutcome,
 )
 from bioevidence.db.session import get_session
-
-logger = get_config().__class__.__module__  # placeholder
-import structlog
 
 logger = structlog.get_logger(__name__)
 
@@ -288,7 +287,7 @@ def parse_eligibility(eligibility_text: str | None) -> tuple[list[str], list[str
             break
 
     if not inclusion and not exclusion:
-        lines = [l.strip() for l in eligibility_text.split("\n") if l.strip()]
+        lines = [line.strip() for line in eligibility_text.split("\n") if line.strip()]
         mid = len(lines) // 2
         inclusion = lines[:mid]
         exclusion = lines[mid:]

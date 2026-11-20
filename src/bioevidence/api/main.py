@@ -1,16 +1,16 @@
 """FastAPI application for BioEvidence API."""
 
-import structlog
 from contextlib import asynccontextmanager
 from typing import Any
 
-from fastapi import FastAPI, HTTPException, Query
+import structlog
+from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
-from bioevidence.agent import BioEvidenceAgent, AgentResponse, create_agent
+from bioevidence.agent import BioEvidenceAgent, create_agent
 from bioevidence.config import get_config
-from bioevidence.retrieval.pipeline import Hit, get_retriever
+from bioevidence.retrieval.pipeline import get_retriever
 
 logger = structlog.get_logger(__name__)
 
@@ -49,12 +49,14 @@ app.add_middleware(
 
 class QuestionRequest(BaseModel):
     """Request model for asking a question."""
+
     question: str = Field(..., min_length=1, max_length=2000)
     system: str | None = Field(None, pattern="^(A0|A1a|A1b|A2|A3|A4|A4b|A5)$")
 
 
 class QuestionResponse(BaseModel):
     """Response model for question answer."""
+
     answer: str
     citations: list[int]
     tools_used: list[str]
@@ -65,6 +67,7 @@ class QuestionResponse(BaseModel):
 
 class SearchRequest(BaseModel):
     """Request model for search."""
+
     query: str = Field(..., min_length=1, max_length=1000)
     k: int = Field(5, ge=1, le=50)
     filters: dict[str, Any] | None = None
@@ -73,12 +76,14 @@ class SearchRequest(BaseModel):
 
 class SearchResponse(BaseModel):
     """Response model for search."""
+
     hits: list[dict]
     query: str
 
 
 class HealthResponse(BaseModel):
     """Health check response."""
+
     status: str
     version: str
 
@@ -111,7 +116,7 @@ async def ask_question(request: QuestionRequest):
         )
     except Exception as e:
         logger.exception("ask_question_failed")
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=str(e)) from e
 
 
 @app.post("/search", response_model=SearchResponse)
@@ -139,7 +144,7 @@ async def search_evidence(request: SearchRequest):
         )
     except Exception as e:
         logger.exception("search_failed")
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=str(e)) from e
 
 
 @app.get("/systems")
@@ -147,19 +152,44 @@ async def list_systems():
     """List available retrieval systems."""
     return {
         "systems": [
-            {"id": "A0", "name": "Baseline Dense", "description": "Off-the-shelf bge-small, dense only"},
+            {
+                "id": "A0",
+                "name": "Baseline Dense",
+                "description": "Off-the-shelf bge-small, dense only",
+            },
             {"id": "A1a", "name": "BM25 Only", "description": "Postgres FTS only"},
-            {"id": "A1b", "name": "Dense Only", "description": "Off-the-shelf bge-small, dense only"},
+            {
+                "id": "A1b",
+                "name": "Dense Only",
+                "description": "Off-the-shelf bge-small, dense only",
+            },
             {"id": "A2", "name": "Hybrid (RRF)", "description": "BM25 + dense with RRF fusion"},
-            {"id": "A3", "name": "Fine-tuned Embeddings", "description": "Hybrid + fine-tuned bge-small embeddings"},
-            {"id": "A4", "name": "Off-the-shelf Reranker", "description": "Fine-tuned embeddings + hybrid + bge-reranker-base"},
-            {"id": "A4b", "name": "Fine-tuned Reranker", "description": "Fine-tuned embeddings + hybrid + fine-tuned MiniLM reranker"},
-            {"id": "A5", "name": "Full System", "description": "Fine-tuned embeddings + hybrid + fine-tuned reranker + metadata filters"},
+            {
+                "id": "A3",
+                "name": "Fine-tuned Embeddings",
+                "description": "Hybrid + fine-tuned bge-small embeddings",
+            },
+            {
+                "id": "A4",
+                "name": "Off-the-shelf Reranker",
+                "description": "Fine-tuned embeddings + hybrid + bge-reranker-base",
+            },
+            {
+                "id": "A4b",
+                "name": "Fine-tuned Reranker",
+                "description": "Fine-tuned embeddings + hybrid + fine-tuned MiniLM reranker",
+            },
+            {
+                "id": "A5",
+                "name": "Full System",
+                "description": "Fine-tuned embeddings + hybrid + fine-tuned reranker + metadata filters",
+            },
         ]
     }
 
 
 if __name__ == "__main__":
     import uvicorn
+
     config = get_config()
     uvicorn.run(app, host=config.api.host, port=config.api.port)

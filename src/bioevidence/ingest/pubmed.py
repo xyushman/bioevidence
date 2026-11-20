@@ -248,7 +248,8 @@ class PubMedIngestor:
     ):
         config = get_config()
         self.client = PubMedClient(
-            api_key=api_key or config.rate_limits.ncbi, rate_limit=rate_limit
+            api_key=api_key or config.rate_limits.ncbi_api_key or None,
+            rate_limit=rate_limit or config.rate_limits.ncbi,
         )
         self.cache = RawCache(cache_dir or Path(config.llm.cache_dir).parent / "raw" / "pubmed")
         self.stats = IngestStats()

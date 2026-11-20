@@ -1,10 +1,10 @@
 """Agent tools for BioEvidence."""
 
 import json
-import structlog
 from dataclasses import dataclass
 
 import sqlglot
+import structlog
 from sqlglot import exp
 
 from bioevidence.config import get_config
@@ -40,35 +40,63 @@ class SearchEvidenceTool:
 class SQLQueryTool:
     """Tool for executing read-only SQL queries with guardrails."""
 
-    ALLOWED_TABLES = frozenset({
-        "trials",
-        "trial_conditions",
-        "trial_interventions",
-        "trial_outcomes",
-        "pubmed_articles",
-        "drug_labels",
-        "chunks",
-    })
-    BLOCKED_FUNCTIONS = frozenset({
-        "pg_",
-        "information_schema",
-        "copy",
-        "into",
-        "pg_read_file",
-        "pg_write_file",
-        "pg_ls_dir",
-        "pg_stat_file",
-        "pg_catalog",
-        "pg_roles",
-        "pg_user",
-        "pg_authid",
-    })
-    BLOCKED_STATEMENTS = frozenset({
-        "INSERT", "UPDATE", "DELETE", "DROP", "CREATE", "ALTER", "TRUNCATE",
-        "GRANT", "REVOKE", "COPY", "EXPLAIN", "PREPARE", "EXECUTE",
-        "DECLARE", "CURSOR", "BEGIN", "COMMIT", "ROLLBACK", "SAVEPOINT",
-        "SET", "RESET", "SHOW", "LOAD", "CHECKPOINT", "VACUUM", "ANALYZE",
-    })
+    ALLOWED_TABLES = frozenset(
+        {
+            "trials",
+            "trial_conditions",
+            "trial_interventions",
+            "trial_outcomes",
+            "pubmed_articles",
+            "drug_labels",
+            "chunks",
+        }
+    )
+    BLOCKED_FUNCTIONS = frozenset(
+        {
+            "pg_",
+            "information_schema",
+            "copy",
+            "into",
+            "pg_read_file",
+            "pg_write_file",
+            "pg_ls_dir",
+            "pg_stat_file",
+            "pg_catalog",
+            "pg_roles",
+            "pg_user",
+            "pg_authid",
+        }
+    )
+    BLOCKED_STATEMENTS = frozenset(
+        {
+            "INSERT",
+            "UPDATE",
+            "DELETE",
+            "DROP",
+            "CREATE",
+            "ALTER",
+            "TRUNCATE",
+            "GRANT",
+            "REVOKE",
+            "COPY",
+            "EXPLAIN",
+            "PREPARE",
+            "EXECUTE",
+            "DECLARE",
+            "CURSOR",
+            "BEGIN",
+            "COMMIT",
+            "ROLLBACK",
+            "SAVEPOINT",
+            "SET",
+            "RESET",
+            "SHOW",
+            "LOAD",
+            "CHECKPOINT",
+            "VACUUM",
+            "ANALYZE",
+        }
+    )
     MAX_LIMIT = 200
     STATEMENT_TIMEOUT_MS = 3000
     LOCK_TIMEOUT_MS = 1000
@@ -86,7 +114,7 @@ class SQLQueryTool:
 
             for statement in parsed:
                 if not self._validate_statement(statement):
-                    return False, f"Invalid statement type"
+                    return False, "Invalid statement type"
 
             # Check for blocked functions in raw SQL (case-insensitive)
             sql_lower = sql.lower()
@@ -98,21 +126,18 @@ class SQLQueryTool:
             for statement in parsed:
                 if not self._validate_tables(statement):
                     return False, "References to disallowed tables"
-
-            return True, ""
-
         except sqlglot.ParseError as e:
             return False, f"SQL parse error: {e}"
         except Exception as e:
             logger.exception("sql_validation_failed")
             return False, f"Validation error: {e}"
+        else:
+            return True, ""
 
     def _validate_statement(self, statement: exp.Expression) -> bool:
         """Validate statement type is SELECT only."""
         # Allow SELECT, WITH (CTE)
-        if isinstance(statement, (exp.Select, exp.With)):
-            return True
-        return False
+        return isinstance(statement, (exp.Select, exp.With))
 
     def _validate_tables(self, statement: exp.Expression) -> bool:
         """Validate all table references are in allowed list."""
@@ -134,7 +159,7 @@ class SQLQueryTool:
     def _add_timeouts(self, sql: str) -> str:
         """Add statement and lock timeouts to SQL."""
         # Remove trailing semicolon
-        sql = sql.rstrip().rstrip(';')
+        sql = sql.rstrip().rstrip(";")
 
         # Add timeouts via SET LOCAL
         timeout_sql = f"""
@@ -177,7 +202,7 @@ SET LOCAL lock_timeout = {self.LOCK_TIMEOUT_MS};
 
         except Exception as e:
             logger.exception("sql_execution_failed")
-            raise ValueError(f"SQL execution failed: {e}")
+            raise ValueError(f"SQL execution failed: {e}") from e
 
 
 class CompareTrialsTool:
@@ -305,9 +330,10 @@ Return JSON with these fields:
             response = self.llm.complete(prompt)
             try:
                 extracted = json.loads(response.text)
-                return {"nct_id": nct_id, "extracted": extracted}
             except json.JSONDecodeError:
                 return {"nct_id": nct_id, "extracted": {}, "error": "Failed to parse extraction"}
+            else:
+                return {"nct_id": nct_id, "extracted": extracted}
 
 
 class AgentTools:

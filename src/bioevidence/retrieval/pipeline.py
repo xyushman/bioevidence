@@ -68,14 +68,16 @@ class DenseRetriever(BaseRetriever):
                 if "doc_type" in filters:
                     filter_conditions.append(Chunk.doc_type == filters["doc_type"])
                 if "phase" in filters:
-                    filter_conditions.append(Chunk.metadata["phase"].astext == filters["phase"])
+                    filter_conditions.append(
+                        Chunk.chunk_metadata["phase"].astext == filters["phase"]
+                    )
                 if "year_min" in filters:
                     filter_conditions.append(
-                        Chunk.metadata["year"].astext.cast(int) >= filters["year_min"]
+                        Chunk.chunk_metadata["year"].astext.cast(int) >= filters["year_min"]
                     )
                 if "year_max" in filters:
                     filter_conditions.append(
-                        Chunk.metadata["year"].astext.cast(int) <= filters["year_max"]
+                        Chunk.chunk_metadata["year"].astext.cast(int) <= filters["year_max"]
                     )
 
             # Query using cosine similarity
@@ -94,7 +96,7 @@ class DenseRetriever(BaseRetriever):
                         chunk_id=chunk.id,
                         score=1.0 - cosine_distance(chunk.embedding, query_embedding),
                         text=chunk.text,
-                        metadata=chunk.metadata or {},
+                        metadata=chunk.chunk_metadata or {},
                         doc_type=chunk.doc_type,
                         doc_id=chunk.doc_id,
                         section=chunk.section,
@@ -118,14 +120,16 @@ class BM25Retriever(BaseRetriever):
                 if "doc_type" in filters:
                     filter_conditions.append(Chunk.doc_type == filters["doc_type"])
                 if "phase" in filters:
-                    filter_conditions.append(Chunk.metadata["phase"].astext == filters["phase"])
+                    filter_conditions.append(
+                        Chunk.chunk_metadata["phase"].astext == filters["phase"]
+                    )
                 if "year_min" in filters:
                     filter_conditions.append(
-                        Chunk.metadata["year"].astext.cast(int) >= filters["year_min"]
+                        Chunk.chunk_metadata["year"].astext.cast(int) >= filters["year_min"]
                     )
                 if "year_max" in filters:
                     filter_conditions.append(
-                        Chunk.metadata["year"].astext.cast(int) <= filters["year_max"]
+                        Chunk.chunk_metadata["year"].astext.cast(int) <= filters["year_max"]
                     )
 
             # Query using ts_rank_cd
@@ -150,7 +154,7 @@ class BM25Retriever(BaseRetriever):
                         chunk_id=chunk.id,
                         score=float(rank),
                         text=chunk.text,
-                        metadata=chunk.metadata or {},
+                        metadata=chunk.chunk_metadata or {},
                         doc_type=chunk.doc_type,
                         doc_id=chunk.doc_id,
                         section=chunk.section,

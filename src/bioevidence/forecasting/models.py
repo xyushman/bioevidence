@@ -1,8 +1,6 @@
 """Forecasting models for BioEvidence."""
 
 import json
-import pickle
-import structlog
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -10,27 +8,25 @@ from typing import Any
 import lightgbm as lgb
 import numpy as np
 import pandas as pd
+import structlog
 import xgboost as xgb
-from sklearn.ensemble import RandomForestRegressor, RandomForestClassifier
 from sklearn.metrics import (
+    accuracy_score,
     mean_absolute_error,
     mean_squared_error,
-    roc_auc_score,
-    accuracy_score,
     precision_recall_fscore_support,
+    roc_auc_score,
 )
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import LabelEncoder, StandardScaler
+from sklearn.preprocessing import StandardScaler
 
 from bioevidence.config import get_config
 from bioevidence.db.models import (
-    Chunk,
     DocType,
     SplitType,
     Trial,
     TrialCondition,
     TrialIntervention,
-    TrialOutcome,
 )
 from bioevidence.db.session import get_session
 
@@ -40,6 +36,7 @@ logger = structlog.get_logger(__name__)
 @dataclass
 class ForecastFeatures:
     """Feature configuration for forecasting."""
+
     # Trial features
     use_phase: bool = True
     use_enrollment: bool = True
@@ -106,17 +103,19 @@ class TrialFeatureExtractor:
             trials = session.query(Trial).filter(Trial.nct_id.in_(trial_ids)).all()
 
             # Get conditions
-            conditions = session.query(TrialCondition).filter(
-                TrialCondition.nct_id.in_(trial_ids)
-            ).all()
+            conditions = (
+                session.query(TrialCondition).filter(TrialCondition.nct_id.in_(trial_ids)).all()
+            )
             cond_map = {}
             for c in conditions:
                 cond_map.setdefault(c.nct_id, []).append(c.condition_mesh or c.condition)
 
             # Get interventions
-            interventions = session.query(TrialIntervention).filter(
-                TrialIntervention.nct_id.in_(trial_ids)
-            ).all()
+            interventions = (
+                session.query(TrialIntervention)
+                .filter(TrialIntervention.nct_id.in_(trial_ids))
+                .all()
+            )
             int_map = {}
             for i in interventions:
                 int_map.setdefault(i.nct_id, []).append(i.name)
@@ -149,15 +148,32 @@ class TrialFeatureExtractor:
                     conds = cond_map.get(trial.nct_id, [])
                     row["num_conditions"] = len(conds)
                     row["has_cancer"] = int(any("neoplasm" in c.lower() for c in conds))
-                    row["has_inflammatory"] = int(any(k in " ".join(conds).lower() for k in ["arthritis", "psoriasis", "crohn", "colitis"]))
-                    row["has_cardiovascular"] = int(any(k in " ".join(conds).lower() for k in ["heart", "cardio", "hypertension"]))
+                    row["has_inflammatory"] = int(
+                        any(
+                            k in " ".join(conds).lower()
+                            for k in ["arthritis", "psoriasis", "crohn", "colitis"]
+                        )
+                    )
+                    row["has_cardiovascular"] = int(
+                        any(
+                            k in " ".join(conds).lower()
+                            for k in ["heart", "cardio", "hypertension"]
+                        )
+                    )
 
                 # Interventions
                 if self.config.use_interventions:
                     ints = int_map.get(trial.nct_id, [])
                     row["num_interventions"] = len(ints)
-                    row["has_mab"] = int(any("mab" in i.lower() or "monoclonal" in i.lower() for i in ints))
-                    row["has_small_molecule"] = int(any(k in " ".join(ints).lower() for k in ["inhibitor", "tablet", "oral", "capsule"]))
+                    row["has_mab"] = int(
+                        any("mab" in i.lower() or "monoclonal" in i.lower() for i in ints)
+                    )
+                    row["has_small_molecule"] = int(
+                        any(
+                            k in " ".join(ints).lower()
+                            for k in ["inhibitor", "tablet", "oral", "capsule"]
+                        )
+                    )
 
                 rows.append(row)
 
@@ -245,26 +261,36 @@ class DurationModel:
         self.model = None
         self.feature_names = None
 
-    def train(self, X: pd.DataFrame, y: pd.Series, val_X: pd.DataFrame | None = None, val_y: pd.Series | None = None):
+    def train(
+        self,
+        features: pd.DataFrame,
+        target: pd.Series,
+        val_features: pd.DataFrame | None = None,
+        val_target: pd.Series | None = None,
+    ) -> None:
         """Train the model."""
-        self.feature_names = X.columns.tolist()
+        self.feature_names = features.columns.tolist()
 
-        train_data = lgb.Dataset(X, label=y)
-        valid_data = lgb.Dataset(val_X, label=val_y) if val_X is not None else None
+        train_data = lgb.Dataset(features, label=target)
+        valid_data = (
+            lgb.Dataset(val_features, label=val_target) if val_features is not None else None
+        )
 
         self.model = lgb.train(
             self.params,
             train_data,
             valid_sets=[valid_data] if valid_data else None,
             num_boost_round=1000,
-            callbacks=[lgb.early_stopping(50), lgb.log_evaluation(100)] if valid_data else [lgb.log_evaluation(100)],
+            callbacks=[lgb.early_stopping(50), lgb.log_evaluation(100)]
+            if valid_data
+            else [lgb.log_evaluation(100)],
         )
 
-    def predict(self, X: pd.DataFrame) -> np.ndarray:
+    def predict(self, features: pd.DataFrame) -> np.ndarray:
         """Predict durations."""
         if self.model is None:
             raise ValueError("Model not trained")
-        return self.model.predict(X[self.feature_names])
+        return self.model.predict(features[self.feature_names])
 
     def save(self, path: Path):
         """Save model."""
@@ -297,12 +323,18 @@ class SuccessModel:
         self.model = None
         self.feature_names = None
 
-    def train(self, X: pd.DataFrame, y: pd.Series, val_X: pd.DataFrame | None = None, val_y: pd.Series | None = None):
+    def train(
+        self,
+        features: pd.DataFrame,
+        target: pd.Series,
+        val_features: pd.DataFrame | None = None,
+        val_target: pd.Series | None = None,
+    ) -> None:
         """Train the model."""
-        self.feature_names = X.columns.tolist()
+        self.feature_names = features.columns.tolist()
 
-        dtrain = xgb.DMatrix(X, label=y)
-        dval = xgb.DMatrix(val_X, label=val_y) if val_X is not None else None
+        dtrain = xgb.DMatrix(features, label=target)
+        dval = xgb.DMatrix(val_features, label=val_target) if val_features is not None else None
 
         evals = [(dval, "val")] if dval else None
 
@@ -315,16 +347,16 @@ class SuccessModel:
             verbose_eval=100,
         )
 
-    def predict_proba(self, X: pd.DataFrame) -> np.ndarray:
+    def predict_proba(self, features: pd.DataFrame) -> np.ndarray:
         """Predict success probabilities."""
         if self.model is None:
             raise ValueError("Model not trained")
-        dtest = xgb.DMatrix(X[self.feature_names])
+        dtest = xgb.DMatrix(features[self.feature_names])
         return self.model.predict(dtest)
 
-    def predict(self, X: pd.DataFrame, threshold: float = 0.5) -> np.ndarray:
+    def predict(self, features: pd.DataFrame, threshold: float = 0.5) -> np.ndarray:
         """Predict binary success."""
-        probas = self.predict_proba(X)
+        probas = self.predict_proba(features)
         return (probas >= threshold).astype(int)
 
     def save(self, path: Path):
@@ -357,10 +389,15 @@ def train_forecasting_models(
         # Get all trial IDs from TRAIN and DEV splits (exclude TEST)
         from bioevidence.db.models import Chunk
 
-        trial_ids = session.query(Chunk.doc_id).filter(
-            Chunk.doc_type == DocType.TRIAL,
-            Chunk.split.in_([SplitType.TRAIN, SplitType.DEV]),
-        ).distinct().all()
+        trial_ids = (
+            session.query(Chunk.doc_id)
+            .filter(
+                Chunk.doc_type == DocType.TRIAL,
+                Chunk.split.in_([SplitType.TRAIN, SplitType.DEV]),
+            )
+            .distinct()
+            .all()
+        )
         trial_ids = [t[0] for t in trial_ids]
 
         logger.info("forecasting_trial_count", count=len(trial_ids))
@@ -389,37 +426,49 @@ def train_forecasting_models(
     duration_features = train_df.drop(columns=["nct_id", "duration", "success"], errors="ignore")
     duration_target = train_df["duration"]
 
-    X_train, X_val, y_train, y_val = train_test_split(
+    train_features, val_features, train_target, val_target = train_test_split(
         duration_features, duration_target, test_size=0.2, random_state=42
     )
 
     duration_model = DurationModel()
-    duration_model.train(X_train, y_train, X_val, y_val)
+    duration_model.train(train_features, train_target, val_features, val_target)
 
     # Evaluate duration
-    val_preds = duration_model.predict(X_val)
-    duration_mae = mean_absolute_error(y_val, val_preds)
-    duration_rmse = np.sqrt(mean_squared_error(y_val, val_preds))
+    val_preds = duration_model.predict(val_features)
+    duration_mae = mean_absolute_error(val_target, val_preds)
+    duration_rmse = np.sqrt(mean_squared_error(val_target, val_preds))
     logger.info("duration_metrics", mae=duration_mae, rmse=duration_rmse)
 
     # Train success model
     logger.info("training_success_model")
-    success_features = train_success_df.drop(columns=["nct_id", "duration", "success"], errors="ignore")
+    success_features = train_success_df.drop(
+        columns=["nct_id", "duration", "success"], errors="ignore"
+    )
     success_target = train_success_df["success"]
 
-    X_train_s, X_val_s, y_train_s, y_val_s = train_test_split(
-        success_features, success_target, test_size=0.2, random_state=42, stratify=success_target
+    success_train_features, success_val_features, success_train_target, success_val_target = (
+        train_test_split(
+            success_features,
+            success_target,
+            test_size=0.2,
+            random_state=42,
+            stratify=success_target,
+        )
     )
 
     success_model = SuccessModel()
-    success_model.train(X_train_s, y_train_s, X_val_s, y_val_s)
+    success_model.train(
+        success_train_features, success_train_target, success_val_features, success_val_target
+    )
 
     # Evaluate success
-    val_probas = success_model.predict_proba(X_val_s)
-    val_preds = success_model.predict(X_val_s)
-    success_auc = roc_auc_score(y_val_s, val_probas)
-    success_acc = accuracy_score(y_val_s, val_preds)
-    precision, recall, f1, _ = precision_recall_fscore_support(y_val_s, val_preds, average="binary")
+    val_probas = success_model.predict_proba(success_val_features)
+    val_preds = success_model.predict(success_val_features)
+    success_auc = roc_auc_score(success_val_target, val_probas)
+    success_acc = accuracy_score(success_val_target, val_preds)
+    precision, recall, f1, _ = precision_recall_fscore_support(
+        success_val_target, val_preds, average="binary"
+    )
     logger.info("success_metrics", auc=success_auc, accuracy=success_acc, f1=f1)
 
     # Save models
@@ -427,10 +476,14 @@ def train_forecasting_models(
     success_model.save(output_dir / "success_model.json")
 
     # Save feature names
-    (output_dir / "feature_names.json").write_text(json.dumps({
-        "duration": duration_model.feature_names,
-        "success": success_model.feature_names,
-    }))
+    (output_dir / "feature_names.json").write_text(
+        json.dumps(
+            {
+                "duration": duration_model.feature_names,
+                "success": success_model.feature_names,
+            }
+        )
+    )
 
     results = {
         "duration_mae": duration_mae,
@@ -438,8 +491,8 @@ def train_forecasting_models(
         "success_auc": success_auc,
         "success_accuracy": success_acc,
         "success_f1": f1,
-        "n_train_duration": len(X_train),
-        "n_train_success": len(X_train_s),
+        "n_train_duration": len(train_features),
+        "n_train_success": len(success_train_features),
     }
 
     logger.info("forecasting_training_complete", **results)

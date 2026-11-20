@@ -1,126 +1,118 @@
-# BioEvidence Configuration
+# BioEvidence application configuration.
+# Environment variables listed in .env.example override these defaults.
 
-# Scope: therapeutic areas and keywords
 scope:
   therapeutic_areas:
-    - oncology
-    - inflammation
-    - immunology
-    - cardiovascular
-    - bone
-    - osteoporosis
+    - name: oncology
+      keywords: [cancer, tumor, neoplasm, carcinoma, lymphoma, leukemia, melanoma]
+      mesh_terms: [Neoplasms]
+    - name: inflammation_immunology
+      keywords:
+        - rheumatoid arthritis
+        - psoriasis
+        - inflammatory bowel disease
+        - crohn
+        - ulcerative colitis
+      mesh_terms:
+        - Arthritis, Rheumatoid
+        - Psoriasis
+        - Inflammatory Bowel Diseases
+    - name: cardiovascular
+      keywords: [heart failure, myocardial infarction, atrial fibrillation, hypertension]
+      mesh_terms: [Cardiovascular Diseases]
+    - name: bone_osteoporosis
+      keywords: [osteoporosis, bone fracture, bone metastasis]
+      mesh_terms: [Osteoporosis, Bone Diseases]
   condition_keywords:
     - cancer
     - tumor
     - neoplasm
-    - carcinoma
-    - lymphoma
-    - leukemia
-    - melanoma
     - rheumatoid arthritis
     - psoriasis
-    - inflammatory bowel disease
-    - crohn
-    - ulcerative colitis
     - heart failure
-    - myocardial infarction
-    - atrial fibrillation
     - hypertension
     - osteoporosis
-    - bone fracture
-    - bone metastasis
-  mesh_terms:
-    - "Neoplasms"
-    - "Arthritis, Rheumatoid"
-    - "Psoriasis"
-    - "Inflammatory Bowel Diseases"
-    - "Cardiovascular Diseases"
-    - "Osteoporosis"
-    - "Bone Diseases"
+  trial_filters:
+    study_type: INTERVENTIONAL
+    start_date_min: "2005-01-01"
+  targets:
+    trials: 25000
+    pubmed_articles: 100000
+    drug_labels: 4000
 
-# Database
 database:
-  url: "${DATABASE_URL}"
+  url: postgresql://bioevidence:bioevidence@localhost:5432/bioevidence
   pool_size: 10
   max_overflow: 20
   pool_timeout: 30
 
-# LLM
 llm:
-  provider: "${LLM_PROVIDER}"
+  provider: gemini
   gemini:
-    api_key: "${GEMINI_API_KEY}"
-    model: "gemini-1.5-flash"
+    api_key: ""
+    model: gemini-1.5-flash
     temperature: 0.0
     max_tokens: 8192
   anthropic:
-    api_key: "${ANTHROPIC_API_KEY}"
-    model: "claude-3-haiku-20240307"
+    api_key: ""
+    model: claude-3-haiku-20240307
     temperature: 0.0
     max_tokens: 4096
   openai:
-    api_key: "${OPENAI_API_KEY}"
-    model: "gpt-4o-mini"
+    api_key: ""
+    model: gpt-4o-mini
     temperature: 0.0
     max_tokens: 4096
-  cache_dir: "data/processed/llm_cache"
+  cache_dir: data/processed/llm_cache
 
-# Embedding
 embedding:
-  model: "${EMBEDDING_MODEL}"
-  dimension: ${EMBEDDING_DIM}
+  model: BAAI/bge-small-en-v1.5
+  dimension: 384
   batch_size: 64
   normalize: true
 
-# Reranker
 reranker:
-  model: "${RERANKER_MODEL}"
+  model: BAAI/bge-reranker-base
   batch_size: 32
 
-# Retrieval
 retrieval:
-  top_k: ${RETRIEVAL_TOP_K}
-  candidate_pool: ${RETRIEVAL_CANDIDATE_POOL}
-  rrf_k: ${RRF_K}
+  system: A5
+  top_k: 5
+  candidate_pool: 50
+  rrf_k: 60
   bm25_weight: 0.5
   dense_weight: 0.5
 
-# Chunking
 chunking:
   max_tokens: 512
   overlap: 32
   trial_section_overlap: 40
   label_section_overlap: 40
 
-# Agent
 agent:
-  max_steps: ${AGENT_MAX_STEPS}
-  timeout_seconds: ${AGENT_TIMEOUT_SECONDS}
-  token_budget: ${AGENT_TOKEN_BUDGET}
+  max_steps: 6
+  timeout_seconds: 30
+  token_budget: 8000
   sql_timeout_seconds: 3
   sql_limit: 200
 
-# Forecasting
 forecasting:
-  test_start_year: ${FORECAST_TEST_START_YEAR}
+  test_start_year: 2020
   max_duration_months: 180
   min_duration_months: 1
 
-# API
 api:
-  host: "${API_HOST}"
-  port: ${API_PORT}
-  cors_origins: ${API_CORS_ORIGINS}
+  host: 0.0.0.0
+  port: 8000
+  cors_origins: [http://localhost:5173]
 
-# Rate limits
 rate_limits:
-  ncbi: ${NCBI_RATE_LIMIT}
-  openfda: ${OPENAFDA_RATE_LIMIT}
+  ncbi: 3
+  ncbi_api_key: ""
+  openfda: 10
 
-# Seed
-seed: ${SEED}
+seed: 42
 
-# MLflow
 mlflow:
-  tracking_uri: "${MLFLOW_TRACKING_URI}"
-  experiment_name: "bioevidence"
+  tracking_uri: file:./mlruns
+  experiment_name: bioevidence

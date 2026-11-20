@@ -97,10 +97,11 @@ class ConstrainedExtractor:
 
         try:
             result = self.generator(prompt, max_tokens=max_tokens, sampler=greedy())
-            return result
         except Exception:
             logger.exception("constrained_extraction_failed")
             return self._fallback_extract(trial_text)
+        else:
+            return result
 
     def _fallback_extract(self, trial_text: str) -> dict[str, Any]:
         """Fallback extraction without constraints."""

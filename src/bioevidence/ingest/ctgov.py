@@ -120,10 +120,11 @@ class RawCache:
             try:
                 with gzip.open(path, "rt") as f:
                     data = json.load(f)
-                logger.debug("cache_hit", key=key)
-                return data
             except Exception as e:
                 logger.warning("cache_read_failed", key=key, error=str(e))
+            else:
+                logger.debug("cache_hit", key=key)
+                return data
         return None
 
     def set(self, key: str, data: dict[str, Any]) -> None:

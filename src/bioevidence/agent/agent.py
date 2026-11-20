@@ -25,6 +25,7 @@ class ToolName(Enum):
 @dataclass
 class ToolCall:
     """A tool call from the agent."""
+
     name: ToolName
     args: dict[str, Any]
     reasoning: str = ""
@@ -33,6 +34,7 @@ class ToolCall:
 @dataclass
 class ToolResult:
     """Result of a tool execution."""
+
     name: ToolName
     output: str
     citations: list[int] = None
@@ -43,6 +45,7 @@ class ToolResult:
 @dataclass
 class AgentResponse:
     """Agent response."""
+
     answer: str
     citations: list[int]
     tools_used: list[str]
@@ -149,22 +152,28 @@ RESPONSE FORMAT (JSON):
                     all_tools_used.append(tool_name.value)
 
                 # Add tool result to conversation
-                messages.append({
-                    "role": "assistant",
-                    "content": f"Tool {tool_name.value} executed. Result: {tool_result.output}"
-                })
+                messages.append(
+                    {
+                        "role": "assistant",
+                        "content": f"Tool {tool_name.value} executed. Result: {tool_result.output}",
+                    }
+                )
 
                 if tool_result.error:
-                    messages.append({
-                        "role": "user",
-                        "content": f"Tool error: {tool_result.error}. Try a different approach or answer with available info."
-                    })
+                    messages.append(
+                        {
+                            "role": "user",
+                            "content": f"Tool error: {tool_result.error}. Try a different approach or answer with available info.",
+                        }
+                    )
             else:
                 # No tool called, but no answer either - force answer
-                messages.append({
-                    "role": "user",
-                    "content": "No tool was called. Provide your final answer based on available information."
-                })
+                messages.append(
+                    {
+                        "role": "user",
+                        "content": "No tool was called. Provide your final answer based on available information.",
+                    }
+                )
 
         # Max steps reached without answer
         return AgentResponse(
@@ -191,7 +200,7 @@ RESPONSE FORMAT (JSON):
         # Try to find JSON in response
         try:
             # Look for JSON object
-            json_match = re.search(r'\{.*\}', text, re.DOTALL)
+            json_match = re.search(r"\{.*\}", text, re.DOTALL)
             if json_match:
                 return json.loads(json_match.group())
         except json.JSONDecodeError:
@@ -221,7 +230,9 @@ RESPONSE FORMAT (JSON):
             elif tool_name == ToolName.SQL:
                 sql = args.get("sql", "")
                 rows = self.tools.sql.execute(sql)
-                output = f"SQL Results ({len(rows)} rows):\n{json.dumps(rows, indent=2, default=str)}"
+                output = (
+                    f"SQL Results ({len(rows)} rows):\n{json.dumps(rows, indent=2, default=str)}"
+                )
                 return ToolResult(
                     name=tool_name,
                     output=output,
@@ -269,6 +280,8 @@ RESPONSE FORMAT (JSON):
         return "\n\n".join(lines) if lines else "No results found."
 
 
-def create_agent(system: str = "A5", max_steps: int = 6, llm_client: LLMClient | None = None) -> BioEvidenceAgent:
+def create_agent(
+    system: str = "A5", max_steps: int = 6, llm_client: LLMClient | None = None
+) -> BioEvidenceAgent:
     """Factory function to create agent."""
     return BioEvidenceAgent(system=system, max_steps=max_steps, llm_client=llm_client)

@@ -12,7 +12,8 @@ depends_on = None
 
 
 def upgrade():
-    # Create enums
+    # Extensions and enums are created explicitly so SQLAlchemy does not create them twice.
+    op.execute("CREATE EXTENSION IF NOT EXISTS vector")
     op.execute("CREATE TYPE doctype AS ENUM ('trial', 'pubmed', 'label')")
     op.execute("CREATE TYPE outcomekind AS ENUM ('primary', 'secondary')")
     op.execute("CREATE TYPE splittype AS ENUM ('train', 'dev', 'test')")
@@ -70,7 +71,11 @@ def upgrade():
         'trial_outcomes',
         sa.Column('id', sa.Integer, primary_key=True, autoincrement=True),
         sa.Column('nct_id', sa.String(20), sa.ForeignKey('trials.nct_id', ondelete='CASCADE'), nullable=False),
-        sa.Column('kind', sa.Enum('primary', 'secondary', name='outcomekind'), nullable=False),
+        sa.Column(
+            'kind',
+            sa.Enum('primary', 'secondary', name='outcomekind', create_type=False),
+            nullable=False,
+        ),
         sa.Column('measure', sa.Text, nullable=False),
         sa.Column('time_frame', sa.Text),
         sa.Column('description', sa.Text),
@@ -104,7 +109,11 @@ def upgrade():
     op.create_table(
         'chunks',
         sa.Column('id', sa.BigInteger, primary_key=True, autoincrement=True),
-        sa.Column('doc_type', sa.Enum('trial', 'pubmed', 'label', name='doctype'), nullable=False),
+        sa.Column(
+            'doc_type',
+            sa.Enum('trial', 'pubmed', 'label', name='doctype', create_type=False),
+            nullable=False,
+        ),
         sa.Column('doc_id', sa.Text, nullable=False),
         sa.Column('section', sa.Text),
         sa.Column('text', sa.Text, nullable=False),
@@ -113,7 +122,12 @@ def upgrade():
         sa.Column('embedding', Vector(384)),
         sa.Column('embedding_ft', Vector(384)),
         sa.Column('tsv', TSVECTOR),
-        sa.Column('split', sa.Enum('train', 'dev', 'test', name='splittype'), nullable=False, server_default='train'),
+        sa.Column(
+            'split',
+            sa.Enum('train', 'dev', 'test', name='splittype', create_type=False),
+            nullable=False,
+            server_default='train',
+        ),
         sa.Column('created_at', sa.DateTime, server_default=sa.func.now()),
     )
 
@@ -136,12 +150,18 @@ def upgrade():
     # GIN index for tsvector
     op.execute('CREATE INDEX ix_chunks_tsv ON chunks USING GIN (tsv)')
 
-    # HNSW indexes for embeddings (created after data is loaded)
-    # op.execute('CREATE INDEX ix_chunks_embedding ON chunks USING hnsw (embedding vector_cosine_ops)')
-    # op.execute('CREATE INDEX ix_chunks_embedding_ft ON chunks USING hnsw (embedding_ft vector_cosine_ops)')
+    # HNSW indexes for cosine similarity search.
+    op.execute(
+        'CREATE INDEX ix_chunks_embedding ON chunks USING hnsw (embedding vector_cosine_ops)'
+    )
+    op.execute(
+        'CREATE INDEX ix_chunks_embedding_ft ON chunks USING hnsw (embedding_ft vector_cosine_ops)'
+    )
 
 
 def downgrade():
+    op.execute('DROP INDEX IF EXISTS ix_chunks_embedding_ft')
+    op.execute('DROP INDEX IF EXISTS ix_chunks_embedding')
     op.drop_table('chunks')
     op.drop_table('drug_labels')
     op.drop_table('pubmed_articles')

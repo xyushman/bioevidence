@@ -3,9 +3,9 @@
 Work top to bottom. Tick `[x]` only when the acceptance criterion is met. Commit after each task.
 
 ## Milestone 0: Scaffold (day 1)
-- [ ] M0.1 Repo scaffold per `01-PROJECT_SPEC.md`: uv project, ruff, pytest, Makefile, pre-commit, `.env.example`, `.gitignore`, CI skeleton. AC: `make lint test` runs (even with 1 dummy test).
-- [ ] M0.2 `docker-compose.yml` with pgvector Postgres, Alembic set up, `db migrate` creates schema from `02`. AC: tables + indexes exist.
-- [ ] M0.3 `LLMClient` (gemini/anthropic/openai) + disk cache + stub client for tests. AC: second identical call is a cache hit (test).
+- [x] M0.1 Repo scaffold per `01-PROJECT_SPEC.md`: uv project, ruff, pytest, Makefile, pre-commit, `.env.example`, `.gitignore`, CI skeleton. AC: `make lint test` runs (even with 1 dummy test).
+- [x] M0.2 `docker-compose.yml` with pgvector Postgres, Alembic set up, `db migrate` creates schema from `02`. AC: tables + indexes exist.
+- [x] M0.3 `LLMClient` (gemini/anthropic/openai) + disk cache + stub client for tests. AC: second identical call is a cache hit (test).
 
 ## Milestone 1: Data (week 1)
 - [ ] M1.1 CT.gov ingestor with pagination, raw cache, parser, upsert. AC: >= 20k trials, fixtures-based tests.

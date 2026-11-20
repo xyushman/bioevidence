@@ -319,7 +319,7 @@ class Chunker:
                         section=chunk_data["section"],
                         text=chunk_data["text"],
                         token_count=chunk_data["token_count"],
-                        metadata={
+                        chunk_metadata={
                             "phase": trial.phase,
                             "status": trial.overall_status,
                             "start_year": trial.start_date.year if trial.start_date else None,
@@ -359,7 +359,7 @@ class Chunker:
                         section=chunk_data["section"],
                         text=chunk_data["text"],
                         token_count=chunk_data["token_count"],
-                        metadata={
+                        chunk_metadata={
                             "journal": article.journal,
                             "year": article.year,
                         },
@@ -398,7 +398,7 @@ class Chunker:
                         section=chunk_data["section"],
                         text=chunk_data["text"],
                         token_count=chunk_data["token_count"],
-                        metadata={
+                        chunk_metadata={
                             "brand_names": label.brand_names,
                             "generic_names": label.generic_names,
                         },

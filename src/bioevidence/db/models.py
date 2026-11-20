@@ -2,6 +2,7 @@
 
 from datetime import date, datetime
 from enum import Enum as PyEnum
+from typing import Any
 
 from pgvector.sqlalchemy import Vector
 from sqlalchemy import (
@@ -167,7 +168,7 @@ class DrugLabel(Base):
     set_id: Mapped[str] = mapped_column(String(100), primary_key=True)
     brand_names: Mapped[list[str] | None] = mapped_column(ARRAY(Text))
     generic_names: Mapped[list[str] | None] = mapped_column(ARRAY(Text))
-    sections: Mapped[dict] = mapped_column(JSON, default=dict)
+    sections: Mapped[dict[str, Any]] = mapped_column(JSON, default=dict)
     effective_date: Mapped[date | None] = mapped_column(Date)
     source_url: Mapped[str] = mapped_column(Text)
 
@@ -183,7 +184,7 @@ class Chunk(Base):
     section: Mapped[str | None] = mapped_column(Text)
     text: Mapped[str] = mapped_column(Text, nullable=False)
     token_count: Mapped[int] = mapped_column(Integer, nullable=False)
-    metadata: Mapped[dict] = mapped_column(JSON, default=dict)
+    chunk_metadata: Mapped[dict[str, Any]] = mapped_column("metadata", JSON, default=dict)
     embedding: Mapped[list[float] | None] = mapped_column(Vector(384))
     embedding_ft: Mapped[list[float] | None] = mapped_column(Vector(384))
     tsv: Mapped[str | None] = mapped_column(TSVECTOR)
@@ -206,7 +207,7 @@ class Chunk(Base):
 
 @event.listens_for(Chunk, "before_insert")
 @event.listens_for(Chunk, "before_update")
-def update_tsv(mapper, connection, target):
+def update_tsv(mapper: Any, connection: Any, target: Chunk) -> None:
     """Update tsvector from text before insert/update."""
     if target.text:
         target.tsv = func.to_tsvector("english", target.text)

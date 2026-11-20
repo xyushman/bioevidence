@@ -39,6 +39,17 @@ def test_config_from_yaml(tmp_path: Path):
     assert config.embedding.dimension == 768
 
 
+def test_default_yaml_has_structured_therapeutic_areas():
+    """Configured therapeutic areas must match the typed schema."""
+    config = load_config()
+    assert config.retrieval.system == "A5"
+    assert config.scope.therapeutic_areas
+    oncology = config.scope.therapeutic_areas[0]
+    assert oncology.name == "oncology"
+    assert "cancer" in oncology.keywords
+    assert "Neoplasms" in oncology.mesh_terms
+
+
 def test_config_env_override(monkeypatch):
     """Test environment variable overrides for top-level fields."""
     monkeypatch.setenv("BIOEVIDENCE_SEED", "999")

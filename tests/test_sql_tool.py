@@ -18,7 +18,9 @@ class TestSQLQueryTool:
     def test_valid_select_with_cte(self):
         """Test valid WITH (CTE) query passes validation."""
         tool = SQLQueryTool()
-        sql = "WITH filtered AS (SELECT * FROM trials WHERE phase = 'Phase 3') SELECT * FROM filtered"
+        sql = (
+            "WITH filtered AS (SELECT * FROM trials WHERE phase = 'Phase 3') SELECT * FROM filtered"
+        )
         valid, error = tool._validate_sql(sql)
         assert valid is True
 
@@ -68,11 +70,11 @@ class TestSQLQueryTool:
         assert valid is False
 
     def test_disallowed_table(self):
-        """Test access to disallowed table is rejected."""
+        """Test access to a table outside the allowlist is rejected."""
         tool = SQLQueryTool()
-        # Try to access a table not in allowed list
-        # This would need a real table name not in ALLOWED_TABLES
-        pass  # Hard to test without actual disallowed table
+        valid, error = tool._validate_sql("SELECT * FROM users")
+        assert valid is False
+        assert "disallowed" in error
 
     def test_add_limit(self):
         """Test LIMIT is added when missing."""
@@ -100,6 +102,7 @@ class TestSQLQueryTool:
         """Test that allowed tables pass validation."""
         tool = SQLQueryTool()
         import sqlglot
+
         parsed = sqlglot.parse("SELECT * FROM trials", dialect="postgres")
         assert tool._validate_tables(parsed[0]) is True
 
@@ -107,6 +110,7 @@ class TestSQLQueryTool:
         """Test SELECT statement is valid."""
         tool = SQLQueryTool()
         import sqlglot
+
         parsed = sqlglot.parse("SELECT * FROM trials", dialect="postgres")
         assert tool._validate_statement(parsed[0]) is True
 
@@ -114,13 +118,17 @@ class TestSQLQueryTool:
         """Test WITH statement is valid."""
         tool = SQLQueryTool()
         import sqlglot
-        parsed = sqlglot.parse("WITH t AS (SELECT * FROM trials) SELECT * FROM t", dialect="postgres")
+
+        parsed = sqlglot.parse(
+            "WITH t AS (SELECT * FROM trials) SELECT * FROM t", dialect="postgres"
+        )
         assert tool._validate_statement(parsed[0]) is True
 
     def test_validate_statement_invalid(self):
         """Test INSERT statement is invalid."""
         tool = SQLQueryTool()
         import sqlglot
+
         parsed = sqlglot.parse("INSERT INTO trials VALUES (1)", dialect="postgres")
         assert tool._validate_statement(parsed[0]) is False
 

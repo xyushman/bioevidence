@@ -2,9 +2,9 @@
 
 from bioevidence.forecasting.models import (
     DurationModel,
+    ForecastFeatures,
     SuccessModel,
     TrialFeatureExtractor,
-    ForecastFeatures,
     prepare_duration_targets,
     prepare_success_targets,
     train_forecasting_models,

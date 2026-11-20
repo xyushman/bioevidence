@@ -1,5 +1,9 @@
 """Configuration management for BioEvidence."""
 
+from __future__ import annotations
+
+import json
+import os
 from functools import lru_cache
 from pathlib import Path
 from typing import Any
@@ -9,8 +13,17 @@ from pydantic import BaseModel, Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
+class TherapeuticAreaConfig(BaseModel):
+    """A configurable therapeutic scope entry."""
+
+    name: str
+    keywords: list[str] = Field(default_factory=list)
+    mesh_terms: list[str] = Field(default_factory=list)
+
+
 class ScopeConfig(BaseModel):
-    therapeutic_areas: list[dict[str, Any]] = Field(default_factory=list)
+    therapeutic_areas: list[TherapeuticAreaConfig] = Field(default_factory=list)
+    condition_keywords: list[str] = Field(default_factory=list)
     trial_filters: dict[str, Any] = Field(default_factory=dict)
     targets: dict[str, int] = Field(default_factory=dict)
 
@@ -50,6 +63,7 @@ class RerankerConfig(BaseModel):
 
 
 class RetrievalConfig(BaseModel):
+    system: str = "A5"
     top_k: int = 5
     candidate_pool: int = 50
     rrf_k: int = 60
@@ -86,6 +100,7 @@ class APIConfig(BaseModel):
 
 class RateLimitsConfig(BaseModel):
     ncbi: int = 3
+    ncbi_api_key: str = ""
     openfda: int = 10
 
 
@@ -126,30 +141,103 @@ class Config(BaseSettings):
     mlflow: MLflowConfig = Field(default_factory=MLflowConfig)
 
 
+ENV_OVERRIDES: dict[str, str] = {
+    "database.url": "DATABASE_URL",
+    "llm.provider": "LLM_PROVIDER",
+    "llm.gemini.api_key": "GEMINI_API_KEY",
+    "llm.anthropic.api_key": "ANTHROPIC_API_KEY",
+    "llm.openai.api_key": "OPENAI_API_KEY",
+    "embedding.model": "EMBEDDING_MODEL",
+    "embedding.dimension": "EMBEDDING_DIM",
+    "reranker.model": "RERANKER_MODEL",
+    "retrieval.top_k": "RETRIEVAL_TOP_K",
+    "retrieval.candidate_pool": "RETRIEVAL_CANDIDATE_POOL",
+    "retrieval.rrf_k": "RRF_K",
+    "agent.max_steps": "AGENT_MAX_STEPS",
+    "agent.timeout_seconds": "AGENT_TIMEOUT_SECONDS",
+    "agent.token_budget": "AGENT_TOKEN_BUDGET",
+    "forecasting.test_start_year": "FORECAST_TEST_START_YEAR",
+    "api.host": "API_HOST",
+    "api.port": "API_PORT",
+    "api.cors_origins": "API_CORS_ORIGINS",
+    "rate_limits.ncbi": "NCBI_RATE_LIMIT",
+    "rate_limits.ncbi_api_key": "NCBI_API_KEY",
+    "rate_limits.openfda": "OPENFDA_RATE_LIMIT",
+    "seed": "SEED",
+    "mlflow.tracking_uri": "MLFLOW_TRACKING_URI",
+}
+
+
+def _set_nested(data: dict[str, Any], dotted_key: str, value: Any) -> None:
+    """Assign a value to a dotted key in a nested dictionary."""
+    parts = dotted_key.split(".")
+    target = data
+    for part in parts[:-1]:
+        child = target.get(part)
+        if not isinstance(child, dict):
+            child = {}
+            target[part] = child
+        target = child
+    target[parts[-1]] = value
+
+
+def _interpolate_env(obj: Any) -> Any:
+    """Expand ``${VAR}`` placeholders recursively."""
+    if isinstance(obj, str):
+        return os.path.expandvars(obj)
+    if isinstance(obj, dict):
+        return {key: _interpolate_env(value) for key, value in obj.items()}
+    if isinstance(obj, list):
+        return [_interpolate_env(value) for value in obj]
+    return obj
+
+
+def _coerce_env_value(raw_value: str) -> Any:
+    """Parse JSON-like environment values and pass scalars through."""
+    if raw_value.startswith(("[", "{")) or raw_value.lower() in {"true", "false", "null"}:
+        try:
+            return json.loads(raw_value)
+        except json.JSONDecodeError:
+            if raw_value.startswith("["):
+                return [item.strip() for item in raw_value.strip("[]").split(",") if item.strip()]
+    return raw_value
+
+
+def _apply_env_overrides(config_data: dict[str, Any]) -> dict[str, Any]:
+    """Apply the documented unprefixed environment variables."""
+    for dotted_key, env_name in ENV_OVERRIDES.items():
+        raw_value = os.getenv(env_name)
+        if raw_value is None or raw_value == "":
+            continue
+        _set_nested(config_data, dotted_key, _coerce_env_value(raw_value))
+
+    for field_name in Config.model_fields:
+        env_name = f"BIOEVIDENCE_{field_name.upper()}"
+        raw_value = os.getenv(env_name)
+        if raw_value is not None and raw_value != "":
+            config_data[field_name] = _coerce_env_value(raw_value)
+
+        nested_prefix = f"BIOEVIDENCE_{field_name.upper()}__"
+        for env_name, raw_value in os.environ.items():
+            if not env_name.startswith(nested_prefix) or raw_value == "":
+                continue
+            nested_path = f"{field_name}.{env_name[len(nested_prefix) :].lower()}"
+            _set_nested(config_data, nested_path, _coerce_env_value(raw_value))
+    return config_data
+
+
 @lru_cache(maxsize=1)
 def load_config(config_path: str | Path | None = None) -> Config:
     """Load configuration from YAML file and environment variables."""
-    if config_path is None:
-        config_path = Path(__file__).parent.parent.parent.parent / "configs" / "config.yaml"
+    default_path = Path(__file__).resolve().parents[2] / "configs" / "config.yaml"
+    resolved_path = Path(config_path) if config_path is not None else default_path
 
     config_data: dict[str, Any] = {}
-    if Path(config_path).exists():
-        with open(config_path) as f:
-            config_data = yaml.safe_load(f) or {}
+    if resolved_path.exists():
+        with resolved_path.open(encoding="utf-8") as handle:
+            config_data = yaml.safe_load(handle) or {}
 
-    # Environment variable interpolation for nested configs
-    import os
-
-    def interpolate_env(obj: Any) -> Any:
-        if isinstance(obj, str):
-            return os.path.expandvars(obj)
-        elif isinstance(obj, dict):
-            return {k: interpolate_env(v) for k, v in obj.items()}
-        elif isinstance(obj, list):
-            return [interpolate_env(v) for v in obj]
-        return obj
-
-    config_data = interpolate_env(config_data)
+    config_data = _apply_env_overrides(_interpolate_env(config_data))
     return Config(**config_data)
 
 

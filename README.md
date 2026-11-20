@@ -30,3 +30,10 @@ development and evaluation, forecasting, data quality/governance, pipelines, API
 4. LoRA extractor evaluated against a zero-shot API LLM on accuracy, cost, latency.
 5. Agent answers with citations, refuses when evidence is missing, SQL tool is provably read-only.
 6. CI blocks merges when eval metrics regress.
+
+## Implementation status
+
+Milestone 0 is scaffolded and hardened: dependency locking is reproducible, the quality gate runs through
+`make check` (or `python scripts/check.py` on Windows), the LLM client has typed providers plus a disk cache,
+and the initial Alembic migration emits the full pgvector schema with HNSW and GIN indexes. Later milestones
+are enabled incrementally as their acceptance criteria pass.
