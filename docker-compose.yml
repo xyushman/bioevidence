@@ -4,6 +4,7 @@ services:
   db:
     image: pgvector/pgvector:pg16
     container_name: bioevidence-db
+    restart: unless-stopped
     environment:
       POSTGRES_USER: bioevidence
       POSTGRES_PASSWORD: bioevidence
@@ -23,6 +24,7 @@ services:
       context: .
       dockerfile: Dockerfile.api
     container_name: bioevidence-api
+    restart: unless-stopped
     environment:
       - DATABASE_URL=postgresql://bioevidence:bioevidence@db:5432/bioevidence
       - LLM_PROVIDER=${LLM_PROVIDER:-gemini}
@@ -54,6 +56,7 @@ services:
       context: ./web
       dockerfile: Dockerfile
     container_name: bioevidence-web
+    restart: unless-stopped
     environment:
       - VITE_API_URL=http://localhost:8000
     ports:
