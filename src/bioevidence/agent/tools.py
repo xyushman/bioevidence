@@ -1,10 +1,13 @@
 """Agent tools for BioEvidence."""
 
 import json
+import structlog
 from dataclasses import dataclass
 
-import structlog
+import sqlglot
+from sqlglot import exp
 
+from bioevidence.config import get_config
 from bioevidence.db.session import get_session
 from bioevidence.llm import LLMClient, create_stub_client
 from bioevidence.retrieval.pipeline import Hit, get_retriever
@@ -35,9 +38,9 @@ class SearchEvidenceTool:
 
 
 class SQLQueryTool:
-    """Tool for executing read-only SQL queries."""
+    """Tool for executing read-only SQL queries with guardrails."""
 
-    ALLOWED_TABLES = {
+    ALLOWED_TABLES = frozenset({
         "trials",
         "trial_conditions",
         "trial_interventions",
@@ -45,46 +48,136 @@ class SQLQueryTool:
         "pubmed_articles",
         "drug_labels",
         "chunks",
-    }
-    BLOCKED_FUNCTIONS = {"pg_", "information_schema", "COPY", "INTO"}
+    })
+    BLOCKED_FUNCTIONS = frozenset({
+        "pg_",
+        "information_schema",
+        "copy",
+        "into",
+        "pg_read_file",
+        "pg_write_file",
+        "pg_ls_dir",
+        "pg_stat_file",
+        "pg_catalog",
+        "pg_roles",
+        "pg_user",
+        "pg_authid",
+    })
+    BLOCKED_STATEMENTS = frozenset({
+        "INSERT", "UPDATE", "DELETE", "DROP", "CREATE", "ALTER", "TRUNCATE",
+        "GRANT", "REVOKE", "COPY", "EXPLAIN", "PREPARE", "EXECUTE",
+        "DECLARE", "CURSOR", "BEGIN", "COMMIT", "ROLLBACK", "SAVEPOINT",
+        "SET", "RESET", "SHOW", "LOAD", "CHECKPOINT", "VACUUM", "ANALYZE",
+    })
     MAX_LIMIT = 200
+    STATEMENT_TIMEOUT_MS = 3000
+    LOCK_TIMEOUT_MS = 1000
 
     def __init__(self):
-        pass
+        self.config = get_config()
 
     def _validate_sql(self, sql: str) -> tuple[bool, str]:
-        """Basic SQL validation."""
-        sql_lower = sql.lower().strip()
+        """Validate SQL using sqlglot AST parsing."""
+        try:
+            # Parse SQL
+            parsed = sqlglot.parse(sql, dialect="postgres")
+            if not parsed:
+                return False, "Failed to parse SQL"
 
-        # Must be SELECT only
-        if not sql_lower.startswith("select"):
-            return False, "Only SELECT queries allowed"
+            for statement in parsed:
+                if not self._validate_statement(statement):
+                    return False, f"Invalid statement type"
 
-        # Check for blocked functions
-        for blocked in self.BLOCKED_FUNCTIONS:
-            if blocked.lower() in sql_lower:
-                return False, f"Blocked function/keyword: {blocked}"
+            # Check for blocked functions in raw SQL (case-insensitive)
+            sql_lower = sql.lower()
+            for blocked in self.BLOCKED_FUNCTIONS:
+                if blocked in sql_lower:
+                    return False, f"Blocked function/keyword: {blocked}"
 
-        # Check tables (basic check)
-        # In production, use proper SQL parser (sqlglot)
-        return True, ""
+            # Check table references
+            for statement in parsed:
+                if not self._validate_tables(statement):
+                    return False, "References to disallowed tables"
+
+            return True, ""
+
+        except sqlglot.ParseError as e:
+            return False, f"SQL parse error: {e}"
+        except Exception as e:
+            logger.exception("sql_validation_failed")
+            return False, f"Validation error: {e}"
+
+    def _validate_statement(self, statement: exp.Expression) -> bool:
+        """Validate statement type is SELECT only."""
+        # Allow SELECT, WITH (CTE)
+        if isinstance(statement, (exp.Select, exp.With)):
+            return True
+        return False
+
+    def _validate_tables(self, statement: exp.Expression) -> bool:
+        """Validate all table references are in allowed list."""
+        # Get CTE names to exclude from validation
+        cte_names = set()
+        for cte in statement.find_all(exp.CTE):
+            cte_names.add(cte.alias.lower())
+
+        for table in statement.find_all(exp.Table):
+            table_name = table.name.lower()
+            # Skip CTE references
+            if table_name in cte_names:
+                continue
+            if table_name not in self.ALLOWED_TABLES:
+                logger.warning("disallowed_table", table=table_name)
+                return False
+        return True
+
+    def _add_timeouts(self, sql: str) -> str:
+        """Add statement and lock timeouts to SQL."""
+        # Remove trailing semicolon
+        sql = sql.rstrip().rstrip(';')
+
+        # Add timeouts via SET LOCAL
+        timeout_sql = f"""
+SET LOCAL statement_timeout = {self.STATEMENT_TIMEOUT_MS};
+SET LOCAL lock_timeout = {self.LOCK_TIMEOUT_MS};
+{sql};
+"""
+        return timeout_sql
+
+    def _ensure_limit(self, sql: str) -> str:
+        """Ensure LIMIT clause is present."""
+        sql_lower = sql.lower()
+        if "limit" not in sql_lower:
+            return f"{sql.rstrip().rstrip(';')} LIMIT {self.MAX_LIMIT}"
+        return sql
 
     def execute(self, sql: str) -> list[dict]:
-        """Execute SQL query."""
+        """Execute SQL query with guardrails."""
         # Validate
         valid, error = self._validate_sql(sql)
         if not valid:
             raise ValueError(f"SQL validation failed: {error}")
 
         # Add LIMIT if not present
-        if "limit" not in sql.lower():
-            sql = f"{sql.rstrip(';')} LIMIT {self.MAX_LIMIT}"
+        sql = self._ensure_limit(sql)
 
-        with get_session() as session:
-            result = session.execute(sql)
-            columns = result.keys()
-            rows = [dict(zip(columns, row, strict=False)) for row in result.fetchall()]
-            return rows
+        # Add timeouts
+        sql = self._add_timeouts(sql)
+
+        try:
+            with get_session() as session:
+                # Set timeouts at session level
+                session.execute(f"SET LOCAL statement_timeout = {self.STATEMENT_TIMEOUT_MS}")
+                session.execute(f"SET LOCAL lock_timeout = {self.LOCK_TIMEOUT_MS}")
+
+                result = session.execute(sql)
+                columns = result.keys()
+                rows = [dict(zip(columns, row, strict=False)) for row in result.fetchall()]
+                return rows
+
+        except Exception as e:
+            logger.exception("sql_execution_failed")
+            raise ValueError(f"SQL execution failed: {e}")
 
 
 class CompareTrialsTool:
